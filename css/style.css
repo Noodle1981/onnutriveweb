@@ -1,0 +1,437 @@
+/* css/style.css */
+
+/* --------------------------------------------------- */
+/* 1. Variables y Estilos Globales
+/* --------------------------------------------------- */
+:root {
+    --nutrive-green: #0a4735;
+    --nutrive-red: #e73940;
+    --nutrive-gold: #e0c181;
+    --text-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* --------------------------------------------------- */
+/* 2. Estilos del Navbar
+/* --------------------------------------------------- */
+.navbar-glass {
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-glass .nav-link {
+    color: var(--nutrive-green);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-glass .nav-link:hover {
+    color: var(--nutrive-red);
+}
+
+.navbar-glass .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--nutrive-gold);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-glass .nav-link:hover::after {
+    width: 80%;
+}
+
+/* --------------------------------------------------- */
+/* 3. Estilos del Hero con Slideshow CSS
+/* --------------------------------------------------- */
+.hero-css-slider {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeAnimation 15s infinite;
+}
+
+/* --- IMÁGENES POR DEFECTO (MÓVIL) --- */
+.slide-1 { background-image: url('../img/d1m.png'); }
+.slide-2 { background-image: url('../img/d2m.png'); animation-delay: 5s; }
+.slide-3 { background-image: url('../img/d3m.png'); animation-delay: 10s; }
+
+/* --- IMÁGENES PARA ESCRITORIO --- */
+@media (min-width: 768px) {
+    .slide-1 { background-image: url('../img/d1e.png'); }
+    .slide-2 { background-image: url('../img/d2e.png'); }
+    .slide-3 { background-image: url('../img/d3e.png'); }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.hero-content .slide-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    opacity: 0;
+    animation: fadeAnimation 15s infinite;
+}
+
+.hero-content .slide-text:nth-child(2) { animation-delay: 5s; }
+.hero-content .slide-text:nth-child(3) { animation-delay: 10s; }
+
+/* --------------------------------------------------- */
+/* 4. Animaciones (@keyframes)
+/* --------------------------------------------------- */
+@keyframes fadeAnimation {
+    0%   { opacity: 0; }
+    8%   { opacity: 1; }
+    33%  { opacity: 1; }
+    41%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* --------------------------------------------------- */
+/* 5. Estilos de la Sección Catálogo
+/* --------------------------------------------------- */
+.filter-btn {
+    border: 2px solid var(--nutrive-green);
+    color: var(--nutrive-green);
+    background-color: transparent;
+    font-weight: 700;
+    margin: 5px;
+    padding: 8px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.filter-btn:hover {
+    background-color: var(--nutrive-green);
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: var(--nutrive-green);
+    color: white;
+    box-shadow: 0 4px 15px rgba(10, 71, 53, 0.3);
+}
+
+.product-card {
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+}
+
+.product-card.hide {
+    transform: scale(0.8);
+    opacity: 0;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+}
+
+.card-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.card-inner img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card-inner:hover img {
+    transform: scale(1.05);
+}
+
+.product-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, var(--nutrive-green), transparent);
+    padding: 40px 20px 20px 20px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.card-inner:hover .product-overlay {
+    transform: translateY(0);
+}
+
+.product-price {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------- */
+/* 6. Estilos de la Sección Planes (Carrusel) - CORREGIDO
+/* --------------------------------------------------- */
+#planes-slider h2 {
+    color: var(--nutrive-green);
+}
+
+.planSwiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-card-square {
+    /* === ¡ESTA ES LA CORRECCIÓN CLAVE! === */
+    max-width: 300px; /* Limita el tamaño máximo */
+    width: 100%;     /* Permite que la tarjeta se encoja */
+    /* ==================================== */
+    
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.plan-card-square:hover {
+    transform: scale(1.03);
+}
+
+.plan-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.plan-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(10, 71, 53, 0.8) 0%, rgba(0,0,0,0) 60%);
+    z-index: 2;
+}
+
+.plan-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+.plan-card-content h4 {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.btn-wsp {
+    display: inline-block;
+    background-color: var(--nutrive-red);
+    color: white;
+    font-weight: 700;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-wsp:hover {
+    background-color: #c42d33;
+    color: white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--nutrive-green) !important;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+/* --------------------------------------------------- */
+/* 7. Responsive General
+/* --------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .hero-content .slide-text {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+    
+    .navbar-glass .nav-link {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    /* Reglas responsivas para el carrusel de planes */
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 16px !important;
+    }
+}
+
+
+/* css/style.css (Añadir al final) */
+
+/* --------------------------------------------------- */
+/* 9. Estilos de la Sección Servicios (Delivery & Catering)
+/* --------------------------------------------------- */
+
+#servicios {
+    background-color: #FFFFFF;
+}
+
+/* Contenedor para las imágenes en capas */
+.image-stack {
+    position: relative;
+    margin-bottom: 40px; /* Espacio para que la imagen de abajo no se pegue al texto en móvil */
+}
+
+/* Imagen principal (la de atrás) */
+.main-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* Imagen de info (la que está encima) */
+.info-image {
+    position: absolute;
+    width: 65%; /* Hacemos que sea más pequeña que la principal */
+    z-index: 2;
+    border: 5px solid white; /* Un borde blanco para que se despegue del fondo */
+    bottom: -40px; /* La posicionamos hacia abajo */
+    right: -40px;  /* Y hacia la derecha, creando el desfase */
+}
+
+/* Modificador para la sección invertida (Catering) */
+.image-stack--reverse .info-image {
+    right: auto;  /* Reseteamos la posición derecha */
+    left: -40px; /* Y la posicionamos a la izquierda */
+}
+
+/* Título pequeño de color (eyebrow) */
+.eyebrow-text {
+    color: var(--nutrive-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Lista de características del servicio */
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left; /* Siempre a la izquierda, incluso si el contenedor está centrado */
+    display: inline-block; /* Para que ocupe solo el ancho necesario */
+}
+
+.service-features li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    color: #495057;
+}
+
+/* Reutilizamos el checkmark de los planes */
+.service-features li::before {
+    content: '✓';
+    color: var(--nutrive-green);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+/* --- Responsive para el efecto de capas en pantallas pequeñas --- */
+@media (max-width: 991.98px) {
+    .image-stack {
+        /* En móvil, el efecto de desfase extremo no funciona bien.
+           Lo simplificamos para que se vea bien en una sola columna. */
+    }
+    .info-image {
+        position: relative;
+        width: 80%;
+        margin: -80px auto 0 auto; /* La subimos un poco para que se superponga */
+        bottom: auto;
+        right: auto;
+        left: auto;
+    }
+
+    .image-stack--reverse .info-image {
+        left: auto; /* Reseteamos también para la versión invertida */
+    }
+}

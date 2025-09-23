@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrive - Comida Saludable</title>
+
+    <!-- Bootstrap CSS (lo seguimos usando para el grid, navbar, etc.) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts (Alternativa a Visby Round CF) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tu hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+
+    <!-- ================================================== -->
+    <!-- NAVEGACIÓN (NAVBAR) -->
+    <!-- ================================================== -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo Nutrive" width="150">
+            </a>
+
+            <!-- Botón para menú en móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links de la navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Viandas a Elección</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registrarme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Empresas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================================== -->
+    <!-- HERO CON SLIDESHOW 100% CSS -->
+    <!-- ================================================== -->
+    <header class="hero-css-slider">
+        <!-- Capas de las diapositivas (se animarán con CSS) -->
+        <div class="slide slide-1"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
+
+        <!-- Overlay oscuro para legibilidad -->
+        <div class="hero-overlay"></div>
+
+    
+    </header>
+    
+  
+ 
+   <!-- index.html (Añadir esta sección después del </header>) -->
+
+
+
+</main>
+    <!-- index.html (Sección del Catálogo ACTUALIZADA) -->
+
+<main>
+    <section id="catalogo" class="py-5">
+        <div class="container">
+            <!-- Título de la Sección -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5">Nuestro Menú</h2>
+                <p class="lead text-muted">Explorá nuestras opciones frescas y saludables</p>
+            </div>
+
+            <!-- Botones de Filtro (sin cambios) -->
+            <div id="filter-buttons" class="d-flex justify-content-center flex-wrap mb-5">
+                <button class="btn filter-btn active" data-filter="all">Todos</button>
+                <button class="btn filter-btn" data-filter="bebida">Bebidas</button>
+                <button class="btn filter-btn" data-filter="sopas">Sopas</button>
+                <button class="btn filter-btn" data-filter="tartas">Tartas</button>
+                <button class="btn filter-btn" data-filter="varios">Varios</button>
+            </div>
+
+            <!-- Grilla de Productos (AHORA VACÍA) -->
+            <div id="product-grid" class="row g-4">
+                <!-- Los productos se generarán aquí con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<section id="planes-slider" class="py-5" style="background-color: #fdfaf5;">
+    <div class="container">
+        <!-- Título de la Sección -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Descubrí un Plan a tu Medida</h2>
+            <p class="lead text-muted">8 opciones diseñadas para acompañarte en tus objetivos.</p>
+        </div>
+
+        <!-- Contenedor del Carrusel Swiper -->
+        <div class="swiper planSwiper">
+            <div class="swiper-wrapper">
+                
+                <!-- Plan 1 -->
+                <div class="swiper-slide">
+                    <div class="plan-card-square">
+                        <img src="./img/planes/p1.jpeg" class="plan-card-bg" alt="Plan 1">
+                        <div class="plan-card-overlay"></div>
+                        <div class="plan-card-content">
+                            <h4>Plan Inicial</h4>
+                            <a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Inicial." target="_blank" class="btn-wsp">
+                                Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="swiper-slide">
+                    <div class="plan-card-square">
+                        <img src="./img/planes/p2.jpeg" class="plan-card-bg" alt="Plan 2">
+                        <div class="plan-card-overlay"></div>
+                        <div class="plan-card-content">
+                            <h4>Plan Detox</h4>
+                             <a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Detox." target="_blank" class="btn-wsp">
+                                Consultar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repite este bloque para los 8 planes, cambiando la imagen y el texto del link -->
+
+                <!-- Plan 3 -->
+                <div class="swiper-slide">
+                    <div class="plan-card-square"><img src="./img/planes/p3.jpeg" class="plan-card-bg" alt="Plan 3"><div class="plan-card-overlay"></div><div class="plan-card-content"><h4>Plan Fitness</h4><a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Fitness." target="_blank" class="btn-wsp">Consultar por WhatsApp</a></div></div>
+                </div>
+
+                <!-- Plan 4 -->
+                <div class="swiper-slide">
+                    <div class="plan-card-square"><img src="./img/planes/p4.jpeg" class="plan-card-bg" alt="Plan 4"><div class="plan-card-overlay"></div><div class="plan-card-content"><h4>Plan Veggie</h4><a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Veggie." target="_blank" class="btn-wsp">Consultar por WhatsApp</a></div></div>
+                </div>
+
+                <!-- Plan 5 a 8 (copia y pega cambiando el número) -->
+                <div class="swiper-slide">
+                    <div class="plan-card-square"><img src="./img/planes/p5.jpeg" class="plan-card-bg" alt="Plan 5"><div class="plan-card-overlay"></div><div class="plan-card-content"><h4>Plan Familiar</h4><a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Familiar." target="_blank" class="btn-wsp">Consultar por WhatsApp</a></div></div>
+                </div>
+                 <div class="swiper-slide">
+                    <div class="plan-card-square"><img src="./img/planes/p6.jpeg" class="plan-card-bg" alt="Plan 6"><div class="plan-card-overlay"></div><div class="plan-card-content"><h4>Plan Aumento</h4><a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Aumento." target="_blank" class="btn-wsp">Consultar por WhatsApp</a></div></div>
+                </div>
+                 <div class="swiper-slide">
+                    <div class="plan-card-square"><img src="./img/planes/p7.jpeg" class="plan-card-bg" alt="Plan 7"><div class="plan-card-overlay"></div><div class="plan-card-content"><h4>Plan Descenso</h4><a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Descenso." target="_blank" class="btn-wsp">Consultar por WhatsApp</a></div></div>
+                </div>
+                 <div class="swiper-slide">
+                    <div class="plan-card-square"><img src="./img/planes/p8.jpeg" class="plan-card-bg" alt="Plan 8"><div class="plan-card-overlay"></div><div class="plan-card-content"><h4>Plan Mantenimiento</h4><a href="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20me%20interesa%20el%20Plan%20Mantenimiento." target="_blank" class="btn-wsp">Consultar por WhatsApp</a></div></div>
+                </div>
+
+            </div>
+            <!-- Botones de Navegación -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+
+<!-- index.html (Añadir esta sección después de los planes) -->
+
+<section id="servicios" class="py-5">
+    <div class="container">
+
+        <!-- ===== SERVICIO DE DELIVERY ===== -->
+        <div class="row align-items-center g-lg-5 py-5">
+            <!-- Columna de Imágenes (en capas) -->
+            <div class="col-lg-6">
+                <div class="image-stack">
+                    <img src="./img/servicios/d2.png" class="img-fluid rounded-3 shadow-lg main-image" alt="Repartidor de Nutrive">
+                    <img src="./img/servicios/d1.png" class="img-fluid rounded-3 shadow-lg info-image" alt="Información de nuestro delivery">
+                </div>
+            </div>
+            <!-- Columna de Texto -->
+            <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="eyebrow-text">NUESTRO SERVICIO</h3>
+                <h2 class="display-5 fw-bold lh-1 mb-3">Llevamos Salud a tu Puerta</h2>
+                <p class="lead">Recibí tus viandas favoritas donde sea que estés, con la frescura y calidad que nos caracteriza. Nuestra logística está diseñada para cuidar cada detalle, desde nuestra cocina hasta tus manos.</p>
+                <ul class="service-features">
+                    <li>Entregas programadas y flexibles</li>
+                    <li>Cobertura en toda la ciudad</li>
+                    <li>Packaging 100% ecológico</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Divisor sutil -->
+        <hr class="my-5">
+
+        <!-- ===== SERVICIO DE CATERING ===== -->
+        <div class="row align-items-center g-lg-5 py-5 flex-lg-row-reverse"> <!-- Clase para invertir el orden -->
+            <!-- Columna de Imágenes (en capas) -->
+            <div class="col-lg-6">
+                <div class="image-stack image-stack--reverse">
+                    <img src="./img/servicios/k2.png" class="img-fluid rounded-3 shadow-lg main-image" alt="Evento con catering de Nutrive">
+                    <img src="./img/servicios/k1.png" class="img-fluid rounded-3 shadow-lg info-image" alt="Información de nuestro catering">
+                </div>
+            </div>
+            <!-- Columna de Texto -->
+            <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="eyebrow-text">PARA EVENTOS Y EMPRESAS</h3>
+                <h2 class="display-5 fw-bold lh-1 mb-3">Nutrición de Calidad para tus Equipos</h2>
+                <p class="lead">Elevá el nivel de tus reuniones, eventos o jornadas laborales con opciones de catering saludables y deliciosas. Creamos menús personalizados que se adaptan a las necesidades de tu equipo.</p>
+                 <ul class="service-features">
+                    <li>Menús corporativos personalizados</li>
+                    <li>Opciones para coffee breaks y almuerzos</li>
+                    <li>Asesoramiento para eventos especiales</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+</main>
+
+  
+
+    <!-- Bootstrap JS (sigue siendo útil para el menú en móvil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+     <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Tu script personalizado -->
+    <script src="js/script.js"></script>
+</body>
+</html>

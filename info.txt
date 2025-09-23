@@ -1,0 +1,1 @@
+Nota sobre la tipografía: "Visby Round CF" es una fuente de pago. Para este ejemplo, usaré una alternativa gratuita muy similar de Google Fonts llamada "Nunito". Si ya tienes los archivos de Visby Round, puedes cargarlos localmente con @font-face.
