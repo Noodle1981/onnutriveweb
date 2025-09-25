@@ -67,32 +67,36 @@
     <!-- ================================================== -->
     <!-- HERO CON SLIDESHOW 100% CSS -->
     <!-- ================================================== -->
-    <header class="hero-video-background">
-    <!-- El video de fondo -->
+<!-- index.html (Reemplaza tu sección <header> completa) -->
+
+<!-- index.html (Reemplaza tu sección <header> completa) -->
+
+<header class="hero-video-background">
+    <!-- El video de fondo (sin cambios) -->
     <video playsinline autoplay muted loop poster="img/poster.jpg" id="bgvideo">
-        <!-- Usamos el video de muestra de Pexels -->
         <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
         Tu navegador no soporta videos HTML5.
     </video>
 
-    <!-- Overlay oscuro para legibilidad (sigue siendo crucial) -->
+    <!-- Overlay (sin cambios) -->
     <div class="hero-overlay"></div>
 
-    <!-- Contenido de texto sobre el video -->
+    <!-- ===== CONTENIDO ACTUALIZADO: LOGO + TEXTO ===== -->
     <div class="hero-content">
-        <!-- Reemplazamos el texto por la imagen del logo -->
-        <img src="img/onnutrivetransparente-Photoroom.png" alt="Logo de Nutrive" class="hero-logo">
+        <!-- 1. El logo encima -->
+        <img src="./img/logosinfondo.png" alt="Logo de Nutrive" class="hero-logo-icon">
+
+        <!-- 2. El título debajo -->
+        <h1>
+            <span class="text-on">on</span>
+            <span class="text-nutrive">nutrive</span>
+        </h1>
+
+        <!-- 3. El subtítulo al final -->
+        <p class="hero-subtitle">Alimentos que activan</p>
     </div>
-
-
+    <!-- ========================================================== -->
 </header>
-    
-  
- 
-   <!-- index.html (Añadir esta sección después del </header>) -->
-
-
-    <!-- index.html (Sección del Catálogo ACTUALIZADA) -->
 
 <main>
 
@@ -100,102 +104,79 @@
 
 <!-- index.html (Reemplaza la sección why-nutrive completa) -->
 
-<section id="why-nutrive" class="py-5">
+<section id="prueba" class="py-5">
     <div class="container">
 
-        <!-- ===== PARTE 1: VISIÓN Y OFERTA INTEGRADA ===== -->
-        <div class="row align-items-center g-5">
-            <!-- Columna Izquierda: Visión y Servicios para Individuos -->
-            <div class="col-lg-6 animate-on-scroll">
-                <h2 class="display-4 fw-bold">La solución integral para tu bienestar</h2>
-                <p class="lead text-muted mb-4">Nuestra visión es ser la empresa líder en alimentación saludable de la región, mejorando tu calidad de vida a través de cada plato.</p>
-                
-                <div class="service-box">
-                    <h3 class="fw-bold">Para Vos</h3>
-                    <ul class="service-list">
-                        <li>Servicio de viandas (retiro y delivery)</li>
-                        <li>Menús personalizados por nutricionistas</li>
-                        <li>Planes para patologías específicas</li>
-                        <li>Toda nuestra cartera de productos saludables</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Columna Derecha: Servicios para Empresas -->
-            <div class="col-lg-6 animate-on-scroll" data-delay="200">
-                 <div class="service-box service-box--dark">
-                    <h3 class="fw-bold">Para tu Empresa</h3>
-                     <ul class="service-list">
-                        <li>Catering para eventos y reuniones</li>
-                        <li>Menús semanales pactados para oficinas</li>
-                        <li>Programas de alimentación saludable</li>
-                        <li>Soluciones a medida para grandes equipos</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- ===== ACTO 1: LA VISIÓN ===== -->
+        <div class="text-center mb-5 animate-on-scroll">
+            <h2 class="display-4 fw-bold">La solución integral para tu bienestar</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 800px;">Nuestra visión es ser la empresa líder de la región, mejorando tu calidad de vida a través de cada plato.</p>
         </div>
 
-        <!-- Divisor -->
-        <hr class="my-5">
+        <!-- Título de transición -->
+        <div class="text-center my-5 animate-on-scroll">
+            <h3 class="subsection-title">Nuestros Pilares</h3>
+        </div>
 
-        <!-- ===== PARTE 2: VALORES INTERACTIVOS (FLIP CARDS) ===== -->
+        <!-- ===== ACTO 2: LOS VALORES (FLIP CARDS) ===== -->
         <div class="row g-4 text-center">
-            <!-- Valor 1 -->
-            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="0">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <i class="bi bi-heart-pulse value-icon"></i>
-                            <h4>Salud y Nutrición</h4>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>La base de todo lo que hacemos, en cada ingrediente que elegimos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Valor 2 -->
-            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="100">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <i class="bi bi-arrow-repeat value-icon"></i>
-                            <h4>Flexibilidad</h4>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Nos adaptamos a tu ritmo de vida, tus gustos y tus necesidades.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Valor 3 -->
-            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="200">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <i class="bi bi-gem value-icon"></i>
-                            <h4>Calidad e Innovación</h4>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Buscamos constantemente los mejores ingredientes y recetas nuevas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Valor 4 -->
-            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="300">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <i class="bi bi-search value-icon"></i>
-                            <h4>Transparencia</h4>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Comprometidos con vos y con el planeta en cada paso que damos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Los 4 valores con flip cards... (sin cambios) -->
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="0"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-heart-pulse value-icon"></i><h4>Salud y Nutrición</h4></div><div class="flip-card-back"><p>La base de todo lo que hacemos, en cada ingrediente que elegimos.</p></div></div></div></div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="100"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-arrow-repeat value-icon"></i><h4>Flexibilidad</h4></div><div class="flip-card-back"><p>Nos adaptamos a tu ritmo de vida, tus gustos y tus necesidades.</p></div></div></div></div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="200"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-gem value-icon"></i><h4>Calidad e Innovación</h4></div><div class="flip-card-back"><p>Buscamos constantemente los mejores ingredientes y recetas nuevas.</p></div></div></div></div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="300"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-search value-icon"></i><h4>Transparencia</h4></div><div class="flip-card-back"><p>Comprometidos con vos y con el planeta en cada paso que damos.</p></div></div></div></div>
         </div>
+
+        <!-- Título de transición -->
+        <div class="text-center mt-5 pt-5 mb-5 animate-on-scroll">
+            <h3 class="subsection-title">Nuestra Promesa en Acción</h3>
+        </div>
+
+
+<!-- SERVICIO DE DELIVERY -->
+<div class="row align-items-center g-lg-5 mb-5 parallax-container">
+    <div class="col-lg-6">
+        <div class="image-stack">
+            <!-- Capas del collage (ordenadas de atrás hacia adelante) -->
+            <img src="./img/servicios/retazo1-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="-2">
+            <img src="./img/servicios/retazo2-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="1">
+            <img src="./img/servicios/auto.png" alt="Delivery Nutrive" class="parallax-element main-image" data-speed="-0.5">
+
+        </div>
+    </div>
+    <div class="col-lg-6 text-center text-lg-start animate-on-scroll" data-delay="200">
+        <h3 class="eyebrow-text">PARA VOS</h3>
+        <h2 class="display-5 fw-bold lh-1 mb-3">Llevamos Salud a tu Puerta</h2>
+        <p class="lead">Recibí tus viandas favoritas donde estés. Nuestra logística cuida cada detalle, desde nuestra cocina hasta tus manos.</p>
+        <ul class="service-features">
+            <li>Servicio de viandas (retiro y delivery)</li>
+            <li>Planes para patologías específicas</li>
+            <li>Packaging 100% ecológico</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SERVICIO DE CATERING -->
+<div class="row align-items-center g-lg-5 flex-lg-row-reverse parallax-container">
+    <div class="col-lg-6">
+        <div class="image-stack image-stack--reverse">
+             <!-- Capas del collage -->
+            <img src="./img/servicios/retazo3-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="-2">
+            <img src="./img/servicios/retazo4-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="1">
+            <img src="./img/servicios/mesa.png" alt="Mesa de catering Nutrive" class="parallax-element main-image" data-speed="-0.5">
+        </div>
+    </div>
+    <div class="col-lg-6 text-center text-lg-start animate-on-scroll" data-delay="200">
+        <h3 class="eyebrow-text">PARA TU EMPRESA</h3>
+        <h2 class="display-5 fw-bold lh-1 mb-3">Nutrición de Calidad para tus Equipos</h2>
+        <p class="lead">Elevá el nivel de tus reuniones y eventos con opciones de catering saludables y deliciosas que se adaptan a tu equipo.</p>
+         <ul class="service-features">
+            <li>Menús corporativos personalizados</li>
+            <li>Opciones para coffee breaks y almuerzos</li>
+            <li>Asesoramiento para eventos especiales</li>
+        </ul>
+    </div>
+</div>
 
     </div>
 </section>
@@ -365,58 +346,6 @@
 
 <!-- index.html (Añadir esta sección después de los planes) -->
 
-<section id="servicios" class="py-5">
-    <div class="container">
-
-        <!-- ===== SERVICIO DE DELIVERY ===== -->
-        <div class="row align-items-center g-lg-5 py-5">
-            <!-- Columna de Imágenes (en capas) -->
-            <div class="col-lg-6">
-                <div class="image-stack">
-                    <img src="./img/servicios/d2.png" class="img-fluid rounded-3 shadow-lg main-image" alt="Repartidor de Nutrive">
-                    <img src="./img/servicios/d1.png" class="img-fluid rounded-3 shadow-lg info-image" alt="Información de nuestro delivery">
-                </div>
-            </div>
-            <!-- Columna de Texto -->
-            <div class="col-lg-6 text-center text-lg-start">
-                <h3 class="eyebrow-text">NUESTRO SERVICIO</h3>
-                <h2 class="display-5 fw-bold lh-1 mb-3">Llevamos Salud a tu Puerta</h2>
-                <p class="lead">Recibí tus viandas favoritas donde sea que estés, con la frescura y calidad que nos caracteriza. Nuestra logística está diseñada para cuidar cada detalle, desde nuestra cocina hasta tus manos.</p>
-                <ul class="service-features">
-                    <li>Entregas programadas y flexibles</li>
-                    <li>Cobertura en toda la ciudad</li>
-                    <li>Packaging 100% ecológico</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Divisor sutil -->
-        <hr class="my-5">
-
-        <!-- ===== SERVICIO DE CATERING ===== -->
-        <div class="row align-items-center g-lg-5 py-5 flex-lg-row-reverse"> <!-- Clase para invertir el orden -->
-            <!-- Columna de Imágenes (en capas) -->
-            <div class="col-lg-6">
-                <div class="image-stack image-stack--reverse">
-                    <img src="./img/servicios/k2.png" class="img-fluid rounded-3 shadow-lg main-image" alt="Evento con catering de Nutrive">
-                    <img src="./img/servicios/k1.png" class="img-fluid rounded-3 shadow-lg info-image" alt="Información de nuestro catering">
-                </div>
-            </div>
-            <!-- Columna de Texto -->
-            <div class="col-lg-6 text-center text-lg-start">
-                <h3 class="eyebrow-text">PARA EVENTOS Y EMPRESAS</h3>
-                <h2 class="display-5 fw-bold lh-1 mb-3">Nutrición de Calidad para tus Equipos</h2>
-                <p class="lead">Elevá el nivel de tus reuniones, eventos o jornadas laborales con opciones de catering saludables y deliciosas. Creamos menús personalizados que se adaptan a las necesidades de tu equipo.</p>
-                 <ul class="service-features">
-                    <li>Menús corporativos personalizados</li>
-                    <li>Opciones para coffee breaks y almuerzos</li>
-                    <li>Asesoramiento para eventos especiales</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</section>
 
 
 <!-- index.html (Añadir esta nueva sección) -->
@@ -520,6 +449,10 @@
         </div>
     </div>
 </section>
+
+<!-- index.html (Esta sección reemplaza a #why-nutrive y a #servicios) -->
+
+
 
 
 

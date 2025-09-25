@@ -74,9 +74,12 @@ body {
     width: 80%;
 }
 
+/* css/style.css (Reemplaza la sección 3 completa) */
+
 /* --------------------------------------------------- */
-/* 3. HERO (VIDEO DE FONDO)
+/* 3. HERO (VIDEO DE FONDO CON LOGO Y TEXTO)
 /* --------------------------------------------------- */
+
 .hero-video-background {
     height: 100vh;
     position: relative;
@@ -84,6 +87,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #bgvideo {
@@ -113,22 +117,88 @@ body {
     position: relative;
     z-index: 2;
     padding: 20px;
-    width: 100%;
+    /* Apilamos los elementos verticalmente */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.hero-logo {
-    max-width: 80%;
-    width: 600px;
+/* ===== NUEVO: Estilo para el logo-ícono ===== */
+.hero-logo-icon {
+    max-width: 450px; /* Tamaño reducido para que actúe como ícono */
     height: auto;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
-    animation: fadeInLogo 1.5s 0.5s ease-out forwards;
+    margin-bottom: 1.5rem; /* Espacio entre el logo y el título */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+    
+    /* Animación de entrada (aparece primero) */
+    animation: fadeInRise 1s 0.5s ease-out forwards;
     opacity: 0;
 }
 
-/* css/style.css (Reemplaza la sección #why-nutrive) */
+/* Estilo principal del título (ligeramente más pequeño que antes) */
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0;
+    text-transform: lowercase;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    
+    /* Animación de entrada (aparece segundo) */
+    animation: fadeInRise 1s 0.7s ease-out forwards;
+    opacity: 0;
+}
 
+.hero-content .text-on {
+    font-weight: 600;
+    color: var(--nutrive-gold);
+}
+
+.hero-content .text-nutrive {
+    font-weight: 800;
+    color: var(--nutrive-green);
+}
+
+/* Estilo para el subtítulo (sin cambios) */
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--nutrive-green);
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
+    /* Animación de entrada (aparece último) */
+    animation: fadeInRise 1s 0.9s ease-out forwards;
+    opacity: 0;
+}
+
+
+/* Reutilizamos la misma animación para todos */
+@keyframes fadeInRise {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Responsive para el Hero en Móviles --- */
+@media (max-width: 767.98px) {
+    .hero-logo-icon {
+        max-width: 120px;
+        margin-bottom: 1rem;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
 /* --------------------------------------------------- */
 /* 4. WHY NUTRIVE (REDISEÑADO)
 /* --------------------------------------------------- */
@@ -868,4 +938,172 @@ body {
     .feature-list {
         text-align: left;
     }
+}
+
+/* css/style.css (Reemplaza las secciones 4 y 8 con esta nueva sección 4) */
+
+/* --------------------------------------------------- */
+/* 4. SECCIÓN PRUEBA (FUSIÓN WHY-NUTRIVE Y SERVICIOS)
+/* --------------------------------------------------- */
+#prueba {
+    background-color: var(--background-cream); /* Un fondo unificado y cálido */
+    overflow-x: hidden;
+}
+
+#prueba .display-4, #prueba .display-5 {
+    color: var(--nutrive-green);
+}
+
+/* Títulos de transición */
+.subsection-title {
+    font-weight: 700;
+    color: var(--nutrive-green);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--nutrive-gold);
+}
+
+
+/* --- Estilos para Flip Cards (Valores) --- */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.flip-card-inner {
+    position: relative; width: 100%; height: 100%; text-align: center;
+    transition: transform 0.6s; transform-style: preserve-3d;
+}
+.flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+@media (min-width: 992px) {
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+}
+.flip-card-front, .flip-card-back {
+    position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; border-radius: 15px; display: flex;
+    flex-direction: column; justify-content: center; align-items: center; padding: 20px;
+}
+.flip-card-front { background-color: #FFFFFF; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.flip-card-back { background-color: var(--nutrive-green); color: white; transform: rotateY(180deg); }
+.value-icon { font-size: 3rem; color: var(--nutrive-red); margin-bottom: 1rem; }
+.flip-card-front h4 { color: var(--nutrive-green); font-weight: 700; }
+
+/* --- Estilos para Servicios Visuales (Delivery & Catering) --- */
+.eyebrow-text {
+    color: var(--nutrive-red); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;
+}
+.image-stack {
+    position: relative; margin-bottom: 40px;
+}
+.main-image {
+    position: relative; z-index: 1;
+}
+.info-image {
+    position: absolute; width: 65%; z-index: 2; border: 5px solid white;
+    bottom: -40px; right: -40px;
+}
+.image-stack--reverse .info-image {
+    right: auto; left: -40px;
+}
+.service-features {
+    list-style: none; padding: 0; margin-top: 20px; text-align: left; display: inline-block;
+}
+.service-features li {
+    margin-bottom: 12px; display: flex; align-items: center;
+}
+.service-features li::before {
+    content: '✓'; color: var(--nutrive-green); font-weight: bold;
+    font-size: 1.2rem; margin-right: 10px;
+}
+
+/* --- Animación al Scroll --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* css/style.css (Actualizar los estilos de .image-stack dentro de la sección #prueba) */
+
+/* --- Estilos para Servicios Visuales (Collage Estático) --- */
+.eyebrow-text {
+    color: var(--nutrive-red); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 0.5rem;
+}
+
+/* El "escenario" para nuestro collage. Es el ancla de posicionamiento. */
+.image-stack {
+    position: relative;
+    height: 400px; /* Le damos una altura fija para trabajar */
+    margin-bottom: 40px; /* Espacio en móviles */
+}
+
+/* Estilo común para todas las imágenes del collage */
+.image-stack img {
+    position: absolute; /* Cada imagen es una capa */
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Transición suave por si quieres añadir un hover en el futuro */
+}
+
+/* --- Composición del collage de DELIVERY --- */
+.image-stack img[src*="retazo1"] {
+    width: 10%;
+    top: 0;
+    left: 10%;
+    z-index: 1; /* Detrás de todo */
+}
+.image-stack img[src*="retazo2"] {
+    width: 40%;
+    bottom: 0;
+    right: -10%;
+    z-index: 1;
+}
+.image-stack img[src*="auto.png"] {
+    width: 90%;
+    max-width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    z-index: 2; /* Por encima de los retazos */
+}
+
+
+/* --- Composición del collage de CATERING (invertido) --- */
+.image-stack--reverse img[src*="retazo3"] {
+    width: 30%;
+    top: 0;
+    right: -10%;
+    z-index: 1;
+}
+.image-stack--reverse img[src*="retazo4"] {
+    width: 10%;
+    bottom: 0;
+    left: -10%;
+    z-index: 1;
+}
+.image-stack--reverse img[src*="mesa.png"] {
+    width: 90%;
+    max-width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
