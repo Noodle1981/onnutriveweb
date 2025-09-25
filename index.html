@@ -215,6 +215,97 @@
         <!-- Divisor -->
         <hr class="my-5">
 
+        <!-- index.html (Pega esta sección completa en tu página) -->
+   <!-- index.html (Pega esta sección completa en tu página) -->
+
+<section id="planes" class="py-5" style="background-color: #fdfaf5;">
+    <div class="container">
+
+        <!-- Título de la Sección -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Descubrí un Plan a tu Medida</h2>
+            <p class="lead text-muted">Hacé clic en cualquier plan para ver los detalles y consultarnos.</p>
+        </div>
+
+        <!-- ===== GRIDS DE PLANES ===== -->
+        <div class="row g-4 plan-grid">
+            <!-- Cada 'div' es una columna que contiene un 'a' que activa el modal -->
+
+            <!-- Plan 1 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <a href="#" class="plan-grid-item" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#planModal"
+                   data-image-src="./img/planes/p1.jpeg"
+                   data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Inicial.">
+                    <img src="./img/planes/p1.jpeg" alt="Plan Inicial">
+                </a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <a href="#" class="plan-grid-item" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#planModal"
+                   data-image-src="./img/planes/p2.jpeg"
+                   data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Detox.">
+                    <img src="./img/planes/p2.jpeg" alt="Plan Detox">
+                </a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p3.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Fitness."><img src="./img/planes/p3.jpeg" alt="Plan Fitness"></a>
+            </div>
+
+            <!-- Plan 4 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p4.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Veggie."><img src="./img/planes/p4.jpeg" alt="Plan Veggie"></a>
+            </div>
+
+            <!-- Plan 5 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p5.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Familiar."><img src="./img/planes/p5.jpeg" alt="Plan Familiar"></a>
+            </div>
+
+            <!-- Plan 6 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p6.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Aumento."><img src="./img/planes/p6.jpeg" alt="Plan Aumento"></a>
+            </div>
+
+            <!-- Plan 7 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p7.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Descenso."><img src="./img/planes/p7.jpeg" alt="Plan Descenso"></a>
+            </div>
+
+            <!-- Plan 8 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p8.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Mantenimiento."><img src="./img/planes/p8.jpeg" alt="Plan Mantenimiento"></a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- ===== MODAL PARA VER EL PLAN EN GRANDE (PONER AL FINAL DEL BODY, ANTES DE LOS SCRIPTS) ===== -->
+<div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="planModalLabel">Detalle del Plan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalPlanImage" src="" alt="Detalle del plan" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <a id="modalWspButton" href="" target="_blank" class="btn btn-wsp-modal w-100">
+            <i class="bi bi-whatsapp"></i> Solicitar Info
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         <!-- ================================================== -->
@@ -229,11 +320,6 @@
 </section>
 
 
-<!-- index.html (Añadir esta nueva sección donde corresponda) -->
-
-<!-- index.html (Reemplaza la sección features completa con esta nueva estructura) -->
-
-<!-- index.html (Sección features con el contenedor achicado) -->
 
 <section id="features" class="py-5">
     <div class="container">
@@ -311,18 +397,13 @@
 
 
 
-
-
-
-    <section id="catalogo" class="py-5">
+<!--    <section id="catalogo" class="py-5">
         <div class="container">
-            <!-- Título de la Sección -->
             <div class="text-center mb-5">
                 <h2 class="fw-bold display-5">Nuestro Menú</h2>
                 <p class="lead text-muted">Explorá nuestras opciones frescas y saludables</p>
             </div>
 
-            <!-- Botones de Filtro (sin cambios) -->
             <div id="filter-buttons" class="d-flex justify-content-center flex-wrap mb-5">
                 <button class="btn filter-btn active" data-filter="all">Todos</button>
                 <button class="btn filter-btn" data-filter="bebida">Bebidas</button>
@@ -331,22 +412,10 @@
                 <button class="btn filter-btn" data-filter="varios">Varios</button>
             </div>
 
-            <!-- Grilla de Productos (AHORA VACÍA) -->
             <div id="product-grid" class="row g-4">
-                <!-- Los productos se generarán aquí con JavaScript -->
             </div>
         </div>
-    </section>
-
-
-
-
-
-
-
-<!-- index.html (Añadir esta sección después de los planes) -->
-
-
+    </section> -->
 
 <!-- index.html (Añadir esta nueva sección) -->
 
