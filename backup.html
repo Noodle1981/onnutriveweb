@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrive - Comida Saludable</title>
+
+    <!-- Bootstrap CSS principal -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- ======================================================= -->
+    <!-- AÑADE ESTA LÍNEA AQUÍ -->
+    <!-- ======================================================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ======================================================= -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- ... resto de tus links de Google Fonts ... -->
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Tu hoja de estilos personalizada (SIEMPRE AL FINAL) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ================================================== -->
+    <!-- NAVEGACIÓN (NAVBAR) -->
+    <!-- ================================================== -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="img/logobanner.png" alt="Logo Nutrive" width="250">
+            </a>
+
+            <!-- Botón para menú en móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links de la navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Viandas a Elección</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registrarme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Empresas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contactos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================================== -->
+    <!-- HERO CON SLIDESHOW 100% CSS -->
+    <!-- ================================================== -->
+<!-- index.html (Reemplaza tu sección <header> completa) -->
+
+<!-- index.html (Reemplaza tu sección <header> completa) -->
+
+<header class="hero-video-background">
+    <!-- El video de fondo (sin cambios) -->
+     <video playsinline autoplay muted loop poster="img/poster.jpg" id="bgvideo">
+        
+        <!-- ASEGÚRATE DE QUE LA RUTA 'src' SEA ESTA -->
+        <source src="./video/videos2.mp4" type="video/mp4">
+        
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <!-- Overlay (sin cambios) -->
+    <div class="hero-overlay"></div>
+
+    <!-- ===== CONTENIDO ACTUALIZADO: LOGO + TEXTO ===== -->
+    <div class="hero-content">
+        <!-- 1. El logo encima -->
+        <img src="./img/logosinfondo.png" alt="Logo de Nutrive" class="hero-logo-icon">
+
+        <!-- 2. El título debajo -->
+        <h1>
+            <span class="text-on">on</span>
+            <span class="text-nutrive">nutrive</span>
+        </h1>
+
+        <!-- 3. El subtítulo al final -->
+        <p class="hero-subtitle">Alimentos que activan</p>
+    </div>
+    <!-- ========================================================== -->
+</header>
+
+<main>
+
+<!-- index.html (Añadir esta sección al final del contenido principal) -->
+
+<!-- index.html (Reemplaza la sección why-nutrive completa) -->
+
+<section id="prueba" class="py-5">
+    <div class="container">
+
+        <!-- ===== ACTO 1: LA VISIÓN ===== -->
+        <div class="text-center mb-5 animate-on-scroll">
+            <h2 class="display-4 fw-bold">La solución integral para tu bienestar</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 800px;">Nuestra visión es ser la empresa líder de la región, mejorando tu calidad de vida a través de cada plato.</p>
+        </div>
+
+        <!-- Título de transición -->
+        <div class="text-center my-5 animate-on-scroll">
+            <h3 class="subsection-title">Nuestros Pilares</h3>
+        </div>
+
+        <!-- ===== ACTO 2: LOS VALORES (FLIP CARDS) ===== -->
+        <div class="row g-4 text-center">
+            <!-- Los 4 valores con flip cards... (sin cambios) -->
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="0"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-heart-pulse value-icon"></i><h4>Salud y Nutrición</h4></div><div class="flip-card-back"><p>La base de todo lo que hacemos, en cada ingrediente que elegimos.</p></div></div></div></div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="100"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-arrow-repeat value-icon"></i><h4>Flexibilidad</h4></div><div class="flip-card-back"><p>Nos adaptamos a tu ritmo de vida, tus gustos y tus necesidades.</p></div></div></div></div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="200"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-gem value-icon"></i><h4>Calidad e Innovación</h4></div><div class="flip-card-back"><p>Buscamos constantemente los mejores ingredientes y recetas nuevas.</p></div></div></div></div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="300"><div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="bi bi-search value-icon"></i><h4>Transparencia</h4></div><div class="flip-card-back"><p>Comprometidos con vos y con el planeta en cada paso que damos.</p></div></div></div></div>
+        </div>
+
+        <!-- Título de transición -->
+        <div class="text-center mt-5 pt-5 mb-5 animate-on-scroll">
+            <h3 class="subsection-title">Nuestra Promesa en Acción</h3>
+        </div>
+
+
+<!-- SERVICIO DE DELIVERY -->
+<div class="row align-items-center g-lg-5 mb-5 parallax-container">
+    <div class="col-lg-6">
+        <div class="image-stack">
+            <!-- Capas del collage (ordenadas de atrás hacia adelante) -->
+            <img src="./img/servicios/retazo1-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="-2">
+            <img src="./img/servicios/retazo2-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="1">
+            <img src="./img/servicios/auto.png" alt="Delivery Nutrive" class="parallax-element main-image" data-speed="-0.5">
+
+        </div>
+    </div>
+    <div class="col-lg-6 text-center text-lg-start animate-on-scroll" data-delay="200">
+        <h3 class="eyebrow-text">PARA VOS</h3>
+        <h2 class="display-5 fw-bold lh-1 mb-3">Llevamos Salud a tu Puerta</h2>
+        <p class="lead">Recibí tus viandas favoritas donde estés. Nuestra logística cuida cada detalle, desde nuestra cocina hasta tus manos.</p>
+        <ul class="service-features">
+            <li>Servicio de viandas (retiro y delivery)</li>
+            <li>Planes para patologías específicas</li>
+            <li>Packaging 100% ecológico</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SERVICIO DE CATERING -->
+<div class="row align-items-center g-lg-5 flex-lg-row-reverse parallax-container">
+    <div class="col-lg-6">
+        <div class="image-stack image-stack--reverse">
+             <!-- Capas del collage -->
+            <img src="./img/servicios/retazo3-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="-2">
+            <img src="./img/servicios/retazo4-Photoroom.png" alt="Pincelada decorativa" class="parallax-element" data-speed="1">
+            <img src="./img/servicios/mesa.png" alt="Mesa de catering Nutrive" class="parallax-element main-image" data-speed="-0.5">
+        </div>
+    </div>
+    <div class="col-lg-6 text-center text-lg-start animate-on-scroll" data-delay="200">
+        <h3 class="eyebrow-text">PARA TU EMPRESA</h3>
+        <h2 class="display-5 fw-bold lh-1 mb-3">Nutrición de Calidad para tus Equipos</h2>
+        <p class="lead">Elevá el nivel de tus reuniones y eventos con opciones de catering saludables y deliciosas que se adaptan a tu equipo.</p>
+         <ul class="service-features">
+            <li>Menús corporativos personalizados</li>
+            <li>Opciones para coffee breaks y almuerzos</li>
+            <li>Asesoramiento para eventos especiales</li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+</section>
+
+<!-- index.html (Reemplaza la sección de planes completa con esto) -->
+
+<section id="planes" class="py-5">
+    <div class="container">
+
+        <!-- ================================================== -->
+        <!-- PARTE 1: EL PORQUÉ (INTRODUCCIÓN Y BENEFICIOS) -->
+        <!-- ================================================== -->
+        <div class="row align-items-center justify-content-center g-5 pb-5">
+            <div class="col-lg-6">
+                <!-- Imagen de la profesional -->
+                <img src="./img/nutricionista.png" class="d-block mx-lg-auto img-fluid professional-img" alt="Nutricionista de Nutrive" width="700" height="500" loading="lazy">
+                 <!-- NOTA: Reemplaza 'img/profesional.jpg' con la ruta a la foto de tu nutricionista -->
+            </div>
+            <div class="col-lg-6">
+                <h3 class="eyebrow-text">DISEÑADOS POR EXPERTOS</h3>
+                <h2 class="display-5 fw-bold lh-1 mb-3">Planes Nutricionales para una Vida Mejor</h2>
+                <p class="lead">Optar por nuestros planes, diseñados por nutricionistas, te aporta beneficios reales y visibles para tu bienestar general.</p>
+                
+                <ul class="benefits-list mt-4">
+                    <li><i class="benefit-icon">✓</i> Ayudan a equilibrar tu peso.</li>
+                    <li><i class="benefit-icon">✓</i> Regulan el tránsito intestinal.</li>
+                    <li><i class="benefit-icon">✓</i> Mejoran notablemente la digestión.</li>
+                    <li><i class="benefit-icon">✓</i> Bajan el nivel de colesterol y triglicéridos.</li>
+                    <li><i class="benefit-icon">✓</i> Ayudan a mantener fuerte tu sistema inmune.</li>
+                </ul>
+            </div>
+        </div>
+
+        
+
+        <!-- Divisor -->
+        <hr class="my-5">
+
+        <!-- index.html (Pega esta sección completa en tu página) -->
+   <!-- index.html (Pega esta sección completa en tu página) -->
+
+<section id="planes" class="py-5" style="background-color: #fdfaf5;">
+    <div class="container">
+
+        <!-- Título de la Sección -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Descubrí un Plan a tu Medida</h2>
+            <p class="lead text-muted">Hacé clic en cualquier plan para ver los detalles y consultarnos.</p>
+        </div>
+
+        <!-- ===== GRIDS DE PLANES ===== -->
+        <div class="row g-4 plan-grid">
+            <!-- Cada 'div' es una columna que contiene un 'a' que activa el modal -->
+
+            <!-- Plan 1 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <a href="#" class="plan-grid-item" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#planModal"
+                   data-image-src="./img/planes/p1.jpeg"
+                   data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Inicial.">
+                    <img src="./img/planes/p1.jpeg" alt="Plan Inicial">
+                </a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <a href="#" class="plan-grid-item" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#planModal"
+                   data-image-src="./img/planes/p2.jpeg"
+                   data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Detox.">
+                    <img src="./img/planes/p2.jpeg" alt="Plan Detox">
+                </a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p3.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Fitness."><img src="./img/planes/p3.jpeg" alt="Plan Fitness"></a>
+            </div>
+
+            <!-- Plan 4 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p4.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Veggie."><img src="./img/planes/p4.jpeg" alt="Plan Veggie"></a>
+            </div>
+
+            <!-- Plan 5 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p5.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Familiar."><img src="./img/planes/p5.jpeg" alt="Plan Familiar"></a>
+            </div>
+
+            <!-- Plan 6 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p6.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Aumento."><img src="./img/planes/p6.jpeg" alt="Plan Aumento"></a>
+            </div>
+
+            <!-- Plan 7 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p7.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Descenso."><img src="./img/planes/p7.jpeg" alt="Plan Descenso"></a>
+            </div>
+
+            <!-- Plan 8 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                 <a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="./img/planes/p8.jpeg" data-wsp-link="https://wa.me/5491112345678?text=Hola%20Nutrive%2C%20quisiera%20consultar%20por%20el%20Plan%20Mantenimiento."><img src="./img/planes/p8.jpeg" alt="Plan Mantenimiento"></a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- ===== MODAL PARA VER EL PLAN EN GRANDE (PONER AL FINAL DEL BODY, ANTES DE LOS SCRIPTS) ===== -->
+<div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="planModalLabel">Detalle del Plan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalPlanImage" src="" alt="Detalle del plan" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <a id="modalWspButton" href="" target="_blank" class="btn btn-wsp-modal w-100">
+            <i class="bi bi-whatsapp"></i> Solicitar Info
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- ================================================== -->
+        <!-- PARTE 3: EL CÓMO (LA PERSONALIZACIÓN) -->
+        <!-- ================================================== -->
+        <div class="personalization-cta mt-5">
+            <h3 class="fw-bold">Todos los planes especiales son personalizados</h3>
+            <p>La nutricionista arma los menús teniendo en cuenta tus gustos y restricciones alimentarias. <br> Tu plan es único, como vos.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="features" class="py-5">
+    <div class="container">
+        
+        <!-- ======================================================= -->
+        <!-- NUEVO CONTENEDOR MÁS PEQUEÑO Y CENTRADO -->
+        <!-- ======================================================= -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10"> <!-- Esta columna limita el ancho en pantallas grandes -->
+        <!-- ======================================================= -->
+
+                <!-- TARJETA UNIFICADA 1: VIANDAS -->
+                <div class="feature-card-unified animate-on-scroll">
+                    <!-- ... contenido de la tarjeta de viandas (sin cambios) ... -->
+                    <div class="feature-image-wrapper">
+                        <img src="./img/patamuslo.png" alt="Plato de vianda saludable">
+                    </div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Viandas</h2>
+                        <p class="feature-subtitle">Comida real, fresca y lista para disfrutar.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-basket2-fill"></i> Abundantes y saciantes</li>
+                            <li><i class="bi bi-shield-check"></i> Bajas en sodio y harinas refinadas</li>
+                            <li><i class="bi bi-fire"></i> Preparaciones al horno o hervidas</li>
+                            <li><i class="bi bi-truck"></i> Directo a la puerta de tu casa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TARJETA UNIFICADA 2: SNACKS (con clase --reverse) -->
+                <div class="feature-card-unified feature-card-unified--reverse animate-on-scroll">
+                    <!-- ... contenido de la tarjeta de snacks (sin cambios) ... -->
+                    <div class="feature-image-wrapper">
+                        <img src="img/snack.png" alt="Snacks saludables">
+                    </div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Snacks</h2>
+                        <p class="feature-subtitle">La energía que necesitás, de forma inteligente.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-lightning-charge-fill"></i> Energía para tus pausas activas</li>
+                            <li><i class="bi bi-palette-fill"></i> Opciones dulces y saladas</li>
+                            <li><i class="bi bi-tree-fill"></i> Ingredientes 100% naturales</li>
+                            <li><i class="bi bi-bicycle"></i> Ideales para pre y post entreno</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TARJETA UNIFICADA 3: INSUMOS -->
+                <div class="feature-card-unified animate-on-scroll">
+                    <!-- ... contenido de la tarjeta de insumos (sin cambios) ... -->
+                    <div class="feature-image-wrapper">
+                        <img src="img/juice.png" alt="Insumos y productos de almacén">
+                    </div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Insumos</h2>
+                        <p class="feature-subtitle">Todo para que tu alacena sea más saludable.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-shop"></i> Productos de almacén saludable</li>
+                            <li><i class="bi bi-cup-straw"></i> Infusiones, jugos y más</li>
+                            <li><i class="bi bi-award-fill"></i> Seleccionados por nutricionistas</li>
+                            <li><i class="bi bi-star-fill"></i> La mejor calidad para tu cocina</li>
+                        </ul>
+                    </div>
+                </div>
+        
+        <!-- ======================================================= -->
+        <!-- CIERRE DEL NUEVO CONTENEDOR -->
+        <!-- ======================================================= -->
+            </div>
+        </div>
+        <!-- ======================================================= -->
+
+    </div>
+</section>
+
+
+
+<!--    <section id="catalogo" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5">Nuestro Menú</h2>
+                <p class="lead text-muted">Explorá nuestras opciones frescas y saludables</p>
+            </div>
+
+            <div id="filter-buttons" class="d-flex justify-content-center flex-wrap mb-5">
+                <button class="btn filter-btn active" data-filter="all">Todos</button>
+                <button class="btn filter-btn" data-filter="bebida">Bebidas</button>
+                <button class="btn filter-btn" data-filter="sopas">Sopas</button>
+                <button class="btn filter-btn" data-filter="tartas">Tartas</button>
+                <button class="btn filter-btn" data-filter="varios">Varios</button>
+            </div>
+
+            <div id="product-grid" class="row g-4">
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+<!-- index.html (Añadir esta nueva sección) -->
+
+<section id="quienes-somos" class="parallax-section">
+    <!-- Capa de superposición para legibilidad del texto -->
+    <div class="parallax-overlay"></div>
+
+    <!-- Contenido -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- Título estilizado en dos líneas -->
+                <div class="stacked-title mb-4">
+                    <h2 class="title-quienes">Quienes</h2>
+                    <h2 class="title-somos">Somos</h2>
+                </div>
+                <!-- Párrafo principal -->
+                <p class="lead parallax-text">
+                    Somos una empresa que brinda servicios de alimentación para el bienestar integral, que incluye la elaboración y comercialización de viandas, snacks y alimentos saludables con acompañamiento y asesoramiento nutricional.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- index.html (Añadir esta sección al final) -->
+
+<section id="contacto" class="py-5">
+    <div class="container">
+        <!-- Título de la Sección -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">¿Hablamos?</h2>
+            <p class="lead text-muted">Estamos para ayudarte a empezar tu camino hacia una vida más saludable.</p>
+        </div>
+
+        <div class="row g-5">
+            <!-- Columna del Formulario -->
+            <div class="col-lg-7">
+                <form action="#" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono (Opcional)</label>
+                        <input type="tel" class="form-control" id="telefono" placeholder="+54 9 11 1234 5678">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Tu Consulta</label>
+                        <textarea class="form-control" id="mensaje" rows="5" placeholder="Contanos en qué podemos ayudarte..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit w-100">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <!-- Columna de Información de Contacto -->
+            <div class="col-lg-5">
+                <h4 class="fw-bold mb-4">Otras formas de conectar</h4>
+
+                <!-- Item de Contacto: WhatsApp -->
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>WhatsApp</h5>
+                        <a href="https://wa.me/5491112345678" target="_blank">+54 9 11 1234 5678</a>
+                    </div>
+                </div>
+
+                <!-- Item de Contacto: Email -->
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope-fill"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>Email</h5>
+                        <a href="mailto:hola@nutrive.com.ar">hola@nutrive.com.ar</a>
+                    </div>
+                </div>
+
+                <!-- Item de Contacto: Dirección -->
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>Visitanos</h5>
+                        <p>Av. Siempreviva 742, Springfield</p>
+                    </div>
+                </div>
+
+                <!-- Imagen Decorativa -->
+                <img src="img/contacto.jpg" class="img-fluid rounded-3 shadow-sm mt-4" alt="Ingredientes frescos de Nutrive">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- index.html (Esta sección reemplaza a #why-nutrive y a #servicios) -->
+
+
+
+
+
+</main>
+
+  
+
+    <!-- Bootstrap JS (sigue siendo útil para el menú en móvil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+     <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Tu script personalizado -->
+    <script src="js/script.js"></script>
+</body>
+</html>

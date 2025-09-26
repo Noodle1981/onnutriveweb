@@ -93,6 +93,84 @@ body {
     color: var(--nutrive-green); 
     text-shadow: none; /* Quitamos la sombra, ya no es necesaria sobre fondo claro */
 }
+/* Estilo para el subrayado naranja */
+.nav-link {
+    position: relative;
+    padding-bottom: 8px; /* Espacio para el subrayado */
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0f4d36; /* Naranja */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #0f4d36; /* Naranja */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- NUEVO: Estilos para el botón CTA --- */
+.cta-button {
+    background-color: #0f4d36; /* Naranja */
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.cta-button:hover {
+    background-color: #e67e22; /* Naranja más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    border-top: 3px solid #0f4d36;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mostrar menú desplegable en pantallas grandes al hacer hover */
+@media (min-width: 1024px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+/* --- NUEVO: Estilos para la sección de contacto --- */
+.contact-input {
+    background-color: #fef5e7; /* Beige claro */
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.contact-input::placeholder {
+    color: #cdaa7c;
+}
+.contact-input:focus {
+    outline: none;
+    border-color: white;
+}
+.contact-submit-btn {
+    background-color: #fef5e7; /* Beige claro */
+    color: #0f4d36; /* Naranja */
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+.contact-submit-btn:hover {
+    background-color: #fdf2d9; /* Beige un poco más oscuro */
+}
 
 /* css/style.css (Reemplaza la sección 3 completa) */
 
@@ -218,6 +296,39 @@ body {
     .hero-subtitle {
         font-size: 1.1rem;
     }
+}
+
+
+ /* Estilos para la sección Inicio */
+ .inicio-title {
+    
+    font-family: 'Nunito', sans-serif;
+}
+.inicio-title-main {
+    color: #4A4A4A; /* Gris oscuro */
+}
+.inicio-title-highlight {
+    color: #C19A6B; /* Color café claro/dorado */
+}
+
+/* --- NUEVO: Animación para el plato de comida --- */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }
 /* --------------------------------------------------- */
 /* 4. WHY NUTRIVE (REDISEÑADO)
@@ -460,7 +571,10 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     position: relative; /* CRUCIAL: Es el ancla para la imagen absoluta */
     margin-bottom: 120px; /* Espacio entre tarjetas, dejando lugar para la imagen */
-    display: flex; /* Usamos flex para alinear el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center
+
 }
 
 /* El contenedor de la imagen */
@@ -469,7 +583,9 @@ body {
     z-index: 2;
     top: -60px; /* La subimos para que sobresalga */
     left: 40px;  /* La posicionamos a la izquierda */
-    width: 300px; /* Le damos un tamaño generoso */
+    width: 550px;
+    max-width: 550px;
+    height: 550px;
     filter: drop-shadow(0 20px 25px rgba(0,0,0,0.25));
 }
 
@@ -481,7 +597,12 @@ body {
 /* El contenido de texto */
 .feature-card-content {
     padding: 40px;
-    padding-left: 360px; /* Padding GRANDE a la izquierda para hacer espacio para la imagen */
+    padding-left: 660px; /* Padding GRANDE a la izquierda para hacer espacio para la imagen */
+    width: 100%;
+}
+.feature-card-content-2 {
+    padding: 40px;
+    padding-left: -660px; /* Padding GRANDE a la izquierda para hacer espacio para la imagen */
     width: 100%;
 }
 
@@ -534,6 +655,25 @@ body {
 }
 
 .feature-list li i {
+    color: var(--nutrive-red);
+    margin-right: 15px;
+    font-size: 1.5rem;
+    min-width: 28px;
+}
+.feature-list-2 {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.feature-list-2 li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.feature-list-2 li i {
     color: var(--nutrive-red);
     margin-right: 15px;
     font-size: 1.5rem;
@@ -1118,4 +1258,96 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+}
+
+
+.site-footer {
+    /* Usamos un color de fondo base similar a la imagen */
+    background-color: #f7f7f7;
+    color: #555;
+    position: relative;
+    overflow: hidden; /* Oculta lo que se salga del footer, como el círculo decorativo */
+}
+
+.footer-heading {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.25rem; /* Espacio debajo de los títulos */
+    font-size: 1.1rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem; /* Espacio entre links */
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0f4d36; /* Color naranja al pasar el ratón */
+}
+
+.social-icon {
+    background-color: #0f4d36;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Círculo decorativo grande */
+.footer-decoration {
+    position: absolute;
+    bottom: -100px;
+    right: -150px;
+    width: 450px;
+    height: 450px;
+    background: linear-gradient(135deg, #f9b24a, #0f4d36);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    background-color: #0f4d36;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-decoration {
+        /* Escondemos la decoración en móviles para un look más limpio */
+        display: none;
+    }
+    .whatsapp-float {
+        /* Reposicionamos el botón de WhatsApp */
+        bottom: 20px;
+        right: 20px;
+    }
 }
