@@ -90,11 +90,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     };
+
+    const setupNavbarScroll = () => {
+        const navbar = document.querySelector('.navbar-glass');
+        if (!navbar) return;
+
+        const handleScroll = () => {
+            // Comprueba si la posición vertical del scroll es mayor a 50 píxeles
+            if (window.scrollY > 50) {
+                // Si hemos bajado, añade la clase
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                // Si estamos arriba, quita la clase
+                navbar.classList.remove('navbar-scrolled');
+            }
+        };
+
+        // Escucha el evento de scroll en toda la ventana
+        window.addEventListener('scroll', handleScroll);
+    };
+
+
  
     // EJECUCIÓN DE TODAS LAS FUNCIONES
     generateProductCards();
     setupMenuFilters();
     setupInteractivity();
     setupPlanModal();
+    setupNavbarScroll();
 
 });
