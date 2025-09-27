@@ -1,0 +1,566 @@
+/*
+    Hoja de Estilos de Onnutrive - Versión Renovada
+    -------------------------------------------------
+    Índice:
+    1. Configuración Global y Variables de Marca
+    2. Clases de Utilidad General
+    3. Navegación (Navbar)
+    4. Sección Hero (Video)
+    5. Secciones Principales (Nosotros, Servicios, Planes)
+    6. Formulario de Contacto
+    7. Footer
+    8. Animaciones y Microinteracciones
+    9. Media Queries (Responsividad)
+*/
+
+/* ---------------------------------- */
+/* 1. CONFIGURACIÓN GLOBAL Y VARIABLES
+/* ---------------------------------- */
+
+@font-face {
+    font-family: 'Visby Round CF';
+    src: url('VisbyRoundCF-Light.eot');
+    src: url('VisbyRoundCF-Light.eot?#iefix') format('embedded-opentype'),
+         url('VisbyRoundCF-Light.woff2') format('woff2'),
+         url('VisbyRoundCF-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Visby Round CF Regular */
+@font-face {
+    font-family: 'Visby Round CF';
+    src: url('VisbyRoundCF-Regular.eot');
+    src: url('VisbyRoundCF-Regular.eot?#iefix') format('embedded-opentype'),
+         url('VisbyRoundCF-Regular.woff2') format('woff2'),
+         url('VisbyRoundCF-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Visby Round CF Medium */
+@font-face {
+    font-family: 'Visby Round CF';
+    src: url('VisbyRoundCF-Medium.eot');
+    src: url('VisbyRoundCF-Medium.eot?#iefix') format('embedded-opentype'),
+         url('VisbyRoundCF-Medium.woff2') format('woff2'),
+         url('VisbyRoundCF-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Visby Round CF DemiBold */
+@font-face {
+    font-family: 'Visby Round CF';
+    src: url('VisbyRoundCF-DemiBold.eot');
+    src: url('VisbyRoundCF-DemiBold.eot?#iefix') format('embedded-opentype'),
+         url('VisbyRoundCF-DemiBold.woff2') format('woff2'),
+         url('VisbyRoundCF-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Visby Round CF Bold */
+@font-face {
+    font-family: 'Visby Round CF';
+    src: url('VisbyRoundCF-Bold.eot');
+    src: url('VisbyRoundCF-Bold.eot?#iefix') format('embedded-opentype'),
+         url('VisbyRoundCF-Bold.woff2') format('woff2'),
+         url('VisbyRoundCF-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Visby Round CF ExtraBold */
+@font-face {
+    font-family: 'Visby Round CF';
+    src: url('VisbyRoundCF-ExtraBold.eot');
+    src: url('VisbyRoundCF-ExtraBold.eot?#iefix') format('embedded-opentype'),
+         url('VisbyRoundCF-ExtraBold.woff2') format('woff2'),
+         url('VisbyRoundCF-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    /* Paleta de colores extraída del Manual de Marca (Clave 2) */
+    --brand-green: #124735;
+    --brand-gold: #DABD85;
+    --brand-accent: #DA4735; /* Color de acento para CTAs */
+    --brand-cream: #fdfaf5;   /* Fondo cálido y suave */
+    --brand-dark: #333333;    /* Color de texto principal */
+    
+    /* Tipografía extraída del Manual de Marca (Clave 1) */
+    --font-title: 'Nunito', sans-serif;;
+    --font-body: 'Nunito', sans-serif;
+}
+
+
+
+
+
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--brand-cream);
+    color: var(--brand-dark);
+}
+
+/* ---------------------------------- */
+/* 2. CLASES DE UTILIDAD GENERAL
+/* ---------------------------------- */
+.section-title {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 2.25rem; /* 36px */
+    color: var(--brand-green);
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 1.125rem; /* 18px */
+    color: #6b7280;
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
+.alimentos-text {
+    font-weight: 5000; /* Bold */
+    color: #2b453e; /* Color verde oscuro de la imagen */
+    font-size: 2.9rem; /* Tamaño de fuente re-ajustado */
+    line-height: 0.9;  /* Ajuste de altura de línea para control vertical */
+    letter-spacing: 0.2px; /* Espaciado ajustado */
+}
+
+.activan-text {
+    font-weight: 2000; /* ExtraBold */
+    color: #d4b588; /* Color beige/dorado de la imagen */
+    font-size: 5.4rem; /* Tamaño de fuente re-ajustado */
+    line-height: 1;
+    margin-top: -0.5rem; /* Ajuste vertical más preciso */
+    letter-spacing: -1px; /* Espaciado negativo ajustado */
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.75rem; /* 44px */
+    }
+}
+
+/* ---------------------------------- */
+/* 3. NAVEGACIÓN (NAVBAR)
+/* ---------------------------------- */
+#navbar {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: white; /* Color inicial sobre el video */
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--brand-accent);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#navbar.scrolled .nav-link {
+    color: var(--brand-green);
+}
+#navbar.scrolled .nav-link:hover {
+    color: var(--brand-accent);
+}
+
+.nav-link-mobile {
+    color: var(--brand-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Botón CTA (Clave 4) */
+.cta-button {
+    background-color: var(--brand-accent);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #c94030; /* Versión más oscura del acento */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Botón CTA Secundario */
+.cta-button-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--brand-green);
+    border: 2px solid var(--brand-gold);
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.65rem 1.75rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--brand-gold);
+    color: var(--brand-green);
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------- */
+/* 4. SECCIÓN HERO (VIDEO)
+/* ---------------------------------- */
+.hero-video-background {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bgvideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    object-fit: cover;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(18, 71, 53, 0.4); /* Overlay con el verde de marca */
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.hero-logo-icon {
+    width: 150px;
+    height: auto;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+}
+@media (min-width: 768px) {
+    .hero-logo-icon {
+        width: 200px;
+    }
+}
+
+/* ---------------------------------- */
+/* 5. SECCIONES PRINCIPALES
+/* ---------------------------------- */
+
+/* --- Animación de flotar --- */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));
+}
+
+
+/* --- Sección "Quiénes Somos" / Pilares --- */
+.pillar-card-horizontal {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
+}
+.pillar-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(218, 189, 133, 0.15); /* Dorado muy suave */
+    color: var(--brand-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.pillar-title {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand-green);
+    margin-bottom: 0.25rem;
+}
+.pillar-text {
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+/* --- Sección Servicios --- */
+.service-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+@media (min-width: 1024px) {
+    .service-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        padding: 3rem;
+    }
+    .service-card--reverse .service-image {
+        order: 2;
+    }
+}
+.service-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+.service-title {
+    font-family: var(--font-title);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--brand-green);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.service-description {
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+.service-list {
+    list-style: none;
+    padding: 0;
+    space-y: 0.75rem;
+}
+.service-list li {
+    display: flex;
+    align-items: center;
+    color: var(--brand-dark);
+}
+.service-list li i {
+    color: var(--brand-accent);
+    margin-right: 0.75rem;
+}
+
+/* --- Sección Planes (NUEVA) --- */
+.plan-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+.plan-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.plan-card:hover .plan-image {
+    transform: scale(1.05);
+}
+.plan-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+.plan-title {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.plan-description {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.plan-card:hover .plan-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------------------------------- */
+/* 6. CONTACTO
+/* ---------------------------------- */
+.cta-button-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.cta-button-whatsapp:hover {
+    background-color: #1EBE57;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+/* ---------------------------------- */
+/* 7. FOOTER
+/* ---------------------------------- */
+.footer-title {
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--brand-green);
+    margin-bottom: 1rem;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #4b5563;
+}
+.footer-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 1024px) {
+    .footer-links li {
+        justify-content: flex-start;
+    }
+}
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--brand-accent);
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--brand-cream);
+    color: var(--brand-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    background-color: var(--brand-green);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ---------------------------------- */
+/* 8. ANIMACIONES
+/* ---------------------------------- */
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--animation-delay, 0s);
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------------------------- */
+/* 9. MEDIA QUERIES
+/* ---------------------------------- */
+@media (max-width: 1023px) {
+    /* Centra el texto en las tarjetas de servicio en móvil */
+    .service-content {
+        text-align: center;
+    }
+    .service-list {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
