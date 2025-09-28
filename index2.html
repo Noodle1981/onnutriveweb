@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrive - Comida Saludable</title>
+
+    <!-- Bootstrap CSS principal -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- ======================================================= -->
+    <!-- AÑADE ESTA LÍNEA AQUÍ -->
+    <!-- ======================================================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- ======================================================= -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- ... resto de tus links de Google Fonts ... -->
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Tu hoja de estilos personalizada (SIEMPRE AL FINAL) -->
+    <link rel="stylesheet" href="css/style2.css"> <!-- VERSIÓN 2-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Importación de Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CDN de Tailwind CSS para utilidades rápidas de layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ================================================== -->
+    <!-- NAVEGACIÓN (NAVBAR) -->
+    <!-- ================================================== -->
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 ">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                     <img src="./img/logobanner.png"  alt="Córdoba Nutrición Logo" class="h-12 w-auto">
+                </div>
+
+                <!-- Menú para pantallas grandes -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="#" class="nav-link">Inicio</a>
+                   <a href="#" class="nav-link">Alimentación inteligente</a>
+                    <div class="relative dropdown">
+                        <a href="#" class="nav-link flex items-center">
+                            <span>Servicios</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div class="dropdown-menu hidden absolute bg-white w-60 mt-2 rounded-md py-2 z-20">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">Descenso en Pesos en Adultos</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">Descenso en Pesos en Niños</a>
+                        </div>
+                    </div>
+                    
+                   
+                    <a href="#" class="nav-link">Viandas</a>
+                    <a href="./planes.html" class="nav-link">Planes</a>
+                    <a href="#" class="nav-link">Sobre Nosotros</a>
+                    <a href="#" class="nav-link">Venta a Empresas</a>
+
+                   
+                </div>
+
+                <!-- Botón CTA para pantallas grandes -->
+                <div class="hidden lg:block">
+                    <a href="#contacto" class="cta-button">Contacto</a>
+                </div>
+
+                <!-- Botón de menú para móviles -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú para móviles (se muestra al hacer clic) -->
+        <div id="mobile-menu" class="hidden lg:hidden">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">Inicio</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">Alimentación inteligente</a>
+                <div>
+                    <button id="mobile-dropdown-button" class="w-full text-left flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">
+                        <span>Servicios</span>
+                        <svg id="mobile-dropdown-icon" class="w-5 h-5 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mobile-dropdown-menu" class="hidden mt-1 pl-4 space-y-1">
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-orange-500 hover:bg-orange-50">Descenso de peso en adultos</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-orange-500 hover:bg-orange-50">Descenso en peso de niños</a>
+                    </div>
+                </div>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">Talleres y Retos</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">Bienestar</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">Viandas</a>
+                <a href="./planes.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50">Planes</a>
+
+                <div class="mt-4 border-t border-gray-200 pt-4">
+                     <a href="#contacto" class="block w-full text-center cta-button">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- ================================================== -->
+    <!-- HERO CON SLIDESHOW 100% CSS -->
+    <!-- ================================================== -->
+
+<main class="hero-video-background">
+
+    <!-- El video de fondo (sin cambios) -->
+    <video playsinline autoplay muted loop poster="img/poster.jpg" id="bgvideo">
+        
+        <!-- ASEGÚRATE DE QUE LA RUTA 'src' SEA ESTA -->
+        <source src="./video/videos2.mp4" type="video/mp4">
+        
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <!-- Overlay (sin cambios) -->
+    <div class="hero-overlay"></div>
+
+</main>
+
+
+
+<!-- === SECCIÓN INICIO === -->
+<section id="inicio" class="bg-white">
+    <div class="container mx-auto px-4 py-16 sm:py-24">
+        <div class="flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-8">
+            <!-- Grupo de Imágenes -->
+            <div class="flex items-center justify-center gap-4 md:gap-2">
+                <!-- Plato de Comida -->
+                <div class="w-48 sm:w-50">
+                     <!-- Reemplaza con la imagen del plato -->
+                    <img src="./img/comida_2.png" alt="Plato de comida saludable" class="rounded-full animate-float">
+                </div>
+            </div>
+
+            <!-- Título Principal -->
+            <div class="font-black mb-4 leading-none">
+                <span class="block text-3xl md:text-4xl" style="color: #0c3d28; font-size: 4.1rem;">Alimentos Que</span>
+                <span class="block text-5xl md:text-6xl" style="color: #d4b483; font-size: 7.1rem;">Activan</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- index.html (Sección features CORREGIDA) -->
+
+<!-- HTML para presentar las 3 versiones -->
+
+<!-- ======================================================= -->
+<!-- VERSIÓN 1: TEMA CLARO (DEFAULT) -->
+<!-- ======================================================= -->
+<section id="features-light" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5"><h2 class="display-5 fw-bold">Versión 1: Tema Claro</h2></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Tarjeta 1 -->
+                <div class="feature-card-unified animate-on-scroll">
+                    <div class="feature-image-wrapper"><img src="./img/patamuslo.png" alt="Plato de vianda saludable"></div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Viandas</h2><p class="feature-subtitle">Comida real, fresca y lista para disfrutar.</p>
+                        <ul class="feature-list"><li><i class="bi bi-basket2-fill"></i> Abundantes y saciantes</li><li><i class="bi bi-shield-check"></i> Bajas en sodio y harinas refinadas</li><li><i class="bi bi-fire"></i> Preparaciones al horno o hervidas</li><li><i class="bi bi-truck"></i> Directo a la puerta de tu casa</li></ul>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="feature-card-unified feature-card-unified--reverse animate-on-scroll">
+                    <div class="feature-image-wrapper"><img src="./img/pastel.png" alt="Pastelería saludable"></div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Pastelería</h2><p class="feature-subtitle">La energía que necesitás, de forma inteligente.</p>
+                        <ul class="feature-list"><li><i class="bi bi-lightning-charge-fill"></i> Energía para tus pausas activas</li><li><i class="bi bi-palette-fill"></i> Opciones dulces y saladas</li><li><i class="bi bi-tree-fill"></i> Ingredientes 100% naturales</li><li><i class="bi bi-bicycle"></i> Ideales para pre y post entreno</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- VERSIÓN 2: TEMA VERDE -->
+<!-- ======================================================= -->
+<section id="features-green" class="py-5 theme-green"> <!-- <-- AÑADIMOS LA CLASE 'theme-green' -->
+    <div class="container">
+        <div class="text-center mb-5"><h2 class="display-5 fw-bold">Versión 2: Tema Verde</h2></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Tarjeta 1 -->
+                <div class="feature-card-unified animate-on-scroll">
+                    <div class="feature-image-wrapper"><img src="./img/patamuslo.png" alt="Plato de vianda saludable"></div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Viandas</h2><p class="feature-subtitle">Comida real, fresca y lista para disfrutar.</p>
+                        <ul class="feature-list"><li><i class="bi bi-basket2-fill"></i> Abundantes y saciantes</li><li><i class="bi bi-shield-check"></i> Bajas en sodio y harinas refinadas</li><li><i class="bi bi-fire"></i> Preparaciones al horno o hervidas</li><li><i class="bi bi-truck"></i> Directo a la puerta de tu casa</li></ul>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="feature-card-unified feature-card-unified--reverse animate-on-scroll">
+                    <div class="feature-image-wrapper"><img src="./img/pastel.png" alt="Pastelería saludable"></div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Pastelería</h2><p class="feature-subtitle">La energía que necesitás, de forma inteligente.</p>
+                        <ul class="feature-list"><li><i class="bi bi-lightning-charge-fill"></i> Energía para tus pausas activas</li><li><i class="bi bi-palette-fill"></i> Opciones dulces y saladas</li><li><i class="bi bi-tree-fill"></i> Ingredientes 100% naturales</li><li><i class="bi bi-bicycle"></i> Ideales para pre y post entreno</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- VERSIÓN 3: TEMA DORADO -->
+<!-- ======================================================= -->
+<section id="features-gold" class="py-5 theme-gold"> <!-- <-- AÑADIMOS LA CLASE 'theme-gold' -->
+    <div class="container">
+        <div class="text-center mb-5"><h2 class="display-5 fw-bold">Versión 3: Tema Dorado</h2></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Tarjeta 1 -->
+                <div class="feature-card-unified animate-on-scroll">
+                    <div class="feature-image-wrapper"><img src="./img/patamuslo.png" alt="Plato de vianda saludable"></div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Viandas</h2><p class="feature-subtitle">Comida real, fresca y lista para disfrutar.</p>
+                        <ul class="feature-list"><li><i class="bi bi-basket2-fill"></i> Abundantes y saciantes</li><li><i class="bi bi-shield-check"></i> Bajas en sodio y harinas refinadas</li><li><i class="bi bi-fire"></i> Preparaciones al horno o hervidas</li><li><i class="bi bi-truck"></i> Directo a la puerta de tu casa</li></ul>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="feature-card-unified feature-card-unified--reverse animate-on-scroll">
+                    <div class="feature-image-wrapper"><img src="./img/pastel.png" alt="Pastelería saludable"></div>
+                    <div class="feature-card-content">
+                        <h2 class="feature-title">Pastelería</h2><p class="feature-subtitle">La energía que necesitás, de forma inteligente.</p>
+                        <ul class="feature-list"><li><i class="bi bi-lightning-charge-fill"></i> Energía para tus pausas activas</li><li><i class="bi bi-palette-fill"></i> Opciones dulces y saladas</li><li><i class="bi bi-tree-fill"></i> Ingredientes 100% naturales</li><li><i class="bi bi-bicycle"></i> Ideales para pre y post entreno</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="prueba" class="py-5">
+    <div class="container">
+
+       
+        <!-- SERVICIO DE CATERING -->
+        <div class="row align-items-center g-lg-6 flex-lg-row-reverse parallax-container">
+            <div class="col-lg-6">
+                <div class="image-stack image-stack--reverse mb-10" data-delay="100">
+                    <!-- Capas del collage -->
+                  
+                    <img src="./img/equipo.jpg" alt="Pincelada decorativa" class="parallax-element" data-speed="1" style="border-radius: 4px;">
+                   
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-start animate-on-scroll " data-delay="200">
+                <h3 class="eyebrow-text">SOBRE NOSOTROS</h3>
+                <h2 class="display-5 fw-bold lh-1 mb-3">¿Quienénes somos?</h2>
+                <p class="lead">Somos una empresa que brinda servicios de alimentación para el bienestar integral.</p>
+                <p class="lead">Nuestra propuesta incluye la elaboración y comercialización de: </p>
+                <ul class="service-features">
+                    <li>Vieandas Personalizables</li>
+                    <li>Snacks y alimentos saludables</li>
+                    <li>Acompañamiento y asesoramiento nutricional</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- index.html (Añadir esta sección al final) -->
+
+ <!-- === NUEVA SECCIÓN DE CONTACTO === -->
+ <section id="contacto" class="bg-gray-100 py-16 sm:py-24">
+    <div class="container mx-auto max-w-3xl px-4">
+        <div class="rounded-2xl p-8 sm:p-12 shadow-2xl" style="background-color: #0c3d28;">
+            <h2 class="text-3xl font-bold text-white mb-6">Contactate con nosotros</h2>
+            <form action="#" method="POST" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nombre" class="sr-only">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" class="contact-input w-full rounded-lg py-3 px-4" placeholder="Nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellido" class="sr-only">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" class="contact-input w-full rounded-lg py-3 px-4" placeholder="Apellido" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="telefono" class="sr-only">Teléfono</label>
+                    <input type="tel" name="telefono" id="telefono" class="contact-input w-full rounded-lg py-3 px-4" placeholder="Teléfono" required>
+                </div>
+                 <div>
+                    <label for="email" class="sr-only">Correo electrónico</label>
+                    <input type="email" name="email" id="email" class="contact-input w-full rounded-lg py-3 px-4" placeholder="Correo electrónico" required>
+                </div>
+                <div>
+                    <label for="mensaje" class="sr-only">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" rows="4" class="contact-input w-full rounded-lg py-3 px-4" placeholder="Mensaje" required></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="contact-submit-btn w-full sm:w-auto rounded-lg py-3 px-8">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- index.html (Esta sección reemplaza a #why-nutrive y a #servicios) -->
+
+
+
+
+
+
+<!-- El footer comienza aquí -->
+<footer class="site-footer">
+    <!-- Parte principal del footer (fondo gris claro) -->
+    <div class="relative py-16 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-7xl">
+            <!-- Grid para las columnas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 z-10 relative">
+                
+                <!-- Columna 1: Logo y Slogan -->
+                <div class="footer-col">
+                    <!-- Reemplaza 'logo.png' con la URL de tu logo -->
+                    <img src="./img/logobanner.png" alt="Córdoba Nutrición Logo" class="h-12 mb-4">
+                    
+                </div>
+
+                <!-- Columna 2: Menú -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Menú</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Viandas</a></li>
+                        <li><a href="#">Snacks</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Venta a Empresas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Servicios -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Planes</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Plan Fitness</a></li>
+                        <li><a href="#">Plan Hiperproteico</a></li>
+                        <li><a href="#">Plan Vegetariano</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto -->
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contacto</h3>
+                    <div class="flex space-x-3">
+                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Elementos decorativos posicionados de forma absoluta -->
+       
+        <a href="#" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Barra inferior del footer (fondo naranja) -->
+    <div class="footer-bottom text-white text-sm py-4 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <span>© Todos los derechos reservados por On Nutrive 2025</span>
+            <span class="mt-2 md:mt-0">Desarrollado por Grupo Xamanen</span>
+        </div>
+    </div>
+</footer>
+
+
+  
+
+    <!-- Bootstrap JS (sigue siendo útil para el menú en móvil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+     <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- VERSION 2 -->
+    <script src="js/script.js"></script>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+        const mobileDropdownMenu = document.getElementById('mobile-dropdown-menu');
+        const mobileDropdownIcon = document.getElementById('mobile-dropdown-icon');
+
+        mobileDropdownButton.addEventListener('click', () => {
+            mobileDropdownMenu.classList.toggle('hidden');
+            mobileDropdownIcon.classList.toggle('rotate-180');
+        });
+
+        // Cierra el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
