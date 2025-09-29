@@ -1,4 +1,4 @@
-// js/planes.js
+// js/planes.js (Versión Final y Corregida)
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,8 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // 4. Grid Interactivo
             if (planGrid) planGrid.innerHTML += `<div class="col-lg-3 col-md-4 col-sm-6"><a href="#" class="plan-grid-item" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="${imagePath}" data-wsp-link="${wspLink}"><img src="${imagePath}" alt="${plan.name}"></a></div>`;
             
-            // 5. Tarjetas Superpuestas (con modal)
-            if (stackedCarousel) stackedCarousel.innerHTML += `<div class="swiper-slide" style="background-image:url(${imagePath})" data-bs-toggle="modal" data-bs-target="#planModal" data-image-src="${imagePath}" data-wsp-link="${wspLink}"></div>`;
+            // 5. Tarjetas Superpuestas (CÓDIGO CORREGIDO)
+            if (stackedCarousel) {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.style.backgroundImage = `url(${imagePath})`;
+                
+                // Generamos el botón DENTRO del slide
+                slide.innerHTML = `
+                    <button class="view-details-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#planModal"
+                            data-image-src="${imagePath}"
+                            data-wsp-link="${wspLink}">
+                        Ver Info
+                    </button>
+                `;
+                stackedCarousel.appendChild(slide);
+            }
         });
     };
 
@@ -54,8 +70,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const galleryThumbsSwiper = new Swiper('.galleryThumbs', { spaceBetween: 10, slidesPerView: 4, freeMode: true, watchSlidesProgress: true });
         new Swiper('.galleryTop', { loop: true, spaceBetween: 10, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, thumbs: { swiper: galleryThumbsSwiper } });
         
-        // 5. Tarjetas Superpuestas (Coverflow)
-        new Swiper('.stackedCarousel', { loop: true, effect: 'coverflow', grabCursor: true, centeredSlides: true, slidesPerView: 'auto', coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true } });
+        // 5. Tarjetas Superpuestas (Coverflow) (INICIALIZACIÓN CORREGIDA)
+        if (document.querySelector('.stackedCarousel')) {
+            new Swiper('.stackedCarousel', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                loop: true,
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true
+                }
+            });
+        }
         
         // Lógica del modal (funciona para todos los formatos que lo usan)
         const planModal = document.getElementById('planModal');

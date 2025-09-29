@@ -21,24 +21,148 @@ body { font-family: 'Nunito', sans-serif; color: #495057; background-color: var(
 .doubleCarousel .btn-wsp:hover { background-color: transparent; color: var(--nutrive-red); }
 
 /* --- 3. GALERÍA CON MINIATURAS --- */
-.gallery-container { position: relative; }
-.galleryTop { height: 70vh; /* MUCHO MÁS ALTO */ max-height: 700px; width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #fff; }
-.galleryTop .swiper-slide { padding: 1rem; }
-.galleryTop .swiper-slide img { width: 100%; height: 100%; object-fit: contain; /* CLAVE: Muestra la imagen completa */ }
-.galleryThumbs { height: 100px; box-sizing: border-box; padding: 10px 0; margin-top: 10px; }
-.galleryThumbs .swiper-slide { width: 25%; height: 100%; opacity: 0.4; cursor: pointer; border-radius: 10px; overflow: hidden; }
-.galleryThumbs .swiper-slide-thumb-active { opacity: 1; border: 3px solid var(--nutrive-gold); }
-.galleryThumbs .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-container {
+    position: relative;
+}
+
+.galleryTop {
+    height: 90vh;
+    /* MUCHO MÁS ALTO */
+    max-height: 700px;
+    width: 100%;
+    border-radius: 15px;
+    /*box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);*/
+    background-color: var(--background-cream);
+}
+
+.galleryTop .swiper-slide {
+    padding: 1rem;
+}
+
+.galleryTop .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* CLAVE: Muestra la imagen completa */
+}
+
+.galleryThumbs {
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.galleryThumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.galleryThumbs .swiper-slide-thumb-active {
+    opacity: 3;
+    border: 3px solid var(--nutrive-gold);
+}
+
+.galleryThumbs .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* --- 4. GRID INTERACTIVO --- */
-.plan-grid-item { display: block; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); transition: all 0.3s ease-in-out; }
-.plan-grid-item:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 15px 35px rgba(10, 71, 53, 0.15); }
-.plan-grid-item img { width: 100%; height: 100%; object-fit: cover; }
+.plan-grid-item {
+    display: block;
+    border-radius: 15px;
+    overflow: hidden; /* Muy importante para que el reflejo no se salga */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    position: relative; /* CRUCIAL: Para posicionar el reflejo dentro */
+}
+
+.plan-grid-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(10, 71, 53, 0.15);
+}
+
+.plan-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Elimina un pequeño espacio fantasma debajo de la imagen */
+}
+
+/* --- ¡AQUÍ ESTÁ LA MAGIA DEL REFLEJO! --- */
+.plan-grid-item::after {
+    content: ''; /* Obligatorio para los pseudo-elementos */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Creamos el degradado que simula el brillo */
+    background: linear-gradient(
+        to top right, 
+        rgba(255, 255, 255, 0.3) 0%,   /* Un blanco brillante en la esquina */
+        rgba(255, 255, 255, 0.1) 40%,  /* Se desvanece rápidamente */
+        rgba(255, 255, 255, 0) 60%    /* Y se vuelve completamente transparente */
+    );
+    
+    opacity: 0; /* Por defecto, el reflejo está oculto */
+    transition: opacity 0.4s ease; /* Transición suave para la aparición */
+}
+
+/* Cuando pasamos el mouse sobre el item, el reflejo aparece */
+.plan-grid-item:hover::after {
+    opacity: 1;
+}
 
 /* --- 5. TARJETAS SUPERPUESTAS (COVERFLOW) --- */
 .stackedCarousel { width: 100%; padding-top: 50px; padding-bottom: 50px; }
-.stackedCarousel .swiper-slide { background-position: center; background-size: cover; width: 320px; height: 400px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); cursor: pointer; }
 
+.stackedCarousel .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    /* Ya no necesitamos el cursor de puntero aquí */
+}
+
+/* ===== NUEVO: Estilo para el botón Ver Info ===== */
+.view-details-btn {
+    position: absolute;
+    bottom: 30px; /* Lo posicionamos en la parte inferior */
+    left: 50%;
+    transform: translateX(-50%) scale(0.8); /* Empieza pequeño y centrado */
+    background-color: var(--nutrive-red);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto se rompa */
+    opacity: 0; /* Empieza invisible */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer; /* Le damos el cursor de puntero al botón */
+    border: 2px solid var(--nutrive-red);
+}
+
+.view-details-btn:hover {
+    background-color: transparent;
+    color: var(--nutrive-red);
+}
+
+/* Cuando el slide está activo, el botón aparece */
+.stackedCarousel .swiper-slide-active .view-details-btn {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
 /* --- ESTILOS DEL MODAL (APLICA A TODOS) --- */
 .modal-content { border-radius: 15px; border: none; }
 .modal-header { border-bottom: 1px solid #eee; }
