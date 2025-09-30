@@ -22,17 +22,41 @@
 :root {
     --nutrive-green: #0a4735;
     --nutrive-red: #e73940;
+    --brand-accent: #DA4735; /* Color de acento para CTAs */
     --nutrive-gold: #e0c181;
     --text-light: #f8f9fa;
     --background-cream: #fdfaf5;
     --text-muted: #6c757d;
+
+    --brand-green: #124735;
+    --brand-gold: #DABD85;
+    --brand-accent: #DA4735; /* Color de acento para CTAs */
+    --brand-cream: #fdfaf5;   /* Fondo cálido y suave */
+    --brand-dark: #333333;    /* Color de texto principal */
+    
+    /* Tipografía extraída del Manual de Marca (Clave 1) */
+    --font-title: 'Nunito', sans-serif;;
+    --font-body: 'Nunito', sans-serif;
 }
 
 body {
     font-family: 'Nunito', sans-serif;
     color: #495057;
 }
+.section-title {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 2.25rem; /* 36px */
+    color: var(--brand-green);
+    line-height: 1.2;
+}
 
+.section-subtitle {
+    font-size: 1.125rem; /* 18px */
+    color: #6b7280;
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
 /* --------------------------------------------------- */
 /* 2. NAVBAR (CON ESTADO DE SCROLL)
 /* --------------------------------------------------- */
@@ -532,6 +556,45 @@ body {
 
 /* css/style.css (Añadir al final de la sección de PLANES) */
 
+
+/* Botón CTA (Clave 4) */
+.cta-button {
+    background-color: var(--brand-accent);
+    color: rgb(255, 255, 255);
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #c94030; /* Versión más oscura del acento */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Botón CTA Secundario */
+.cta-button-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--brand-green);
+    border: 2px solid var(--brand-gold);
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.65rem 1.75rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--brand-gold);
+    color: var(--brand-green);
+    transform: translateY(-2px);
+}
 /* --- Estilos para el bloque de Personalización (Estilo de tarjeta recuperado) --- */
 .personalization-cta {
     background-color: white;
@@ -559,6 +622,15 @@ body {
 /* --------------------------------------------------- */
 
 /* --- Estructura y Layout Base (Aplica a todos los temas) --- */
+
+
+.section-title {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 2.25rem; /* 36px */
+    color: var(--brand-green);
+    line-height: 1.2;
+}
 .feature-card-unified {
     position: relative;
     margin-bottom: 120px;
@@ -806,10 +878,7 @@ body {
     z-index: 1;
 }
 
-.parallax-section .container {
-    position: relative;
-    z-index: 2;
-}
+
 
 .stacked-title h2 {
     font-weight: 800;
@@ -911,6 +980,31 @@ body {
 
 .contact-text a:hover {
     color: var(--nutrive-red);
+}
+
+
+/* ---------------------------------- */
+/* 6. CONTACTO
+/* ---------------------------------- */
+.cta-button-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.cta-button-whatsapp:hover {
+    background-color: #1EBE57;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 /* --------------------------------------------------- */
@@ -1191,56 +1285,87 @@ body {
 }
 
 
-.site-footer {
-    /* Usamos un color de fondo base similar a la imagen */
-    background-color: #f7f7f7;
-    color: #555;
-    position: relative;
-    overflow: hidden; /* Oculta lo que se salga del footer, como el círculo decorativo */
-}
 
-.footer-heading {
+/* ---------------------------------- */
+/* 7. FOOTER
+/* ---------------------------------- */
+.footer-title {
+    font-family: var(--font-title);
     font-weight: 700;
-    color: #333;
-    margin-bottom: 1.25rem; /* Espacio debajo de los títulos */
-    font-size: 1.1rem;
+    color: var(--brand-green);
+    margin-bottom: 1rem;
 }
-
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #4b5563;
+}
 .footer-links li {
-    margin-bottom: 0.75rem; /* Espacio entre links */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+@media (min-width: 1024px) {
+    .footer-links li {
+        justify-content: flex-start;
+    }
+}
 .footer-links a {
-    color: #555;
     text-decoration: none;
+    color: inherit;
     transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
-    color: #0f4d36; /* Color naranja al pasar el ratón */
+    color: var(--brand-accent);
 }
-
 .social-icon {
-    background-color: #0f4d36;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
-}
-
-/* Círculo decorativo grande */
-.footer-decoration {
-    position: absolute;
-    bottom: -100px;
-    right: -150px;
-    width: 450px;
-    height: 450px;
-    background: linear-gradient(135deg, #f9b24a, #0f4d36);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    z-index: 0;
+    background-color: var(--brand-cream);
+    color: var(--brand-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
+.social-icon:hover {
+    background-color: var(--brand-green);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ---------------------------------- */
+/* 8. ANIMACIONES
+/* ---------------------------------- */
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--animation-delay, 0s);
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
 
 /* Botón flotante de WhatsApp */
 .whatsapp-float {

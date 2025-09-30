@@ -51,31 +51,24 @@
                 <!-- Menú para pantallas grandes -->
                 <div class="hidden lg:flex items-center space-x-6">
                     <a href="#" class="nav-link">Inicio</a>
-                   <a href="#" class="nav-link">Alimentación inteligente</a>
-                    <div class="relative dropdown">
-                        <a href="#" class="nav-link flex items-center">
-                            <span>Servicios</span>
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </a>
-                        <div class="dropdown-menu hidden absolute bg-white w-60 mt-2 rounded-md py-2 z-20">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">Descenso en Pesos en Adultos</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50">Descenso en Pesos en Niños</a>
-                        </div>
-                    </div>
+                   
                     
                    
                     <a href="#" class="nav-link">Viandas</a>
+                    <a href="#" class="nav-link">Pastelería</a>
                     <a href="./planes.html" class="nav-link">Planes</a>
                     <a href="#" class="nav-link">Sobre Nosotros</a>
-                    <a href="#" class="nav-link">Venta a Empresas</a>
+                    <a href="#" class="nav-link">Empresas</a>
+                    <!-- CTA Desktop (Clave 4) -->
+              
 
                    
                 </div>
-
-                <!-- Botón CTA para pantallas grandes -->
                 <div class="hidden lg:block">
-                    <a href="#contacto" class="cta-button">Contacto</a>
+                    <a href="#contacto" class="cta-button">Pedir Ahora</a>
                 </div>
+
+                
 
                 <!-- Botón de menú para móviles -->
                 <div class="lg:hidden flex items-center">
@@ -157,6 +150,8 @@
         </div>
     </div>
 </section>
+
+
 
 <!-- index.html (Sección features CORREGIDA) -->
 
@@ -250,34 +245,38 @@
 </section>
 
 
-
-<section id="prueba" class="py-5">
-    <div class="container">
-
-       
-        <!-- SERVICIO DE CATERING -->
-        <div class="row align-items-center g-lg-6 flex-lg-row-reverse parallax-container">
-            <div class="col-lg-6">
-                <div class="image-stack image-stack--reverse mb-10" data-delay="100">
-                    <!-- Capas del collage -->
-                  
-                    <img src="./img/equipo.jpg" alt="Pincelada decorativa" class="parallax-element" data-speed="1" style="border-radius: 4px;">
-                   
+<!-- SECCIÓN "QUIÉNES SOMOS" REESTRUCTURADA -->
+<section id="nosotros" class="py-20 sm:py-28 bg-white">
+    <div class="container mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Columna de Imagen -->
+            <div class="animate-on-scroll">
+                <img src="./img/equipo.jpg" alt="El equipo de Onnutrive" class="rounded-2xl shadow-lg w-full">
+            </div>
+            <!-- Columna de Texto -->
+            <div class="animate-on-scroll" style="animation-delay: 0.1s;">
+                <h2 class="section-title">Nuestro Equipo, Nuestra Pasión</h2>
+                <p class="mt-4 text-lg text-gray-600 leading-relaxed">Somos una empresa dedicada a mejorar el bienestar a través de la alimentación. Cada plato es preparado con dedicación, combinando la ciencia de la nutrición con el arte de la buena cocina.</p>
+                <div class="mt-8">
+                     <a href="#" class="cta-button-secondary">Nuestra Historia</a>
                 </div>
             </div>
-            <div class="col-lg-6 text-center text-lg-start animate-on-scroll " data-delay="200">
-                <h3 class="eyebrow-text">SOBRE NOSOTROS</h3>
-                <h2 class="display-5 fw-bold lh-1 mb-3">¿Quienénes somos?</h2>
-                <p class="lead">Somos una empresa que brinda servicios de alimentación para el bienestar integral.</p>
-                <p class="lead">Nuestra propuesta incluye la elaboración y comercialización de: </p>
-                <ul class="service-features">
-                    <li>Vieandas Personalizables</li>
-                    <li>Snacks y alimentos saludables</li>
-                    <li>Acompañamiento y asesoramiento nutricional</li>
-                </ul>
-            </div>
         </div>
+    </div>
+</section>
 
+
+ <!-- SECCIÓN CONTACTO POTENCIADA -->
+ <section id="contacto" class="bg-brand-green text-white py-20 sm:py-28">
+    <div class="container mx-auto max-w-3xl px-4 text-center">
+        <h2 class="section-title  animate-on-scroll">Activa tu bienestar hoy</h2>
+        <p class="section-subtitle  animate-on-scroll mt-4">¿Listo para empezar a comer rico y saludable? <br> Toca el botón para chatear con nosotros y hacer tu pedido.</p>
+        <div class="mt-12 animate-on-scroll">
+            <a href="https://wa.me/542645820093?text=Hola%20Onnutrive%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20viandas%20y%20planes." target="_blank" class="cta-button-whatsapp">
+                <i class="bi bi-whatsapp mr-3"></i>
+                Pedir por WhatsApp
+            </a>
+        </div>
     </div>
 </section>
 
@@ -285,7 +284,7 @@
 <!-- index.html (Añadir esta sección al final) -->
 
  <!-- === NUEVA SECCIÓN DE CONTACTO === -->
- <section id="contacto" class="bg-gray-100 py-16 sm:py-24">
+ <!-- <section id="contacto" class="bg-gray-100 py-16 sm:py-24">
     <div class="container mx-auto max-w-3xl px-4">
         <div class="rounded-2xl p-8 sm:p-12 shadow-2xl" style="background-color: #0c3d28;">
             <h2 class="text-3xl font-bold text-white mb-6">Contactate con nosotros</h2>
@@ -318,7 +317,7 @@
             </form>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- index.html (Esta sección reemplaza a #why-nutrive y a #servicios) -->
 
@@ -327,81 +326,78 @@
 
 
 
-<!-- El footer comienza aquí -->
-<footer class="site-footer">
-    <!-- Parte principal del footer (fondo gris claro) -->
-    <div class="relative py-16 px-4 sm:px-6 lg:px-8">
-        <div class="container mx-auto max-w-7xl">
-            <!-- Grid para las columnas -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 z-10 relative">
+<!-- ======================================================= -->
+    <!-- FOOTER MEJORADO Y CENTRADO -->
+    <!-- ======================================================= -->
+    <footer class="bg-white">
+        <div class="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+            <!--
+              Grid container:
+              - 1 columna en móvil
+              - 2 columnas en tablet (md)
+              - 4 columnas en desktop (lg)
+              - Texto centrado en móvil/tablet, y alineado a la izquierda en desktop.
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
                 
-                <!-- Columna 1: Logo y Slogan -->
-                <div class="footer-col">
-                    <!-- Reemplaza 'logo.png' con la URL de tu logo -->
-                    <img src="./img/logobanner.png" alt="Córdoba Nutrición Logo" class="h-12 mb-4">
-                    
+                <!-- Columna 1: Logo e Info -->
+                <!-- Usamos flex para controlar la alineación de los items internos -->
+                <div class="flex flex-col items-center lg:items-start">
+                    <img src="./img/logobanner.png" alt="Onnutrive Logo" class="h-12 w-auto mb-4">
+                    <p class="text-sm text-gray-500">Alimentos que activan.</p>
                 </div>
-
-                <!-- Columna 2: Menú -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">Menú</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Viandas</a></li>
-                        <li><a href="#">Snacks</a></li>
-                        <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Venta a Empresas</a></li>
+    
+                <!-- Columna 2: Explorar -->
+                <div>
+                    <h4 class="font-bold text-sm text-gray-800 mb-4 tracking-wider uppercase">Explorar</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#nosotros" class="hover:text-green-700 transition-colors">Quiénes Somos</a></li>
+                        <li><a href="#servicios" class="hover:text-green-700 transition-colors">Servicios</a></li>
+                        <li><a href="#planes" class="hover:text-green-700 transition-colors">Planes</a></li>
                     </ul>
                 </div>
-
-                <!-- Columna 3: Servicios -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">Planes</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Plan Fitness</a></li>
-                        <li><a href="#">Plan Hiperproteico</a></li>
-                        <li><a href="#">Plan Vegetariano</a></li>
-                        
+    
+                <!-- Columna 3: Legal -->
+                <div>
+                    <h4 class="font-bold text-sm text-gray-800 mb-4 tracking-wider uppercase">Legal</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-green-700 transition-colors">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-green-700 transition-colors">Política de Privacidad</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Columna 4: Contacto -->
-                <div class="footer-col">
-                    <h3 class="footer-heading">Contacto</h3>
-                    <div class="flex space-x-3">
-                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                <!-- Usamos flex para controlar la alineación de los items internos -->
+                <div class="flex flex-col items-center lg:items-start">
+                     <h4 class="font-bold text-sm text-gray-800 mb-4 tracking-wider uppercase">Contacto</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <!-- Cada 'li' es un contenedor flex para alinear ícono y texto -->
+                        <li class="flex items-center justify-center lg:justify-start">
+                            <i class="bi bi-geo-alt-fill mr-3 text-lg text-green-800"></i>
+                            <span>Paula Albarracín 727 sur, San Juan</span>
+                        </li>
+                        <li class="flex items-center justify-center lg:justify-start">
+                            <i class="bi bi-whatsapp mr-3 text-lg text-green-800"></i>
+                            <span>264 582 0093</span>
+                        </li>
+                    </ul>
+                     <!-- Contenedor para íconos sociales, centrado en móvil, a la izquierda en desktop -->
+                    <div class="flex space-x-5 mt-6 justify-center lg:justify-start">
+                        <a href="#" class="text-gray-500 hover:text-green-700 transition-colors text-2xl"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-green-700 transition-colors text-2xl"><i class="bi bi-facebook"></i></a>
                     </div>
                 </div>
-
+                
+            </div>
+            
+            <!-- Separador y Copyright -->
+            <div class="mt-16 border-t border-gray-200 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; <span id="year"></span> Onnutrive. Todos los derechos reservados.</p>
+                <p class="mt-1">Desarrollado por Grupo Xamanen</p>
             </div>
         </div>
-        
-        <!-- Elementos decorativos posicionados de forma absoluta -->
-       
-        <a href="#" class="whatsapp-float" aria-label="Contactar por WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    </footer>
 
-    <!-- Barra inferior del footer (fondo naranja) -->
-    <div class="footer-bottom text-white text-sm py-4 px-4 sm:px-6 lg:px-8">
-        <div class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <span>© Todos los derechos reservados por On Nutrive 2025</span>
-            <span class="mt-2 md:mt-0">Desarrollado por Grupo Xamanen</span>
-        </div>
-    </div>
-</footer>
 
 
   
