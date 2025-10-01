@@ -145,56 +145,121 @@ body {
     width: 100%;
 }
 
-/* --- NUEVO: Estilos para el botón CTA --- */
-.cta-button {
-    background-color: #0f4d36; /* Naranja */
-    color: white;
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.cta-button:hover {
-    background-color: #e67e22; /* Naranja más oscuro */
-    transform: translateY(-2px);
+
+/* css/style.css (Reemplazar los estilos del CTA del navbar) */
+
+/* --- ESTILOS PARA EL BOTÓN CTA CON FORMA DE PINCELADA --- */
+
+/* css/style.css (Reemplazar los estilos del CTA del navbar) */
+
+/* --- ESTILOS PARA EL BOTÓN CTA CON FORMA DE PINCELADA (LEGIBILIDAD MEJORADA) --- */
+
+.cta-brush-button {
+    /* --- Fondo (sin cambios) --- */
+    background-image: url('../img/retazo3.PNG');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+
+    /* --- Tamaño (sin cambios) --- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 90px;
+    
+    /* --- ESTILOS DEL TEXTO (¡AQUÍ ESTÁN LAS MEJORAS!) --- */
+    color: var(--nutrive-red);
+    font-weight: 800; /* Mantenemos la negrita */
+    text-decoration: none;
+    
+    /* MEJORA 1: AUMENTAMOS EL TAMAÑO BASE DEL TEXTO */
+    font-size: 1.5rem; /* Aprox. 24px. Mucho más grande y legible */
+    
+    /* MEJORA 2: AÑADIMOS UN TRAZO SUTIL ALREDEDOR DE LAS LETRAS */
+    /* Esto crea un borde fino que separa el texto del fondo */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); /* Trazo blanco semitransparente */
+    text-wrap-style: 1px rgba(0, 0, 0, 0); /* Estándar (aún no soportado por todos) */
+    
+    /* MEJORA 3: AÑADIMOS UNA SOMBRA MÁS MARCADA */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para darle profundidad */
+
+    /* --- Transición (sin cambios) --- */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Estilos para el menú desplegable */
-.dropdown-menu {
-    border-top: 3px solid #0f4d36;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+/* --- EFECTO DE HOVER MEJORADO --- */
+.cta-brush-button:hover {
+    color: var(--nutrive-gold); /* Cambia a rojo para un feedback claro */
+    
+    /* Mantenemos el efecto de zoom y rotación */
+    transform: scale(1.05) rotate(-2deg);
 }
 
-/* Mostrar menú desplegable en pantallas grandes al hacer hover */
-@media (min-width: 1024px) {
-    .dropdown:hover .dropdown-menu {
-        display: block;
+/* css/style.css (Añadir este bloque al final de la sección del Navbar) */
+
+/* css/style.css (Reemplazar este bloque completo) */
+
+/* --- DETALLES DECORATIVOS PARA EL NAVBAR (VERSIÓN NÍTIDA) --- */
+
+/* Contenedor común para los retazos */
+.nav-decoration {
+    position: absolute;
+    top: 0;
+    height: 100%; /* CLAVE: El retazo ocupará el 100% de la altura del navbar */
+    width: 300px; /* Ancho de la imagen del retazo (puedes ajustarlo) */
+    background-repeat: no-repeat;
+    
+    /* ===== CAMBIO 1: 100% DE OPACIDAD ===== */
+    opacity: 1; /* El retazo es completamente visible y nítido */
+    
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out; /* Mantenemos la transición para el scroll */
+}
+
+/* Retazo de la izquierda */
+.nav-decoration--left {
+    left: 0;
+    background-image: url('../img/retazo2.png');
+    background-position: top left;
+    
+    /* ===== CAMBIO 2: AJUSTE DE TAMAÑO ===== */
+    background-size: contain; /* La imagen se estira para cubrir el contenedor sin deformarse */
+}
+
+/* Retazo de la derecha */
+.nav-decoration--right {
+    right: 0;
+    background-image: url('../img/retazo1.png');
+    background-position: top right;
+
+    /* ===== CAMBIO 2: AJUSTE DE TAMAÑO ===== */
+    background-size:contain; /* La imagen se estira para cubrir el contenedor sin deformarse */
+}
+
+
+/* --- Adaptación para el estado de scroll (SIN CAMBIOS) --- */
+/* Cuando el navbar tiene fondo de video, los retazos se ven */
+.navbar-glass .nav-decoration {
+    opacity: 1;
+}
+
+/* Cuando se hace scroll y el fondo es blanco, los retazos desaparecen */
+.navbar-scrolled .nav-decoration {
+    opacity: 0;
+}
+
+
+/* --- Ocultar en móviles (SIN CAMBIOS) --- */
+@media (max-width: 1024px) {
+    .nav-decoration {
+        display: none;
     }
 }
 
-/* --- NUEVO: Estilos para la sección de contacto --- */
-.contact-input {
-    background-color: #fef5e7; /* Beige claro */
-    border: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-.contact-input::placeholder {
-    color: #cdaa7c;
-}
-.contact-input:focus {
-    outline: none;
-    border-color: white;
-}
-.contact-submit-btn {
-    background-color: #fef5e7; /* Beige claro */
-    color: #0f4d36; /* Naranja */
-    font-weight: 700;
-    transition: background-color 0.3s ease;
-}
-.contact-submit-btn:hover {
-    background-color: #fdf2d9; /* Beige un poco más oscuro */
-}
 
 /* css/style.css (Reemplaza la sección 3 completa) */
 
@@ -679,8 +744,10 @@ body {
 
 /* --- TEMA 1: CLARO (DEFAULT) --- */
 #features-light { background-color: var(--background-cream); }
-#features-light .feature-card-unified { background-color: #FFFFFF; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-#features-light .feature-title { color: var(--nutrive-green); }
+.feature-card-unified {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);}
 #features-light .feature-subtitle { color: var(--text-muted); }
 #features-light .feature-list li { color: #495057; }
 #features-light .feature-list li i { color: var(--nutrive-red); }
@@ -703,6 +770,11 @@ body {
 .theme-gold .feature-list li { color: var(--nutrive-green); font-weight: 600; }
 .theme-gold .feature-list li i { color: var(--nutrive-red); } /* Íconos rojos */
 
+
+section[id*="features-"] {
+    background-color: var(--background-cream);
+}
+
 /* --- Responsive (Aplica a todos los temas) --- */
 @media (max-width: 991.98px) {
     .feature-card-unified, .feature-card-unified--reverse { flex-direction: column !important; margin-bottom: 100px; }
@@ -714,6 +786,62 @@ body {
     .feature-card-unified--reverse .feature-list li i { margin-left: 0; margin-right: 15px; order: 0; }
 }
 
+/* Usamos pseudo-elementos para los retazos, aplicados solo a las tarjetas con la clase '.with-details' */
+.feature-card-unified.with-details::before,
+.feature-card-unified.with-details::after {
+    content: '';
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; /* Los ponemos DETRÁS de la tarjeta */
+    opacity: 0; /* Empiezan invisibles */
+    transition: opacity 0.5s 0.3s ease, transform 0.5s 0.3s ease; /* Transición con retraso */
+}
+
+/* Animación de entrada para los retazos */
+.feature-card-unified.with-details.is-visible::before,
+.feature-card-unified.with-details.is-visible::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- Retazos para la tarjeta normal --- */
+.feature-card-unified.with-details::before {
+    background-image: url('../img/retazo2.PNG'); /* El de arriba LISTO */
+    width: 200px;
+    height: 200px;
+    top: -80px;
+    left: -10px;
+    transform: scale(0.8) rotate(-15deg);
+}
+.feature-card-unified.with-details::after {
+    background-image: url('../img/retazo4.PNG'); /* El de abajo LISTO */
+    width: 250px;
+    height: 250px;
+    bottom: -10px;
+    right: -235px;
+    transform: scale(0.8) rotate(10deg);
+}
+
+/* --- Retazos para la tarjeta invertida (zig-zag) --- */
+.feature-card-unified.with-details.feature-card-unified--reverse::before {
+    background-image: url('../img/retazo3.PNG');
+    width: 200px;
+    height: 200px;
+    top: -145px;
+    right: -50px; /* Cambia de 'left' a 'right' */
+    left: auto;
+    transform: scale(0.8) rotate(0deg);
+}
+.feature-card-unified.with-details.feature-card-unified--reverse::after {
+    background-image: url('../img/retazo1.PNG');
+    width: 250px;
+    height: 250px;
+    bottom: -40px;
+    left: -110px; /* Cambia de 'right' a 'left' */
+    right: auto;
+    transform: scale(0.8) rotate(-10deg);
+}
 
 
 /* --------------------------------------------------- */
