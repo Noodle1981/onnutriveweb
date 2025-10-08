@@ -34,19 +34,17 @@
 
         body {
             font-family: var(--font-body);
-            /* CAMBIO: Fondo de tabla de madera blanca */
             background-image: url('https://images.pexels.com/photos/164005/pexels-photo-164005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            color: var(--brand-dark); /* Color de texto principal cambiado a oscuro */
+            color: var(--brand-dark);
             position: relative;
-            overflow-x: hidden; /* Evita el scroll horizontal causado por los elementos */
+            overflow-x: hidden;
         }
 
-        /* Contenedor para el contenido principal para separarlo del fondo */
         .main-content-wrapper {
-            background-color: rgba(255, 255, 255, 0.6); /* Superposición blanca semitransparente */
+            background-color: rgba(255, 255, 255, 0.8); /* Aumenté un poco la opacidad para mejor legibilidad */
             backdrop-filter: blur(5px);
             position: relative; 
             z-index: 2; 
@@ -67,23 +65,6 @@
             max-width: 600px;
             margin: 1rem auto 0;
         }
-        
-        .alimentos-text {
-            font-weight: 700;
-            color: #2b453e;
-            font-size: clamp(2.5rem, 6vw, 2.9rem);
-            line-height: 0.9;
-            letter-spacing: 0.2px;
-        }
-
-        .activan-text .text-gold {
-            font-weight: 800;
-            color: #d4b588;
-            font-size: clamp(4rem, 12vw, 5.4rem);
-            line-height: 1;
-            margin-top: -0.5rem;
-            letter-spacing: -1px;
-        }
 
         @media (min-width: 768px) {
             .section-title {
@@ -94,9 +75,6 @@
         /* 3. NAVEGACIÓN (NAVBAR) */
         .navbar {
             transition: all 0.3s ease-in-out;
-        }
-
-        .navbar.scrolled {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -107,16 +85,12 @@
             font-family: var(--font-body);
             font-weight: 700;
             font-size: 0.95rem;
-            color: white;
+            color: var(--brand-green);
             position: relative;
             padding-bottom: 0.5rem;
         }
-
-        .navbar.scrolled .nav-link {
-            color: var(--brand-green);
-        }
         
-        .navbar.scrolled .nav-link:hover, .navbar.scrolled .nav-link.active {
+        .navbar .nav-link:hover, .navbar .nav-link.active {
             color: var(--brand-accent);
         }
 
@@ -157,8 +131,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
-        
-        .cta-button-secondary {
+         .cta-button-secondary {
             display: inline-block;
             background-color: transparent;
             color: var(--brand-green);
@@ -177,49 +150,184 @@
             transform: translateY(-2px);
         }
 
-
-        /* 4. SECCIÓN HERO (VIDEO) */
-        .hero-video-background {
-            height: 100vh;
+        /* 4. SECCIÓN SHOWCASE (VIANDAS, PASTELERÍA, ETC) */
+        .showcase-section {
+            padding: 5rem 0;
             position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        #bgvideo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            z-index: 0;
+        .showcase-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            margin-bottom: 5rem;
+            z-index: 5;
+        }
+        .showcase-image {
+            position: relative;
+            z-index: 10;
+            filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+            padding: 0 1.5rem;
+        }
+        .showcase-image img {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
             object-fit: cover;
         }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(18, 71, 53, 0.4);
-            z-index: 1;
+        .showcase-content {
+            background-color: var(--brand-cream);
+            color: var(--brand-dark);
+            border-radius: 1.5rem;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            margin-top: -80px;
+            z-index: 5;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        .hero-content {
+        .showcase-title {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--brand-green);
+        }
+        .showcase-subtitle {
+            font-size: 1.1rem;
+            color: var(--brand-dark);
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .showcase-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: left;
+            display: inline-block;
+        }
+        .showcase-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem; /* Ajuste de tamaño para mejor lectura */
+        }
+        .showcase-list i {
+            color: var(--brand-gold);
+            font-size: 1.25rem;
+            margin-right: 1rem;
+        }
+        @media (min-width: 992px) {
+            .showcase-container {
+                grid-template-columns: repeat(12, 1fr);
+                gap: 0;
+                margin-bottom: 8rem;
+            }
+            .showcase-image {
+                grid-column: 1 / span 6;
+                grid-row: 1;
+                padding: 0;
+            }
+            .showcase-image img { max-width: none; }
+            .showcase-content {
+                grid-column: 5 / span 8;
+                grid-row: 1;
+                padding: 3rem 3rem 3rem 20rem; /* Ajuste de padding */
+                text-align: left;
+                margin-top: 0;
+            }
+            .showcase-container--reverse .showcase-image {
+                grid-column: 7 / span 6;
+            }
+            .showcase-container--reverse .showcase-content {
+                grid-column: 1 / span 8;
+                padding: 3rem 20rem 3rem 3rem; /* Ajuste de padding */
+            }
+        }
+        
+        /* 5. SECCIÓN CÓMO PEDIR */
+        .como-pedir-section {
+            padding: 5rem 0;
+        }
+        .choice-card {
+            background: var(--brand-cream);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .choice-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .choice-icon {
+            font-size: 3rem;
+            color: var(--brand-gold);
+            margin-bottom: 1rem;
+        }
+        .choice-title {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--brand-green);
+        }
+        .choice-text {
+            color: #6b7280;
+            margin: 1rem 0;
+        }
+
+        /* 6. SECCIÓN PASOS INTERACTIVOS */
+        .pasos-section {
+            padding: 6rem 0;
+            background-color: var(--brand-cream);
+            overflow: hidden;
+        }
+        .paso-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 6rem;
             position: relative;
-            z-index: 2;
         }
-
-        /* 5. ANIMACIÓN FLOTANTE */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        .paso-item:last-child {
+            margin-bottom: 0;
         }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-            filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));
+        .paso-content { flex: 1; z-index: 2; }
+        .paso-image { flex: 1; z-index: 1; }
+        .paso-image img {
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
-
-        /* 6. CONTACTO */
+        .paso-number {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--brand-gold);
+            line-height: 1;
+        }
+        .paso-title {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--brand-green);
+            margin-top: -1rem;
+        }
+        @media (max-width: 768px) {
+            .paso-item { flex-direction: column; }
+            .paso-item.reverse { flex-direction: column-reverse; }
+        }
+        @media (min-width: 769px) {
+            .paso-item.reverse .paso-content { order: 2; }
+            .paso-item.reverse .paso-image { order: 1; }
+        }
+        
+        /* 7. CONTACTO */
         #contacto {
             background-color: var(--brand-green);
         }
@@ -244,18 +352,10 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 25px rgba(0,0,0,0.25);
         }
-
-        /* 7. FOOTER */
-        .footer {
-            background-color: var(--brand-cream);
-            color: var(--brand-dark);
-        }
-        .footer-title {
-            font-family: var(--font-title);
-            font-weight: 700;
-            color: var(--brand-green);
-            margin-bottom: 1rem;
-        }
+        
+        /* 8. FOOTER */
+        .footer { background-color: var(--brand-cream); }
+        .footer-title { color: var(--brand-green); }
         .footer-links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
         .footer-links li { display: flex; align-items: center; justify-content: center; }
         @media (min-width: 992px) { .footer-links li { justify-content: flex-start; } }
@@ -274,169 +374,43 @@
             transform: scale(1.1);
         }
 
-        /* 8. ANIMACIONES DE SCROLL */
+        /* 9. ANIMACIONES */
         .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(60px) scale(0.95);
-            transition: opacity 0.8s cubic-bezier(0.65, 0.84, 0.44, 1), transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-            transition-delay: var(--animation-delay, 0s);
+          
+            transform: translateY(40px) scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .animate-on-scroll.is-visible {
-            opacity: 1;
+          
             transform: translateY(0) scale(1);
         }
-        
-        /* 9. NUEVO: ESTILO DE TARJETAS SHOWCASE */
-        .showcase-section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            position: relative; /* Contenedor para elementos decorativos */
+        .slide-from-left, .slide-from-right {
+           
+            transition: opacity 1s ease-out, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        .showcase-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            gap: 1rem;
-            position: relative;
-            margin-bottom: 5rem;
-            z-index: 5; /* Asegura que la tarjeta esté sobre los elementos decorativos de la sección */
-        }
-
-        .showcase-image {
-            position: relative;
-            z-index: 10;
-            filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
-            padding: 0 1.5rem; /* Evita que la imagen toque los bordes en móvil */
-        }
-        .showcase-image img {
-            width: 100%;
-            max-width: 400px; /* Limita el tamaño en móvil */
-            margin: 0 auto;
-            display: block;
-            border-radius: 50%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
-
-        .showcase-content {
-            background-color: var(--brand-cream);
-            color: var(--brand-dark);
-            border-radius: 1.5rem;
-            padding: 4rem 2rem 2rem; /* Más padding arriba para la imagen */
-            text-align: center;
-            margin-top: -80px; /* Solapamiento negativo */
-            z-index: 5;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .showcase-title {
-            font-family: var(--font-title);
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--brand-green);
-        }
-
-        .showcase-subtitle {
-            font-size: 1.1rem;
-            color: var(--brand-dark);
-            margin-top: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .showcase-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 auto;
-            text-align: left;
-            display: inline-block;
-        }
-
-        .showcase-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .showcase-list i {
-            color: var(--brand-gold);
-            font-size: 1.25rem;
-            margin-right: 1rem;
-        }
-        
-        #quienes { background-color: rgba(253, 250, 245, 0.7); }
-
-        @media (min-width: 992px) {
-            .showcase-container {
-                grid-template-columns: repeat(12, 1fr);
-                gap: 0;
-                margin-bottom: 8rem;
-            }
-
-            .showcase-image {
-                grid-column: 1 / span 6;
-                grid-row: 1;
-                padding: 0;
-            }
-            .showcase-image img { max-width: none; }
-
-            .showcase-content {
-                grid-column: 5 / span 8;
-                grid-row: 1;
-                padding: 3rem 3rem 3rem 23rem;
-                text-align: left;
-                margin-top: 0;
-            }
+        .slide-from-left { transform: translateX(-100px); }
+        .slide-from-right { transform: translateX(100px); }
+        .is-visible .slide-from-left, .is-visible .slide-from-right {
             
-            .showcase-container--reverse .showcase-image {
-                grid-column: 7 / span 6;
-            }
-
-            .showcase-container--reverse .showcase-content {
-                grid-column: 1 / span 8;
-                padding: 3rem 19rem 3rem 9rem;
-            }
+            transform: translateX(0);
         }
-
-        /* 10. ELEMENTOS DECORATIVOS FLOTANTES */
-        .decorative-element {
-            position: absolute;
-            z-index: 1; 
-            transition: transform 0.2s ease-out;
-            pointer-events: none;
-        }
-        @keyframes gentle-float-rotate {
-            0% { transform: translateY(0px) rotate(-5deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-            100% { transform: translateY(0px) rotate(-5deg); }
-        }
-        @keyframes gentle-float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        .anim-float-rotate {
-            animation: gentle-float-rotate 10s ease-in-out infinite;
-        }
-        .anim-float {
-             animation: gentle-float 8s ease-in-out infinite;
-        }
+        
     </style>
 </head>
 <body>
-
     <!-- NAVEGACIÓN -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid" style="max-width: 1140px;">
             <a class="navbar-brand" href="#">
-                <img id="nav-logo" src="./img/logobanner.png" alt="Onnutrive Logo" style="height: 48px; transition: all 0.3s ease;">
+                <img id="nav-logo" src="https://i.imgur.com/gSnky3S.png" alt="Onnutrive Logo" style="height: 48px; transition: all 0.3s ease;">
             </a>
             <button id="mobile-menu-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i id="mobile-menu-icon" class="bi bi-list text-white fs-2"></i>
+                <i id="mobile-menu-icon" class="bi bi-list text-success fs-2"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-center">
                     <li class="nav-item"><a class="nav-link mx-3" href="#viandas">Viandas</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#como-pedir">Cómo Pedir</a></li>
                     <li class="nav-item"><a class="nav-link mx-3" href="#pasteleria">Pastelería</a></li>
                     <li class="nav-item"><a class="nav-link mx-3" href="#planes">Planes</a></li>
                     <li class="nav-item"><a class="nav-link mx-3" href="#nosotros">Sobre Nosotros</a></li>
@@ -450,47 +424,14 @@
             </div>
         </div>
     </nav>
-
-    <!-- HERO SECTION -->
-    <header class="hero-video-background">
-        <video playsinline autoplay muted loop id="bgvideo">
-            <source src="https://noodle1981.github.io/onnutriveweb/video/videos2.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content text-center"></div>
-    </header>
-
-    <div class="main-content-wrapper">
+    <div class="main-content-wrapper pt-5">
         <main>
-            <!-- SECCIÓN "ALIMENTOS QUE ACTIVAN" -->
-            <section id="activan" class="py-5">
-                <div class="container" style="max-width: 960px;">
-                    <div class="row align-items-center justify-content-center text-center text-lg-start g-5">
-                        <div class="col-auto animate-on-scroll">
-                            <img src="./img/comida_2.png" alt="Plato de comida saludable flotando"  class="rounded-full animate-float" style="width: 200px; border-radius: 50px;">
-                        </div>
-                        <div class="col-lg-6 animate-on-scroll" style="animation-delay: 0.02s;">
-                            <h2 class="activan-text font-title fw-bolder lh-1">
-                                <span class="alimentos-text">Alimentos Que</span>
-                                <span class="text-gold">Activan</span>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- SECCIONES DE SERVICIOS -->
+            <!-- SECCIÓN VIANDAS (VERSIÓN ORIGINAL) -->
             <div id="viandas" class="showcase-section">
                 <div class="container position-relative">
-                    <!-- Elementos decorativos para Viandas -->
-                    <img src="./img/retazo3.PNG" alt="romero" class="decorative-element anim-float-rotate d-none d-lg-block" style="width: 120px; top: -5%; left: -8%;" data-speed="-1.5">
-                    <img src="./img/retazo1.PNG"  alt="tomate" class="decorative-element anim-float" style="width: 90px; top: 60%; left: 40%;" data-speed="2">
-                    <img src="./img/retazo2.PNG"  alt="tenedor" class="decorative-element d-none d-lg-block" style="width: 150px; bottom: -15%; right: -5%; transform: rotate(25deg);" data-speed="1">
-
-                    <!-- Tarjeta 1 VIANDAS -->
                     <div class="showcase-container animate-on-scroll">
                         <div class="showcase-image">
-                            <img src="./img/patamuslo.png" alt="Plato de vianda saludable con ensalada y pollo">
+                            <img src="https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plato de vianda saludable con ensalada y pollo">
                         </div>
                         <div class="showcase-content">
                             <h2 class="showcase-title">Viandas</h2>
@@ -506,14 +447,90 @@
                 </div>
             </div>
             
-            <div id="pasteleria" class="showcase-section" style="background-color: rgba(253, 250, 245, 0.7);">
-                 <div class="container position-relative">
-                    <!-- Elementos decorativos para Pastelería -->
-                    <img src="./img/retazo2.PNG"  alt="pimiento rojo" class="decorative-element anim-float d-none d-lg-block" style="width: 120px; top: -10%; right: -5%;" data-speed="1.5">
-                    <img src="./img/retazo4.PNG"  alt="hoja de menta" class="decorative-element anim-float-rotate" style="width: 80px; bottom: 10%; left: -2%;" data-speed="-1">
-                    <img src="./img/retazo3.PNG"  alt="cuchillo" class="decorative-element d-none d-lg-block" style="width: 150px; top: 40%; right: 45%; transform: rotate(-20deg);" data-speed="-2">
+            <!-- SECCIÓN ¿CÓMO QUERÉS PEDIR? -->
+            <section id="como-pedir" class="como-pedir-section">
+                <div class="container">
+                    <div class="text-center mb-5">
+                         <h2 class="section-title animate-on-scroll">¿Cómo Querés Pedir?</h2>
+                         <p class="section-subtitle animate-on-scroll">Tenemos la opción perfecta para tus necesidades. Elegí la que mejor se adapte a tu rutina.</p>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 animate-on-scroll">
+                            <div class="choice-card">
+                                <div>
+                                    <i class="bi bi-calendar-week choice-icon"></i>
+                                    <h3 class="choice-title">Planes Semanales</h3>
+                                    <p class="choice-text">Organizá tus comidas de toda la semana. ¡Nosotros nos encargamos de cocinar por vos!</p>
+                                </div>
+                                <a href="#planes" class="cta-button">Ver Planes</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 animate-on-scroll" style="--animation-delay: 0.1s;">
+                            <div class="choice-card">
+                                <div>
+                                    <i class="bi bi-bicycle choice-icon"></i>
+                                    <h3 class="choice-title">Disponible en el Día</h3>
+                                    <p class="choice-text">¿Antojo de último momento? Consultá nuestro menú del día y recibilo donde estés.</p>
+                                </div>
+                                <a href="https://wa.me/542645820093?text=Hola%2C%20quisiera%20saber%20cu%C3%A1l%20es%20el%20men%C3%BA%20del%20d%C3%ADa." target="_blank" class="cta-button">Pedir por WhatsApp</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 animate-on-scroll" style="--animation-delay: 0.2s;">
+                            <div class="choice-card">
+                                <div>
+                                    <i class="bi bi-hand-index-thumb choice-icon"></i>
+                                    <h3 class="choice-title">Vianda a Elección</h3>
+                                    <p class="choice-text">Armá tu pedido como más te guste. Mirá los pasos y creá tu combinación perfecta.</p>
+                                </div>
+                                <a href="#pasos-pedido" class="cta-button">Ver los 3 Pasos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 3 PASOS PARA PEDIR -->
+            <section id="pasos-pedido" class="pasos-section">
+                <div class="container">
+                    <div class="text-center mb-5">
+                         <h2 class="section-title animate-on-scroll">Pedí a tu Gusto en 3 Simples Pasos</h2>
+                    </div>
+                    <div class="paso-item">
+                        <div class="paso-content text-center text-md-start">
+                            <div class="paso-number animate-on-scroll">01</div>
+                            <h3 class="paso-title animate-on-scroll">Mmmm... ¿Cuál me gusta más?</h3>
+                            <p class="section-subtitle mx-0 animate-on-scroll">Explorá nuestra variedad de viandas. Tenemos opciones para todos: Hecho en casa, Fit y Veggie.</p>
+                        </div>
+                        <div class="paso-image">
+                           <img src="./img/patamuslo.png" alt="Paso 1: Elegir viandas" class="img-fluid slide-from-right">
+                        </div>
+                    </div>
+                    <div class="paso-item reverse">
+                        <div class="paso-content text-center text-md-start">
+                            <div class="paso-number animate-on-scroll">02</div>
+                            <h3 class="paso-title animate-on-scroll">Voy haciendo mi pedido...</h3>
+                            <p class="section-subtitle mx-0 animate-on-scroll">Contactanos por WhatsApp y contanos qué te gustaría comer. ¡Es rápido y fácil!</p>
+                        </div>
+                        <div class="paso-image">
+                             <img src="./img/patamuslo.png" alt="Paso 2: Hacer el pedido" class="img-fluid slide-from-left">
+                        </div>
+                    </div>
+                    <div class="paso-item">
+                        <div class="paso-content text-center text-md-start">
+                            <div class="paso-number animate-on-scroll">03</div>
+                            <h3 class="paso-title animate-on-scroll">¡Listo! A disfrutar</h3>
+                            <p class="section-subtitle mx-0 animate-on-scroll">Coordinamos la entrega y recibís tus viandas listas para calentar y disfrutar donde quieras.</p>
+                        </div>
+                        <div class="paso-image">
+                             <img src="./img/patamuslo.png" alt="Paso 3: Disfrutar la comida" class="img-fluid slide-from-right">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                    <!-- Tarjeta 2 PASTELERÍA -->
+            <!-- SECCIÓN PASTELERÍA -->
+            <div id="pasteleria" class="showcase-section" style="background-color: rgba(253, 250, 245, 0.7);">
+                <div class="container position-relative">
                     <div class="showcase-container showcase-container--reverse animate-on-scroll">
                         <div class="showcase-image">
                             <img src="https://images.pexels.com/photos/827513/pexels-photo-827513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pastelería saludable">
@@ -532,25 +549,13 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN DE PLANES REDISEÑADA -->
+            <!-- SECCIÓN PLANES -->
             <section id="planes" class="showcase-section">
                 <div class="container">
                     <div class="text-center mb-5">
                          <h2 class="section-title animate-on-scroll">Planes a tu Medida</h2>
                          <p class="section-subtitle animate-on-scroll">Encuentra el plan nutricional perfecto para alcanzar tus objetivos de bienestar.</p>
                     </div>
-
-                    <!-- Plan Fitness -->
-                    <!-- <div class="showcase-container animate-on-scroll">
-                        <div class="showcase-image">
-                            <img src="https://images.pexels.com/photos/1152237/pexels-photo-1152237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plan Fitness">
-                        </div>
-                        <div class="showcase-content">
-                            <h3 class="showcase-title">Plan Fitness</h3>
-                            <p class="showcase-subtitle">Ricos en proteínas y carbohidratos complejos para ganar fuerza y masa muscular.</p>
-                        </div>
-                    </div>
-                     -->
                     <div class="showcase-container showcase-container--reverse animate-on-scroll">
                         <div class="showcase-image">
                            <img src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plan Hiperproteico" style="width: 600px">
@@ -558,56 +563,16 @@
                         <div class="showcase-content">
                            <h3 class="showcase-title">Plan Hiperproteico</h3>
                             <p class="showcase-subtitle">Promueve la quema de calorías y acelera tu metabolismo para un descenso de peso rápido.</p>
-                            <div class="mt-5 text-center animate-on-scroll">
+                            <div class="mt-5 text-center">
                                 <a href="#contacto" class="cta-button">Ver todos los planes</a>
                             </div>
                         </div>
-                       
-                    </div>
-                   
-                     <!-- <div class="showcase-container animate-on-scroll">
-                        <div class="showcase-image">
-                           <img src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plan Vegetariano">
-                        </div>
-                        <div class="showcase-content">
-                           <h3 class="showcase-title">Plan Vegetariano</h3>
-                            <p class="showcase-subtitle">Todos los nutrientes esenciales con proteínas de alta calidad de origen vegetal.</p>
-                        </div>
-                    </div>
-                     
-                     <div class="showcase-container showcase-container--reverse animate-on-scroll">
-                        <div class="showcase-image">
-                           <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Plan Balanceado">
-                        </div>
-                        <div class="showcase-content">
-                           <h3 class="showcase-title">Plan Balanceado</h3>
-                            <p class="showcase-subtitle">Para mejorar tu calidad de vida y mantener un peso saludable de forma equilibrada.</p>
-                        </div>
-                    </div> -->
-
-                    
-                </div>
-            </section>
-            
-            <!-- SECCIÓN "QUIÉNES SOMOS" -->
-            <section id="nosotros" class="py-5" style="background-color: rgba(253, 250, 245, 0.7);">
-                <div class="container" style="max-width: 960px;">
-                    <div class="row g-5 align-items-center">
-                        <div class="col-lg-6 animate-on-scroll">
-                            <img src="./img/equipo.jpg"  alt="El equipo de Onnutrive" class="img-fluid rounded-4 shadow-lg">
-                        </div>
-                        <div class="col-lg-6 animate-on-scroll" style="animation-delay: 0.1s;">
-                            <h2 class="section-title">Nuestro Equipo, Nuestra Pasión</h2>
-                            <p class="mt-4 fs-5 lh-lg text-secondary">Somos una empresa familiar dedicada a mejorar el bienestar a través de la alimentación. Cada plato es preparado con dedicación, combinando la ciencia de la nutrición con el arte de la buena cocina.</p>
-                            <div class="mt-4">
-                                <a href="#" class="cta-button-secondary">Nuestra Historia</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
             
-
+            
+            
             <!-- SECCIÓN CONTACTO -->
             <section id="contacto" class="text-white py-5">
                 <div class="container text-center" style="max-width: 768px;">
@@ -672,29 +637,6 @@
     <!-- Scripts Personalizados -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const navbar = document.getElementById('navbar');
-            const navLogo = document.getElementById('nav-logo');
-            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-            const logoBlanco = './img/logobanner.png';
-            const logoColor = './img/logobanner.png';
-
-            // --- Script para Navbar con Scroll ---
-            function handleNavScroll() {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                    navLogo.src = logoColor;
-                    mobileMenuIcon.classList.remove('text-white');
-                    mobileMenuIcon.classList.add('text-success');
-                } else {
-                    navbar.classList.remove('scrolled');
-                    navLogo.src = logoBlanco;
-                    mobileMenuIcon.classList.add('text-white');
-                    mobileMenuIcon.classList.remove('text-success');
-                }
-            }
-            window.addEventListener('scroll', handleNavScroll);
-            handleNavScroll(); // Ejecutar al cargar
-
             // --- Cierre del menú móvil al hacer clic en un enlace ---
             const navLinks = document.querySelectorAll('#navbarNav .nav-link');
             const navCollapse = document.querySelector('.navbar-collapse.collapse');
@@ -711,31 +653,20 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
+                        // Si el elemento ya se animó, deja de observarlo para mejorar el rendimiento
+                        if (entry.target.classList.contains('slide-from-left') || entry.target.classList.contains('slide-from-right') || entry.target.classList.contains('animate-on-scroll')) {
+                            observer.unobserve(entry.target);
+                        }
                     }
                 });
             }, {
-                threshold: 0.1
+                threshold: 0.2
             });
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
             
-            // --- NUEVO: Script para Parallax en elementos decorativos ---
-            const decorativeElements = document.querySelectorAll('.decorative-element');
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                decorativeElements.forEach(el => {
-                    // Solo aplicar parallax si el elemento está visible o cerca de estarlo
-                    const rect = el.parentElement.getBoundingClientRect();
-                    if (rect.top < window.innerHeight && rect.bottom > 0) {
-                        const speed = el.dataset.speed;
-                        const yPos = -(scrollY * speed / 10);
-                        // Mantiene otras transformaciones como la rotación inicial
-                        const initialTransform = el.style.transform.replace(/translateY\([^)]+\)/g, '').trim();
-                        el.style.transform = `${initialTransform} translateY(${yPos}px)`;
-                    }
-                });
+            document.querySelectorAll('.animate-on-scroll, .slide-from-left, .slide-from-right').forEach(el => {
+                observer.observe(el);
             });
-
+            
             // --- Script para el año del footer ---
             document.getElementById('year').textContent = new Date().getFullYear();
         });
