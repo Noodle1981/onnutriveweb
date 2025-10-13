@@ -192,7 +192,7 @@ body {
     100% { transform: translateY(0px); }
 }
 .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
     filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));
 }
 
@@ -397,8 +397,9 @@ body {
     100% { transform: translateY(0px); }
 }
 .anim-float-rotate {
-    animation: gentle-float-rotate 10s ease-in-out infinite;
+    animation: gentle-float-rotate 5s ease-in-out infinite;
 }
 .anim-float {
-     animation: gentle-float 8s ease-in-out infinite;
+     animation: gentle-float 3s ease-in-out infinite;
 }
+

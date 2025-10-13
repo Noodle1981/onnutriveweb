@@ -19,6 +19,31 @@
 /* --------------------------------------------------- */
 /* 1. CONFIGURACIÓN GLOBAL Y VARIABLES
 /* --------------------------------------------------- */
+
+
+
+@font-face {
+    /* Este es el nombre que usarás en tu CSS para llamar a la fuente. */
+    font-family: 'Visby Round CF'; 
+    
+    /* Aquí debes poner la ruta correcta a tus archivos de fuente. */
+    /* Se recomienda usar .woff2 por su mejor compresión y .woff como fallback. */
+    src: url('/fonts/VisbyRoundCF-Regular.woff2') format('woff2'),
+         url('/fonts/VisbyRoundCF-Regular.woff') format('woff');
+         
+    /* También puedes especificar el peso y estilo si tienes varios archivos. */
+    font-weight: normal; /* o 400 */
+    font-style: normal;
+  }
+  
+  /* Ejemplo para una versión en negrita (bold) */
+  @font-face {
+    font-family: 'Visby Round CF';
+    src: url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff2') format('woff2'),
+         url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff') format('woff');
+    font-weight: bold; /* o 700 */
+    font-style: normal;
+  }
 :root {
     --nutrive-green: #0a4735;
     --nutrive-red: #e73940;
@@ -40,7 +65,7 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Visby Round CF', sans-serif;
     color: #495057;
 }
 .section-title {
