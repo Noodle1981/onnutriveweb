@@ -348,6 +348,7 @@ body {
 #quienes { background-color: rgba(253, 250, 245, 0.7); }
 
 @media (min-width: 992px) {
+
     .showcase-container {
         grid-template-columns: repeat(12, 1fr);
         gap: 0;
@@ -458,6 +459,16 @@ body {
 
 /* Responsividad para el collage */
 @media (max-width: 991px) {
+    .navbar {
+       max-width: 100%;
+    }
+    
+
+    
+    .hero-video-background {
+        height: 50vh;
+  
+    }
     #planes .text-center.text-lg-start {
         text-align: center !important;
     }
