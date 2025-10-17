@@ -336,12 +336,12 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .showcase-list i {
     color: var(--brand-gold);
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-right: 1rem;
 }
 
@@ -365,7 +365,7 @@ body {
     .showcase-content {
         grid-column: 5 / span 8;
         grid-row: 1;
-        padding: 3rem 3rem 3rem 23rem;
+        padding: 3rem 3rem 3rem 16rem;
         text-align: left;
         margin-top: 0;
     }
@@ -376,7 +376,7 @@ body {
 
     .showcase-container--reverse .showcase-content {
         grid-column: 1 / span 8;
-        padding: 3rem 19rem 3rem 9rem;
+        padding: 3rem 14rem 3rem 9rem;
     }
 }
 

@@ -433,13 +433,16 @@ body {
 }
 .step-image {
     flex: 1;
-    max-width: 45%;
+    max-width: 60%;
     position: relative;
 }
 .step-image img {
     width: 100%;
-    border-radius: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    /* border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); */
+}
+.step-image img:hover {
+  scale: 1.5;
 }
 .step-content {
     flex: 1;
@@ -541,7 +544,7 @@ body {
 .collage-item {
     overflow: hidden;
     border-radius: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
