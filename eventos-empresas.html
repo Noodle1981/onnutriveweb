@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onnutrive Corporativo - Catering y Delivery para Empresas</title>
+    
+    <!-- Favicon (Usando el logo de Onnutrive) -->
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/124735/FFFFFF?text=ON">
+
+    <!-- Tipografía Profesional (del código de referencia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Iconografía de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!--
+      Estilos Personalizados (CSS de referencia + Nuevos Estilos)
+      Incluye todos los estilos de style_2.css más los nuevos para el formulario y la grilla de clientes.
+    -->
+    <style>
+        /* 1. CONFIGURACIÓN GLOBAL Y VARIABLES */
+        :root {
+        --brand-green: #124735;
+        --brand-gold: #DABD85;
+        --brand-accent: #DA4735;
+        --brand-cream: #fdfaf5;
+        --brand-dark: #333333;
+        --font-title: 'Nunito', sans-serif;
+        --font-body: 'Nunito', sans-serif;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        color: var(--brand-dark);
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .main-content-wrapper {
+        position: relative; 
+        z-index: 2; 
+      }
+
+      /* 2. CLASES DE UTILIDAD GENERAL */
+      .section-title {
+        font-family: var(--font-title);
+        font-weight: 800;
+        font-size: 2.25rem;
+        color: var(--brand-green);
+        line-height: 1.2;
+      }
+
+      .section-subtitle {
+        font-size: 1.125rem;
+        color: #6b7280;
+        max-width: 600px;
+        margin: 1rem auto 0;
+      }
+
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 2.75rem;
+        }
+      }
+
+      /* 3. NAVEGACIÓN (NAVBAR) */
+      .navbar {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .navbar.scrolled {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .navbar .nav-link {
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: white;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .navbar.scrolled .nav-link {
+        color: var(--brand-green);
+      }
+
+      .navbar.scrolled .nav-link:hover, .navbar.scrolled .nav-link.active {
+        color: var(--brand-accent);
+      }
+
+      .navbar .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--brand-accent);
+        transition: width 0.3s ease-in-out;
+      }
+
+      .navbar .nav-link:hover::after, .navbar .nav-link.active::after {
+        width: 100%;
+      }
+
+      .navbar-toggler { border: none; }
+      .navbar-toggler:focus { box-shadow: none; }
+
+      .cta-button {
+        background-color: var(--brand-accent);
+        color: white;
+        font-family: var(--font-body);
+        font-weight: 700;
+        padding: 0.75rem 1.75rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: inline-block;
+        border: none; /* Para los botones de formulario */
+      }
+
+      .cta-button:hover {
+        color: white;
+        background-color: #c94030;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      }
+
+      .cta-button-secondary {
+        display: inline-block;
+        background-color: transparent;
+        color: var(--brand-green);
+        border: 2px solid var(--brand-gold);
+        font-family: var(--font-body);
+        font-weight: 700;
+        padding: 0.65rem 1.75rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button-secondary:hover {
+        background-color: var(--brand-gold);
+        color: var(--brand-green);
+        transform: translateY(-2px);
+      }
+
+      /* 4. SECCIÓN HERO (VIDEO) */
+      .hero-video-background {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #bgvideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 0;
+        object-fit: cover;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(18, 71, 53, 0.4);
+        z-index: 1;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+      }
+      .hero-content h1 {
+        font-family: var(--font-title);
+        font-weight: 800;
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        line-height: 1.1;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      }
+      .hero-content p {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        font-weight: 400;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        max-width: 600px;
+        margin: 1rem auto 2rem;
+      }
+
+      /* 5. ANIMACIÓN FLOTANTE */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+        filter: drop-shadow(0 25px 25px rgba(0,0,0,0.15));
+      }
+
+      /* 6. SECCIÓN CLIENTES (NUEVA) */
+      #clientes {
+        background-color: var(--brand-cream);
+      }
+      .client-logos-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem 3rem; /* Más espacio para logos */
+        margin-top: 3rem;
+      }
+      .client-logos-grid .client-logo {
+        height: 90px; /* Altura unificada para logos */
+        width: auto;
+        max-width: 160px; /* Ancho máximo */
+        object-fit: contain; /* Asegura que el logo se vea bien */
+        opacity: 0.8;
+        transition: all 0.3s ease;
+      }
+      .client-logos-grid .client-logo:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      /* 7. FORMULARIO DE CONTACTO (NUEVO) */
+      #contacto {
+        background-color: var(--brand-cream);
+        padding: 5rem 0;
+      }
+      .contact-form {
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        margin-top: 3rem;
+      }
+      @media (max-width: 767px) {
+        .contact-form {
+          padding: 1.5rem;
+        }
+      }
+      .contact-form .form-label {
+        font-weight: 700;
+        color: var(--brand-green);
+        margin-bottom: 0.5rem;
+      }
+      .contact-form .form-control, .contact-form .form-select {
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ddd;
+        font-family: var(--font-body);
+        font-size: 1rem;
+      }
+      .contact-form .form-control:focus, .contact-form .form-select:focus {
+        border-color: var(--brand-gold);
+        box-shadow: 0 0 0 3px rgba(218, 189, 133, 0.3);
+      }
+      .contact-form .cta-button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+      }
+
+      /* 8. FOOTER (de referencia) */
+      .footer {
+        background-color: var(--brand-cream);
+        color: var(--brand-dark);
+        border-top: 1px solid #e5e7eb;
+      }
+      .footer-title {
+        font-family: var(--font-title);
+        font-weight: 700;
+        color: var(--brand-green);
+        margin-bottom: 1rem;
+      }
+      .footer-links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+      .footer-links li { display: flex; align-items: center; justify-content: center; }
+      @media (min-width: 992px) { .footer-links li { justify-content: flex-start; } }
+      .footer-links a { text-decoration: none; color: #4b5563; transition: color 0.3s ease; }
+      .footer-links a:hover { color: var(--brand-accent); }
+      .social-icon {
+        width: 40px; height: 40px; border-radius: 50%;
+        background-color: #fff; border: 1px solid #e5e7eb;
+        color: var(--brand-green);
+        display: inline-flex; align-items: center; justify-content: center;
+        text-decoration: none; transition: all 0.3s ease;
+      }
+      .social-icon:hover {
+        background-color: var(--brand-green);
+        color: white;
+        transform: scale(1.1);
+      }
+
+      /* 9. ANIMACIONES DE SCROLL (de referencia) */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+        transition: opacity 0.8s cubic-bezier(0.65, 0.84, 0.44, 1), transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition-delay: var(--animation-delay, 0s);
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      /* 10. ESTILO DE TARJETAS SHOWCASE (de referencia) */
+      .showcase-section {
+        background-image: url('https://www.transparenttextures.com/patterns/white-wood.png');
+        background-color: #f9f9f9;
+        background-size: auto;
+        background-position: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        position: relative;
+        overflow: hidden; /* Evita que los elementos decorativos desborden */
+      }
+      .showcase-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        margin-bottom: 5rem;
+        z-index: 5;
+      }
+
+      .showcase-image {
+        position: relative;
+        z-index: 10;
+        filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+        padding: 0 1.5rem;
+      }
+      .showcase-image img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+
+      .showcase-content {
+        background-color: var(--brand-cream);
+        color: var(--brand-dark);
+        border-radius: 1.5rem;
+        padding: 4rem 2rem 2rem;
+        text-align: center;
+        margin-top: -80px;
+        z-index: 5;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
+
+      .showcase-title {
+        font-family: var(--font-title);
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--brand-green);
+      }
+
+      .showcase-subtitle {
+        font-size: 1.1rem;
+        color: var(--brand-dark);
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .showcase-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        text-align: left;
+        display: inline-block;
+      }
+
+      .showcase-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1.1rem; /* Ajustado para mejor lectura */
+        font-weight: 600;
+      }
+
+      .showcase-list i {
+        color: var(--brand-gold);
+        font-size: 1.25rem; /* Icono más grande */
+        margin-right: 1rem;
+      }
+
+      @media (min-width: 992px) {
+        .showcase-section {
+          padding-top: 8rem;
+          padding-bottom: 8rem;
+        }
+        .showcase-container {
+          grid-template-columns: repeat(12, 1fr);
+          gap: 0;
+          margin-bottom: 8rem;
+        }
+        .showcase-image {
+          grid-column: 1 / span 6;
+          grid-row: 1;
+          padding: 0;
+        }
+        .showcase-image img { max-width: none; }
+        .showcase-content {
+          grid-column: 5 / span 8;
+          grid-row: 1;
+          padding: 3rem 3rem 3rem 16rem;
+          text-align: left;
+          margin-top: 0;
+        }
+        .showcase-container--reverse .showcase-image {
+          grid-column: 7 / span 6;
+        }
+        .showcase-container--reverse .showcase-content {
+          grid-column: 1 / span 8;
+          padding: 3rem 16rem 3rem 4rem; /* Ajustado el padding */
+        }
+        .showcase-list li {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* 11. ELEMENTOS DECORATIVOS FLOTANTES */
+      .decorative-element {
+        position: absolute;
+        z-index: 1; 
+        transition: transform 0.2s ease-out;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+      @keyframes gentle-float-rotate {
+        0% { transform: translateY(0px) rotate(-5deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+        100% { transform: translateY(0px) rotate(-5deg); }
+      }
+      @keyframes gentle-float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+      .anim-float-rotate {
+        animation: gentle-float-rotate 5s ease-in-out infinite;
+      }
+      .anim-float {
+          animation: gentle-float 3s ease-in-out infinite;
+      }
+      
+      /* 12. RESPONSIVIDAD (de referencia) */
+      @media (max-width: 991px) {
+        .hero-video-background {
+          height: 70vh; /* Un poco más de altura en móvil */
+        }
+      }
+    </style>
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid" style="max-width: 1140px;">
+            <a class="navbar-brand" href="./index-2.html">
+                <!-- Logo de Placeholder, se cambia con JS -->
+                <img id="nav-logo" src="./img/logo-blanco.png" alt="Onnutrive Logo" style="height: 48px; transition: all 0.3s ease;">
+            </a>
+            <button id="mobile-menu-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i id="mobile-menu-icon" class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center">
+                    <!-- Enlaces actualizados para B2B -->
+                    <li class="nav-item"><a class="nav-link mx-3" href="#catering">Catering</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#coffee-breaks">Coffee Breaks</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#delivery">Delivery</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3" href="#clientes">Clientes</a></li>
+                </ul>
+                <div class="d-none d-lg-block">
+                    <a href="#contacto" class="cta-button">Cotizar Ahora</a>
+                </div>
+                 <div class="d-lg-none text-center pt-3">
+                    <a href="#contacto" class="cta-button">Cotizar Ahora</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Enfoque B2B) -->
+    <header class="hero-video-background">
+        <video playsinline autoplay muted loop id="bgvideo">
+            <!-- Video de referencia, funciona -->
+            <source src="https://noodle1981.github.io/onnutriveweb/video/videos2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+            <h1 class="animate-on-scroll">Soluciones Corporativas de Alimentación</h1>
+            <p class="animate-on-scroll" style="animation-delay: 0.1s;">Alimenta el éxito de tu equipo con Onnutrive.<br>Alimentos que activan.
+            </p>
+            <a href="#contacto" class="cta-button animate-on-scroll" style="animation-delay: 0.2s;">Solicitar Propuesta</a>
+        </div>
+    </header>
+
+    <div class="main-content-wrapper">
+        <main>
+            
+            <!-- SECCIÓN 1: CATERING (ÉNFASIS) -->
+            <section id="catering" class="showcase-section">
+                <div class="container position-relative">
+                    <!-- Elementos decorativos -->
+                    <img src="./img/hojas-sin-fondo.png" alt="hoja" class="decorative-element anim-float-rotate" style="width: 150px; top: -5%; left: -8%;" data-speed="2">
+                    <img src="./img/general-sin-fondo.png" alt="tomate" class="decorative-element anim-float d-none d-lg-block" style="width: 120px; bottom: -5%; left: 15%;" data-speed="-1.5">
+
+                    <!-- Tarjeta 1: Catering -->
+                    <div class="showcase-container animate-on-scroll">
+                        <div class="showcase-image">
+                            <!-- Imagen de Catering (del brochure) -->
+                            <img src="./img/servicios/mesa.png" alt="Mesa de catering saludable de Onnutrive">
+                        </div>
+                        <div class="showcase-content">
+                            <h2 class="showcase-title">Catering & Eventos</h2>
+                            <p class="showcase-subtitle">Opciones saludables y deliciosas para tus reuniones y eventos.</p>
+                            <ul class="showcase-list">
+                                <li><i class="bi bi-calendar-check"></i> Jornadas de Capacitación</li>
+                                <li><i class="bi bi-people-fill"></i> Reuniones de Directorio</li>
+                                <li><i class="bi bi-bar-chart-fill"></i> Eventos de Team Building</li>
+                                <li><i class="bi bi-cup-hot-fill"></i> Desayunos de Trabajo</li>
+                            </ul>
+                            <div class="mt-5 text-center">
+                                <a href="#contacto" class="cta-button">Cotizar Catering</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 2: COFFEE BREAKS (ÉNFASIS) -->
+            <section id="coffee-breaks" class="showcase-section" style="background-color: var(--brand-cream);">
+                 <div class="container position-relative">
+                    <!-- Elementos decorativos -->
+                    <img src="./img/hojas-sin-fondo.png" alt="cafe" class="decorative-element anim-float d-none d-lg-block" style="width: 100px; top: -8%; right: -5%;" data-speed="2.5">
+                    <img src="./img/hojas-sin-fondo.png" alt="croissant" class="decorative-element anim-float-rotate" style="width: 150px; bottom: 10%; left: -5%;" data-speed="-1">
+
+                    <!-- Tarjeta 2: Coffee Breaks (Invertida) -->
+                    <div class="showcase-container showcase-container--reverse animate-on-scroll">
+                        <div class="showcase-image">
+                            <img src="./img/servicios/coffe.png" alt="Snacks y café para coffee break">
+                        </div>
+                        <div class="showcase-content">
+                            <h2 class="showcase-title">Coffee Breaks</h2>
+                            <p class="showcase-subtitle">La pausa perfecta para activar la productividad de tu equipo.</p>
+                            <ul class="showcase-list">
+                                <li><i class="bi bi-lightning-charge-fill"></i> Snacks nutritivos y energéticos</li>
+                                <li><i class="bi bi-brightness-high-fill"></i> Platos frescos y bocadillos</li>
+                                <li><i class="bi bi-hand-thumbs-up-fill"></i> Sabroso, saludable y práctico</li>
+                                <li><i class="bi bi-clock-fill"></i> Puntualidad y servicio de calidad</li>
+                            </ul>
+                            <div class="mt-5 text-center">
+                                <a href="#contacto" class="cta-button">Pedir Coffee Break</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: DELIVERY CORPORATIVO -->
+            <section id="delivery" class="showcase-section">
+                <div class="container position-relative">
+                    <!-- Elementos decorativos -->
+                    <img src="img/mancha-sin-fondo.png" alt="palta" class="decorative-element anim-float" style="width: 150px; top: -5%; right: -2%;" data-speed="1.5">
+
+                    <!-- Tarjeta 3: Delivery -->
+                    <div class="showcase-container animate-on-scroll">
+                        <div class="showcase-image">
+                            <!-- Imagen de 7Viandas (del brochure) -->
+                            <img src="./img/servicios/d2.png" alt="Viandas saludables de Onnutrive">
+                        </div>
+                        <div class="showcase-content">
+                            <h2 class="showcase-title">Delivery Corporativo</h2>
+                            <p class="showcase-subtitle">Planes nutricionales y viandas en la puerta de tu empresa.</p>
+                            <ul class="showcase-list">
+                                <li><i class="bi bi-truck"></i> Conveniencia y puntualidad</li>
+                                <li><i class="bi bi-person-workspace"></i> Ahorra tiempo a tu personal</li>
+                                <li><i class="bi bi-clipboard-heart-fill"></i> Alimentación balanceada sin esfuerzo</li>
+                                <li><i class="bi bi-arrow-repeat"></i> Menús frescos elaborados día a día</li>
+                            </ul>
+                            <div class="mt-5 text-center">
+                                <a href="#contacto" class="cta-button">Consultar Delivery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: CLIENTES (Prueba Social B2B) -->
+            <section id="clientes" class="py-5">
+                <div class="container text-center text-white">
+                    <h2 class="section-title text-white animate-on-scroll">Empresas que confían en nosotros</h2>
+                    <p class="section-subtitle text-light animate-on-scroll" style="animation-delay: 0.1s;">Nos enorgullece ser el socio de alimentación de grandes equipos.</p>
+                    <div class="client-logos-grid animate-on-scroll" style="animation-delay: 0.2s;">
+                        <!-- Logos de Clientes (Placeholders) -->
+                        <img src="./img/Empresas/eco-minera.png" alt="Logo Eco Minera" class="client-logo">
+                        <img src="./img/Empresas/arcor.png" alt="Logo Arcor" class="client-logo">
+                        <img src="./img/Empresas/upcn.png" alt="Logo UPCN Voley" class="client-logo">
+                        <img src="./img/Empresas/galvarini.png" alt="Logo Galvarini" class="client-logo">
+                        <img src="./img/Empresas/argentina-fortescue.png" alt="Logo Argentina Fortescue" class="client-logo">
+                        <img src="./img/Empresas/cimac.png" alt="Logo Cimac" class="client-logo">
+                        <img src="./img/Empresas/los-aromos.png" alt="Logo Los Aromos" class="client-logo">
+                        <img src="./img/Empresas/veja.png" alt="Logo Vejamoreno" class="client-logo">
+                        <img src="./img/Empresas/el-nido.png" alt="Logo el nido" class="client-logo">
+                        <img src="./img/Empresas/albardon.png" alt="Logo Transportes Albardon" class="client-logo">
+                      
+                        <img src="./img/Empresas/komatsu.png"  alt="Logo Komatsu" class="client-logo">
+                        <img src="./img/Empresas/lumiere.png"  alt="Logo Lumiere" class="client-logo">
+                        <img src="./img/Empresas/los-azules.png" alt="Logo Los Azules" class="client-logo">
+                        <img src="./img/Empresas/mercedario.png" alt="Logo Clinica Mercedario" class="client-logo">
+                        <img src="./img/Empresas/credicop.png" alt="Logo Banco Credicoop" class="client-logo">
+                        <img src="./img/Empresas/aviagen.png" alt="Logo Aviagen" class="client-logo">
+                        <img src="./img/Empresas/cartocor.png" alt="Logo Cartocor" class="client-logo">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 5: FORMULARIO DE CONTACTO -->
+            <section id="contacto">
+                <div class="container" style="max-width: 800px;">
+                    <h2 class="section-title text-center animate-on-scroll">Solicita tu Propuesta</h2>
+                    <p class="section-subtitle text-center animate-on-scroll" style="animation-delay: 0.1s;">
+                        Cuéntanos sobre tu evento o necesidad corporativa. 
+                        Nos pondremos en contacto a la brevedad.
+                    </p>
+
+                    <!-- Formulario de Contacto -->
+                    <form class="contact-form animate-on-scroll" style="animation-delay: 0.2s;" action="#" method="POST">
+                        <div class="row g-3">
+                            <!-- Datos de Contacto -->
+                            <div class="col-md-6">
+                                <label for="empresa" class="form-label">Nombre de Empresa o Contacto</label>
+                                <input type="text" class="form-control" id="empresa" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <!-- Campos Específicos Solicitados -->
+                            <div class="col-md-6">
+                                <label for="tipo_evento" class="form-label">Tipo de Evento o Servicio</label>
+                                <select id="tipo_evento" class="form-select" required>
+                                    <option value="" selected disabled>Selecciona una opción...</option>
+                                    <option value="coffee_break">Coffee Break</option>
+                                    <option value="catering_reunion">Catering para Reunión</option>
+                                    <option value="catering_jornada">Catering para Jornada/Capacitación</option>
+                                    <option value="delivery_corporativo">Delivery de Viandas Corporativo</option>
+                                    <option value="otro">Otro Evento</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cantidad_personas" class="form-label">Cantidad de Personas</label>
+                                <input type="number" class="form-control" id="cantidad_personas" min="1" placeholder="Aprox.">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="fecha_evento" class="form-label">Fecha del Evento</label>
+                                <input type="date" class="form-control" id="fecha_evento">
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label">Mensaje Adicional</label>
+                                <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos más detalles, horarios, o si hay restricciones alimentarias..."></textarea>
+                            </div>
+
+                            <!-- Botón de Envío -->
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="cta-button">Enviar Consulta</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        
+        <!-- FOOTER (de referencia) -->
+        <footer class="footer">
+            <div class="container py-5">
+                <div class="row g-4 text-center text-lg-start">
+                    <div class="col-lg-3 col-md-6">
+                        <img src="./img/logobanner.png" alt="Onnutrive Logo Color" style="height: 48px; filter: brightness(0) invert(1) brightness(0.2) sepia(1) hue-rotate(100deg) saturate(1.5);" class="mx-auto mx-lg-0">
+                        <p class="mt-3 text-secondary">Alimentos que activan.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="footer-title">Nuestros Servicios</h4>
+                        <ul class="footer-links">
+                            <li><a href="#catering">Catering y Eventos</a></li>
+                            <li><a href="#coffee-breaks">Coffee Breaks</a></li>
+                            <li><a href="#delivery">Delivery Corporativo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="footer-title">Empresa</h4>
+                        <ul class="footer-links">
+                            <li><a href="#clientes">Clientes</a></li>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="footer-title">Contacto</h4>
+                        <ul class="footer-links">
+                            <!-- Datos del Brochure -->
+                            <li><i class="bi bi-geo-alt-fill me-2"></i>Paula Albarracín 727 sur, San Juan</li>
+                            <li><i class="bi bi-whatsapp me-2"></i>264 582 0093</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="https://www.instagram.com/onnutrive" target="_blank" class="social-icon me-2"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top mt-5 pt-4 text-center text-secondary small">
+                    <p>&copy; <span id="year"></span> Onnutrive. Todos los derechos reservados.</p>
+                    <p class="mt-1">Desarrollado con base en el diseño de Grupo Xamanen</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts Personalizados (de referencia, limpiados) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const navLogo = document.getElementById('nav-logo');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+            
+            // URLs de los logos para el efecto de scroll
+            const logoBlanco = './img/logo-blanco.png';
+            const logoColor = './img/logo-color.png';
+
+            // --- Script para Navbar con Scroll ---
+            function handleNavScroll() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                    navLogo.src = logoColor;
+                    mobileMenuIcon.classList.remove('text-white');
+                    mobileMenuIcon.classList.add('text-success'); // Verde de Bootstrap
+                } else {
+                    navbar.classList.remove('scrolled');
+                    navLogo.src = logoBlanco;
+                    mobileMenuIcon.classList.add('text-white');
+                    mobileMenuIcon.classList.remove('text-success');
+                }
+            }
+            window.addEventListener('scroll', handleNavScroll);
+            handleNavScroll(); // Ejecutar al cargar
+
+            // --- Cierre del menú móvil al hacer clic en un enlace ---
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+            const navCollapse = document.querySelector('.navbar-collapse.collapse');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                   if (navCollapse.classList.contains('show')) {
+                       new bootstrap.Collapse(navCollapse).hide();
+                   }
+                });
+            });
+
+            // --- Script para Animaciones al Hacer Scroll ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+            
+            // --- Script para Parallax en elementos decorativos ---
+            const decorativeElements = document.querySelectorAll('.decorative-element');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                decorativeElements.forEach(el => {
+                    const rect = el.parentElement.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const speed = el.dataset.speed;
+                        const yPos = -(scrollY * speed / 10);
+                        const initialTransform = el.style.transform.replace(/translateY\([^)]+\)/g, '').trim();
+                        el.style.transform = `${initialTransform} translateY(${yPos}px)`;
+                    }
+                });
+            });
+
+            // --- Script para el año del footer ---
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
