@@ -1,12 +1,46 @@
-  /* 1. CONFIGURACIÓN GLOBAL Y VARIABLES */
+@font-face {
+    /* Este es el nombre que usarás en tu CSS para llamar a la fuente. */
+    font-family: 'Visby Round CF'; 
+    
+    /* Aquí debes poner la ruta correcta a tus archivos de fuente. */
+    /* Se recomienda usar .woff2 por su mejor compresión y .woff como fallback. */
+    src: url('/fonts/VisbyRoundCF-Regular.woff2') format('woff2'),
+         url('/fonts/VisbyRoundCF-Regular.woff') format('woff');
+         
+    /* También puedes especificar el peso y estilo si tienes varios archivos. */
+    font-weight: normal; /* o 400 */
+    font-style: normal;
+  }
+  
+  /* Ejemplo para una versión en negrita (bold) */
+  @font-face {
+    font-family: 'Visby Round CF';
+    src: url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff2') format('woff2'),
+         url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff') format('woff');
+    font-weight: bold; /* o 700 */
+    font-style: normal;
+  } 
+  
+  @font-face {
+    font-family: 'Visby Round CF';
+    src: url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-ExtraBold.woff') format('woff2'),
+         url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-ExtraBold.woff') format('woff');
+    font-weight: extrabold; /* o 700 */
+    font-style: normal;
+  } 
+  
+  
+  
+  
+/* 1. CONFIGURACIÓN GLOBAL Y VARIABLES */
   :root {
     --brand-green: #124735;
     --brand-gold: #DABD85;
     --brand-accent: #DA4735;
     --brand-cream: #fdfaf5;
     --brand-dark: #333333;
-    --font-title: 'Nunito', sans-serif;
-    --font-body: 'Nunito', sans-serif;
+    --font-title: 'Visby Round CF', sans-serif;
+    --font-body: 'Visby Round CF', sans-serif;
 }
 
 body {
@@ -31,11 +65,13 @@ body {
 
 /* 2. CLASES DE UTILIDAD GENERAL */
 .section-title {
-    font-family: var(--font-title);
     font-weight: 800;
-    font-size: 2.25rem;
-    color: var(--brand-green);
-    line-height: 1.2;
+    color: #2b453e;
+    font-size: clamp(2.5rem, 6vw, 2.9rem);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    /* Truco para simular más grosor */
+    -webkit-text-stroke: 1.5px #2b453e;
 }
 
 .section-subtitle {
@@ -46,20 +82,25 @@ body {
 }
 
 .alimentos-text {
-    font-weight: 700;
+    font-weight: 800;
     color: #2b453e;
     font-size: clamp(2.5rem, 6vw, 2.9rem);
     line-height: 0.9;
-    letter-spacing: 0.2px;
+    letter-spacing: -3px;
+    /* Truco para simular más grosor */
+    -webkit-text-stroke: 1.5px #2b453e;
 }
 
 .activan-text .text-gold {
+    font-weight: 1000;
     font-weight: 800;
     color: #d4b588;
     font-size: clamp(4rem, 12vw, 5.4rem);
     line-height: 1;
     margin-top: -0.5rem;
-    letter-spacing: -1px;
+    letter-spacing: -5px;
+    /* Truco para simular más grosor */
+    -webkit-text-stroke: 2px #d4b588;
 }
 
 @media (min-width: 768px) {
@@ -199,6 +240,17 @@ body {
 /* 6. CONTACTO */
 #contacto {
     background-color: var(--brand-green);
+    
+}
+
+#contacto .h2 {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: clamp(2.5rem, 6vw, 2.9rem);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    /* Truco para simular más grosor */
+    -webkit-text-stroke: 1.5px #ffffff;
 }
 .cta-button-whatsapp {
     display: inline-flex;
@@ -311,10 +363,13 @@ body {
 }
 
 .showcase-title {
-    font-family: var(--font-title);
-    font-size: 3.5rem;
     font-weight: 800;
-    color: var(--brand-green);
+    color: #2b453e;
+    font-size: clamp(2.5rem, 6vw, 2.9rem);
+    line-height: 0.9;
+    letter-spacing: -3px;
+    /* Truco para simular más grosor */
+    -webkit-text-stroke: 1.5px #2b453e;
 }
 
 .showcase-subtitle {
@@ -337,6 +392,7 @@ body {
     align-items: center;
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .showcase-list i {

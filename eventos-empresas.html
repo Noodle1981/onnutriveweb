@@ -241,43 +241,43 @@
       }
 
       /* 7. FORMULARIO DE CONTACTO (NUEVO) */
-      #contacto {
+      #contacto-eventos {
         background-color: var(--brand-cream);
         padding: 5rem 0;
-      }
-      .contact-form {
+        }
+        .contact-form {
         background: #ffffff;
         padding: 2.5rem;
         border-radius: 1.5rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.877);
         margin-top: 3rem;
-      }
-      @media (max-width: 767px) {
-        .contact-form {
-          padding: 1.5rem;
         }
-      }
-      .contact-form .form-label {
+        @media (max-width: 767px) {
+        .contact-form {
+        padding: 1.5rem;
+        }
+        }
+        .contact-form .form-label {
         font-weight: 700;
         color: var(--brand-green);
         margin-bottom: 0.5rem;
-      }
-      .contact-form .form-control, .contact-form .form-select {
+        }
+        .contact-form .form-control, .contact-form .form-select {
         border-radius: 0.5rem;
         padding: 0.75rem 1rem;
         border: 1px solid #ddd;
         font-family: var(--font-body);
         font-size: 1rem;
-      }
-      .contact-form .form-control:focus, .contact-form .form-select:focus {
+        }
+        .contact-form .form-control:focus, .contact-form .form-select:focus {
         border-color: var(--brand-gold);
         box-shadow: 0 0 0 3px rgba(218, 189, 133, 0.3);
-      }
-      .contact-form .cta-button {
+        }
+        .contact-form .cta-button {
         width: 100%;
         padding: 1rem;
         font-size: 1.1rem;
-      }
+        }
 
       /* 8. FOOTER (de referencia) */
       .footer {
@@ -495,10 +495,10 @@
                     <li class="nav-item"><a class="nav-link mx-3" href="#clientes">Clientes</a></li>
                 </ul>
                 <div class="d-none d-lg-block">
-                    <a href="#contacto" class="cta-button">Cotizar Ahora</a>
+                    <a href="#contacto-eventos" class="cta-button">Cotizar Ahora</a>
                 </div>
                  <div class="d-lg-none text-center pt-3">
-                    <a href="#contacto" class="cta-button">Cotizar Ahora</a>
+                    <a href="#contacto-eventos" class="cta-button">Cotizar Ahora</a>
                  </div>
             </div>
         </div>
@@ -515,7 +515,7 @@
             <h1 class="animate-on-scroll">Soluciones Corporativas de Alimentación</h1>
             <p class="animate-on-scroll" style="animation-delay: 0.1s;">Alimenta el éxito de tu equipo con Onnutrive.<br>Alimentos que activan.
             </p>
-            <a href="#contacto" class="cta-button animate-on-scroll" style="animation-delay: 0.2s;">Solicitar Propuesta</a>
+            <a href="#contacto-eventos" class="cta-button animate-on-scroll" style="animation-delay: 0.2s;">Solicitar Propuesta</a>
         </div>
     </header>
 
@@ -545,7 +545,7 @@
                                 <li><i class="bi bi-cup-hot-fill"></i> Desayunos de Trabajo</li>
                             </ul>
                             <div class="mt-5 text-center">
-                                <a href="#contacto" class="cta-button">Cotizar Catering</a>
+                                <a href="#contacto-eventos" class="cta-button">Cotizar Catering</a>
                             </div>
                         </div>
                     </div>
@@ -574,7 +574,7 @@
                                 <li><i class="bi bi-clock-fill"></i> Puntualidad y servicio de calidad</li>
                             </ul>
                             <div class="mt-5 text-center">
-                                <a href="#contacto" class="cta-button">Pedir Coffee Break</a>
+                                <a href="#contacto-eventos" class="cta-button">Pedir Coffee Break</a>
                             </div>
                         </div>
                     </div>
@@ -603,7 +603,7 @@
                                 <li><i class="bi bi-arrow-repeat"></i> Menús frescos elaborados día a día</li>
                             </ul>
                             <div class="mt-5 text-center">
-                                <a href="#contacto" class="cta-button">Consultar Delivery</a>
+                                <a href="#contacto-eventos" class="cta-button">Consultar Delivery</a>
                             </div>
                         </div>
                     </div>
@@ -613,8 +613,8 @@
             <!-- SECCIÓN 4: CLIENTES (Prueba Social B2B) -->
             <section id="clientes" class="py-5">
                 <div class="container text-center text-white">
-                    <h2 class="section-title text-white animate-on-scroll">Empresas que confían en nosotros</h2>
-                    <p class="section-subtitle text-light animate-on-scroll" style="animation-delay: 0.1s;">Nos enorgullece ser el socio de alimentación de grandes equipos.</p>
+                    <h2 class="section-title  animate-on-scroll">Empresas que confían en nosotros</h2>
+                    <p class="section-subtitle  animate-on-scroll" style="animation-delay: 0.1s;">Nos enorgullece ser el socio de alimentación de grandes equipos.</p>
                     <div class="client-logos-grid animate-on-scroll" style="animation-delay: 0.2s;">
                         <!-- Logos de Clientes (Placeholders) -->
                         <img src="./img/Empresas/eco-minera.png" alt="Logo Eco Minera" class="client-logo">
@@ -639,62 +639,65 @@
                 </div>
             </section>
 
-            <!-- SECCIÓN 5: FORMULARIO DE CONTACTO -->
-            <section id="contacto">
-                <div class="container" style="max-width: 800px;">
-                    <h2 class="section-title text-center animate-on-scroll">Solicita tu Propuesta</h2>
-                    <p class="section-subtitle text-center animate-on-scroll" style="animation-delay: 0.1s;">
-                        Cuéntanos sobre tu evento o necesidad corporativa. 
-                        Nos pondremos en contacto a la brevedad.
-                    </p>
-
-                    <!-- Formulario de Contacto -->
-                    <form class="contact-form animate-on-scroll" style="animation-delay: 0.2s;" action="#" method="POST">
-                        <div class="row g-3">
-                            <!-- Datos de Contacto -->
-                            <div class="col-md-6">
-                                <label for="empresa" class="form-label">Nombre de Empresa o Contacto</label>
-                                <input type="text" class="form-control" id="empresa" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            
-                            <!-- Campos Específicos Solicitados -->
-                            <div class="col-md-6">
-                                <label for="tipo_evento" class="form-label">Tipo de Evento o Servicio</label>
-                                <select id="tipo_evento" class="form-select" required>
-                                    <option value="" selected disabled>Selecciona una opción...</option>
-                                    <option value="coffee_break">Coffee Break</option>
-                                    <option value="catering_reunion">Catering para Reunión</option>
-                                    <option value="catering_jornada">Catering para Jornada/Capacitación</option>
-                                    <option value="delivery_corporativo">Delivery de Viandas Corporativo</option>
-                                    <option value="otro">Otro Evento</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="cantidad_personas" class="form-label">Cantidad de Personas</label>
-                                <input type="number" class="form-control" id="cantidad_personas" min="1" placeholder="Aprox.">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="fecha_evento" class="form-label">Fecha del Evento</label>
-                                <input type="date" class="form-control" id="fecha_evento">
-                            </div>
-
-                            <!-- Mensaje -->
-                            <div class="col-12">
-                                <label for="mensaje" class="form-label">Mensaje Adicional</label>
-                                <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos más detalles, horarios, o si hay restricciones alimentarias..."></textarea>
-                            </div>
-
-                            <!-- Botón de Envío -->
-                            <div class="col-12 text-center mt-4">
-                                <button type="submit" class="cta-button">Enviar Consulta</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+           <!-- SECCIÓN 5: FORMULARIO DE CONTACTO -->
+           <section id="contacto-eventos">
+             <div class="container" style="max-width: 800px;">
+            <h2 class="section-title text-center animate-on-scroll ">Activa tu bienestar hoy</h2>
+            <p class="section-subtitle text-center animate-on-scroll " style="animation-delay: 0.1s;">
+             ¿Listo para empezar a comer rico y saludable? <br>
+             Completa el formulario para enviarnos tu pedido por WhatsApp.
+             </p>
+            
+         <!-- Formulario de Contacto (MODIFICADO) -->
+          <!-- Se quita 'action' y 'method', se añade 'id' para el script -->
+           <form id="contactForm" class="contact-form animate-on-scroll" style="animation-delay: 0.2s;">
+            <div class="row g-3">
+            <!-- Datos de Contacto -->
+            <div class="col-md-6">
+            <label for="empresa" class="form-label">Nombre de Empresa o Contacto</label>
+             <input type="text" class="form-control" id="empresa" required>
+           </div>
+             <div class="col-md-6">
+             <label for="email" class="form-label">Email (Para seguimiento)</label>
+            <input type="email" class="form-control" id="email" required>
+           </div>
+           
+             <!-- Campos Específicos Solicitados -->
+             <div class="col-md-6">
+             <label for="tipo_evento" class="form-label">Tipo de Evento o Servicio</label>
+            <select id="tipo_evento" class="form-select" required>
+            <option value="" selected disabled>Selecciona una opción...</option>
+           <option value="Coffee Break">Coffee Break</option>
+             <option value="Catering para Reunión">Catering para Reunión</option>
+             <option value="Catering para Jornada/Capacitación">Catering para Jornada/Capacitación</option>
+           <option value="Delivery de Viandas Corporativo">Delivery de Viandas Corporativo</option>
+          <option value="Otro Evento">Otro Evento</option>
+          </select>
+            </div>
+         <div class="col-md-3">
+            <label for="cantidad_personas" class="form-label">Cant. Personas</label>
+          <input type="number" class="form-control" id="cantidad_personas" min="1" placeholder="Aprox.">
+          </div>
+           <div class="col-md-3">
+           <label for="fecha_evento" class="form-label">Fecha Evento</label>
+           <input type="date" class="form-control" id="fecha_evento">
+            </div>
+            
+            <!-- Mensaje -->
+           <div class="col-12">
+           <label for="mensaje" class="form-label">Mensaje Adicional</label>
+           <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos más detalles, horarios, o si hay restricciones alimentarias..."></textarea>
+           </div>
+            
+             <!-- Botón de Envío (MODIFICADO) -->
+            <div class="col-12 text-center mt-4">
+            <button type="submit" class="cta-button whatsapp">
+             <i class="bi bi-whatsapp me-2"></i>Enviar por WhatsApp
+            </button>
+           </div>
+           </div>
+            </form>
+           </div>
             </section>
         </main>
         
@@ -719,7 +722,7 @@
                         <ul class="footer-links">
                             <li><a href="#clientes">Clientes</a></li>
                             <li><a href="#">Sobre Nosotros</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
+                            <li><a href="#contacto-eventos">Contacto</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -755,7 +758,7 @@
             
             // URLs de los logos para el efecto de scroll
             const logoBlanco = './img/logo-blanco.png';
-            const logoColor = './img/logo-color.png';
+            const logoColor = './img/logobanner.png';
 
             // --- Script para Navbar con Scroll ---
             function handleNavScroll() {
@@ -815,6 +818,53 @@
 
             // --- Script para el año del footer ---
             document.getElementById('year').textContent = new Date().getFullYear();
+
+             // --- Script para el año del footer ---
+           document.getElementById('year').textContent = new Date().getFullYear();
+
+// --- NUEVO SCRIPT: Formulario de Contacto a WhatsApp ---
+const contactForm = document.getElementById('contactForm');
+ if (contactForm) {
+ contactForm.addEventListener('submit', function(event) {
+event.preventDefault(); // Evitar el envío normal
+
+ // 1. Obtener valores
+ const empresa = document.getElementById('empresa').value;
+ const email = document.getElementById('email').value;
+const tipoEventoSelect = document.getElementById('tipo_evento');
+const tipoEvento = tipoEventoSelect.options[tipoEventoSelect.selectedIndex].text;
+const cantidadPersonas = document.getElementById('cantidad_personas').value;
+ const fechaEvento = document.getElementById('fecha_evento').value;
+ const mensaje = document.getElementById('mensaje').value;
+
+ // 2. Número de WhatsApp (tomado del footer)
+// Formato internacional para Argentina: 54 + 9 (para celular) + 264 582 0093
+const whatsappNumber = '5492645820093'; 
+
+// 3. Construir el mensaje
+ let messageBody = `Hola Onnutrive, me gustaría solicitar una propuesta:\n\n`;
+ messageBody += `*Empresa/Contacto:* ${empresa}\n`;
+ messageBody += `*Email de Contacto:* ${email}\n`;
+ messageBody += `*Tipo de Servicio:* ${tipoEvento}\n`;
+
+if (cantidadPersonas) {
+messageBody += `*Cantidad de Personas:* ${cantidadPersonas}\n`;
+}
+ if (fechaEvento) {
+ messageBody += `*Fecha del Evento:* ${fechaEvento}\n`;
+}
+ if (mensaje) {
+messageBody += `*Mensaje Adicional:*\n${mensaje}\n`;
+ }
+
+// 4. Codificar mensaje para URL
+ const encodedMessage = encodeURIComponent(messageBody);
+
+ // 5. Crear URL y abrir
+ const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+ window.open(whatsappURL, '_blank');
+ });
+ }
         });
     </script>
 </body>
