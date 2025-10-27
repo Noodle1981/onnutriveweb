@@ -21,19 +21,12 @@
 
     <!-- Swiper CSS para la galería -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style_2.css"> <!-- VERSIÓN 2-->
 
     <!-- Estilos combinados y mejorados -->
     <style>
         /* 1. CONFIGURACIÓN GLOBAL Y VARIABLES (de viandas.css) */
-        :root {
-            --brand-green: #124735;
-            --brand-gold: #DABD85;
-            --brand-accent: #DA4735;
-            --brand-cream: #fdfaf5;
-            --brand-dark: #333333;
-            --font-title: 'Montserrat', sans-serif;
-            --font-body: 'Nunito', sans-serif;
-        }
+        
 
         body {
             font-family: var(--font-body);
@@ -161,6 +154,7 @@
             background-color: var(--brand-cream);
             overflow: hidden;
             transition: transform 0.3s ease;
+            position: relative; /* AÑADIDO: Contenedor para el botón */
         }
         
         .hybridCarouselTop .swiper-slide img {
@@ -174,7 +168,65 @@
             cursor: pointer;
             transform: scale(1.05); /* Destaca la tarjeta activa */
         }
+
+        /* --- INICIO: ESTILO BOTÓN SOBRE IMAGEN (NUEVO) --- */
+        .slide-button-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 2.5rem 1.5rem 1.5rem; /* Espacio para el botón y gradiente */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Alinea al fondo */
+            
+            /* Gradiente sutil para legibilidad del botón */
+            background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+            
+            /* Oculto por defecto */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            
+            /* Asegura que el click pase al slide si no se acierta el botón */
+            pointer-events: none; 
+        }
+
+        /* Mostrar solo en el slide activo */
+        .swiper-slide-active .slide-button-overlay {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto; /* El botón se puede clickear */
+        }
         
+        .btn-view-plan {
+            /* Estilo basado en .cta-button pero con colores de la marca */
+            background-color: var(--brand-accent); /* Usar dorado para destacar */
+            color: var(--brand-cream); /* Texto oscuro para contraste */
+            font-family: var(--font-body);
+            font-weight: 800; /* Más grueso */
+            font-size: 1rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem; /* Espacio entre icono y texto */
+            cursor: pointer;
+            border: 2px solid white; /* Borde blanco para 'pop' visual */
+        }
+        
+        .btn-view-plan:hover {
+            background-color: var(--brand-gold);
+            color: var(--brand-green);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        /* --- FIN: ESTILO BOTÓN --- */
+
         .hybridCarouselThumbs {
             height: 240px; /* Ajuste para responsividad */
             box-sizing: border-box;
@@ -297,28 +349,44 @@
     </style>
 </head>
 <body>
-    <!-- NAVEGACIÓN (Importada de viandas.html) -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+       <!-- NAVEGACIÓN -->
+       <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid" style="max-width: 1140px;">
-            <a class="navbar-brand" href="./index-2.html"> <!-- Enlace a la página principal -->
+            <a class="navbar-brand" href="#">
                 <img id="nav-logo" src="./img/logobanner.png" alt="Onnutrive Logo" style="height: 48px; transition: all 0.3s ease;">
             </a>
             <button id="mobile-menu-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i id="mobile-menu-icon" class="bi bi-list text-success fs-2"></i>
+                <i id="mobile-menu-icon" class="bi bi-list text-black fs-2"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-center">
-                    <li class="nav-item"><a class="nav-link mx-3" href="viandas.html#viandas">Viandas</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3" href="viandas.html#como-pedir">Cómo Pedir</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3" href="viandas.html#pasteleria">Pastelería</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 active" href="planes.html">Planes</a></li> <!-- Enlace activo -->
-                    <li class="nav-item"><a class="nav-link mx-3" href="./sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item "><a class="nav-link mx-3  " href="./viandas.html">Viandas</a></li>
+                    
+                    <!-- INICIO DEL CAMBIO: ITEM CON SUBMENÚ (DROPDOWN) -->
+                    <!-- Se utiliza 'data-bs-auto-close="outside"' para que el submenú no se cierre si se hace clic fuera del mismo en desktop -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle"  id="navbarDropdownBudines" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pastelería
+                        </a>
+                        <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
+                            <li><a class="dropdown-item" href="#budin-banana">Budines</a></li>
+                            <li><a class="dropdown-item" href="#budin-limon">Snacks</a></li>
+                            <li><a class="dropdown-item" href="#budin-naranja">Postres</a></li>
+                            
+                        </ul>
+                    </li>
+                    <!-- FIN DEL CAMBIO -->
+
+                   
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./planes.html">Planes</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./eventos-empresas.html">Eventos Empresas</a></li>
                 </ul>
                 <div class="d-none d-lg-block">
-                    <a href="https://wa.me/542645820093?text=Hola%20Onnutrive%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20viandas%20y%20planes." target="_blank" class="cta-button">Pedir Ahora</a>
+                    <a href="#contacto" class="cta-button">Pedir Ahora</a>
                 </div>
                  <div class="d-lg-none text-center pt-3">
-                    <a href="https://wa.me/542645820093?text=Hola%20Onnutrive%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20viandas%20y%20planes." target="_blank" class="cta-button">Pedir Ahora</a>
+                    <a href="#contacto" class="cta-button">Pedir Ahora</a>
                 </div>
             </div>
         </div>
@@ -429,17 +497,19 @@
 
             // --- CÓDIGO DE viandas.html (Navbar, Animaciones, Footer) ---
 
+        
+
             // Cierre del menú móvil al hacer clic en un enlace
-            const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link:not(.dropdown-toggle), #navbarNav .dropdown-item'); 
             const navCollapse = document.querySelector('.navbar-collapse.collapse');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                   if (navCollapse.classList.contains('show')) {
-                       new bootstrap.Collapse(navCollapse).hide();
+                   // Solo cerramos el colapso si el elemento no es un dropdown toggle
+                   if (!link.classList.contains('dropdown-toggle') && navCollapse.classList.contains('show')) {
+                        new bootstrap.Collapse(navCollapse).hide();
                    }
                 });
             });
-
             // Animaciones al Hacer Scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -495,14 +565,32 @@
             planData.forEach((plan, index) => {
                 const topSlide = document.createElement('div');
                 topSlide.className = 'swiper-slide';
-                topSlide.innerHTML = `<img src="${plan.img}" alt="${plan.nombre}">`;
+                
+                // --- INICIO: HTML MODIFICADO ---
+                // Añadimos la imagen y la superposición del botón
+                topSlide.innerHTML = `
+                    <img src="${plan.img}" alt="${plan.nombre}">
+                    <div class="slide-button-overlay">
+                        <span class="btn-view-plan">
+                            <i class="bi bi-search"></i> Ver Plan
+                        </span>
+                    </div>
+                `;
+                // --- FIN: HTML MODIFICADO ---
+
+                // El listener se mantiene en el 'topSlide'.
+                // Si el slide está activo, el click (en la imagen O el botón)
+                // abrirá el modal.
                 topSlide.addEventListener('click', () => {
                     if (topSlide.classList.contains('swiper-slide-active')) {
                         openModal(plan);
                     }
+                    // Si no está activo, el click es manejado por Swiper
+                    // para centrar el slide.
                 });
                 hybridWrapperTop.appendChild(topSlide);
 
+                // --- (El código de las miniaturas 'thumbSlide' no cambia) ---
                 const thumbSlide = document.createElement('div');
                 thumbSlide.className = 'swiper-slide';
                 thumbSlide.innerHTML = `<img src="${plan.img}" alt="Miniatura ${plan.nombre}">`;
@@ -546,4 +634,3 @@
     </script>
 </body>
 </html>
-
