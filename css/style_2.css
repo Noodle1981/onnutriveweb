@@ -34,8 +34,8 @@
   
 /* 1. CONFIGURACIÓN GLOBAL Y VARIABLES */
   :root {
-    --brand-green: #124735;
-    --brand-gold: #DABD85;
+    --brand-green: #146742;
+    --brand-gold: #E6BB6E;
     --brand-accent: #DA4735;
     --brand-cream: #fdfaf5;
     --brand-dark: #333333;
@@ -66,12 +66,12 @@ body {
 /* 2. CLASES DE UTILIDAD GENERAL */
 .section-title {
     font-weight: 800;
-    color: #2b453e;
+    color: var(--brand-green);
     font-size: clamp(2.5rem, 6vw, 2.9rem);
     line-height: 0.9;
     letter-spacing: -3px;
     /* Truco para simular más grosor */
-    -webkit-text-stroke: 1.5px #2b453e;
+    -webkit-text-stroke: 1.5px var(--brand-green);
 }
 
 .section-subtitle {
@@ -83,12 +83,12 @@ body {
 
 .alimentos-text {
     font-weight: 800;
-    color: #2b453e;
+    color: var(--brand-green);
     font-size: clamp(2.5rem, 6vw, 2.9rem);
     line-height: 0.9;
     letter-spacing: -3px;
     /* Truco para simular más grosor */
-    -webkit-text-stroke: 1.5px #2b453e;
+    -webkit-text-stroke: 1.5px var(--brand-green);
 }
 
 .activan-text .text-gold {
@@ -157,6 +157,75 @@ body {
 .navbar-toggler:focus { box-shadow: none; }
 
 
+/* Dropdawn menú */
+
+.dropdown-menu {
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: var(--brand-cream); 
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--brand-dark);
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--brand-gold);
+    color: var(--brand-green);
+}
+
+@media (max-width: 991px) {
+    /* En móvil, el dropdown debe ser un elemento de menú normal */
+    .nav-item.dropdown {
+        /* Permite que el elemento padre tenga margen y centrado como los otros items */
+        margin-bottom: 0.5rem;
+    }
+
+    /* El enlace principal se ve como un nav-link normal */
+    .nav-item.dropdown .nav-link {
+        color: var(--brand-green); /* Usa el color de texto del nav.scrolled */
+        /* Eliminamos el indicador de dropdown en móvil para que parezca un elemento de menú desplegado */
+        
+    }
+
+    /* Ocultamos la flecha de dropdown en mobile */
+    .nav-item.dropdown .dropdown-toggle::after {
+        display: none !important;
+    }
+    
+    /* El menú desplegable en móvil se muestra como parte de la lista principal */
+    .dropdown-menu {
+        position: static !important; /* Muestra el submenú en línea */
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent; /* Transparente para mezclarse con el fondo del navbar */
+        padding: 0;
+        text-align: center;
+    }
+
+    .dropdown-item {
+        color: var(--brand-dark); /* Color de sub-items en móvil */
+        padding: 0.5rem 0;
+        background: transparent;
+        font-weight: 500;
+    }
+    .dropdown-item:hover {
+        background: transparent;
+        color: var(--brand-accent);
+    }
+}
+
+
 /* Navegación de viandas  */
 
 #navbar-viandas {
@@ -167,7 +236,7 @@ body {
     border-bottom: 1px solid #e5e7eb;
 }
 
-.navbar .nav-link {
+.navbar .navianda-link {
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.95rem;
@@ -176,16 +245,18 @@ body {
     padding-bottom: 0.5rem;
 }
 
+
+
 .navbar-viandas .nav-link:hover, .navbar-viandas .nav-link.active {
     color: var(--brand-accent);
 }
 
-.navbar-viandas .nav-viandas-link::after {
+.navbar-viandas .navianda-link::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 2px;
     background-color: var(--brand-accent);
     transition: width 0.3s ease-in-out;
@@ -625,12 +696,12 @@ body {
 
 .showcase-title {
     font-weight: 800;
-    color: #2b453e;
+    color:var(--brand-green);
     font-size: clamp(2.5rem, 6vw, 2.9rem);
     line-height: 0.9;
     letter-spacing: -3px;
     /* Truco para simular más grosor */
-    -webkit-text-stroke: 1.5px #2b453e;
+    -webkit-text-stroke: 1.5px var(--brand-green);
 }
 
 .showcase-subtitle {

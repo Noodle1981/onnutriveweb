@@ -25,7 +25,8 @@
 <body>
 
     <!-- NAVEGACIÓN -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+     <!-- NAVEGACIÓN -->
+     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid" style="max-width: 1140px;">
             <a class="navbar-brand" href="#">
                 <img id="nav-logo" src="./img/logo-blanco.png" alt="Onnutrive Logo" style="height: 48px; transition: all 0.3s ease;">
@@ -35,11 +36,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-center">
-                    <li class="nav-item "><a class="nav-link mx-3 text-white " href="./viandas.html">Viandas</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 text-white " href="#pasteleria">Budines</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 text-white " href="#pasteleria">Snacks</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 text-white " href="./planes.html">Planes</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 text-white " href="./sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item "><a class="nav-link mx-3  " href="./viandas.html">Viandas</a></li>
+                    
+                    <!-- INICIO DEL CAMBIO: ITEM CON SUBMENÚ (DROPDOWN) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle"  id="navbarDropdownBudines" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Budiness
+                        </a>
+                        <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
+                            <li><a class="dropdown-item" href="#budin-banana">Budín de Banana y Cacao</a></li>
+                            <li><a class="dropdown-item" href="#budin-limon">Budín de Limón y Amapola</a></li>
+                            <li><a class="dropdown-item" href="#budin-naranja">Budín de Naranja y Vainilla</a></li>
+                            <li><hr class="dropdown-divider d-lg-none"></li>
+                            <li><a class="dropdown-item d-lg-none" href="#pasteleria">Ver toda la Pastelería</a></li>
+                        </ul>
+                    </li>
+                    <!-- FIN DEL CAMBIO -->
+
+                    <li class="nav-item"><a class="nav-link mx-3  " href="#pasteleria">Snacks</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./planes.html">Planes</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./sobre-nosotros.html">Sobre Nosotros</a></li>
                 </ul>
                 <div class="d-none d-lg-block">
                     <a href="#contacto" class="cta-button">Pedir Ahora</a>
@@ -50,7 +66,6 @@
             </div>
         </div>
     </nav>
-
     <!-- HERO SECTION -->
     <header class="hero-video-background">
         <video playsinline autoplay muted loop id="bgvideo">
@@ -409,7 +424,7 @@ new Swiper(".hybridCarouselTop", {
             handleNavScroll(); // Ejecutar al cargar
 
             // --- Cierre del menú móvil al hacer clic en un enlace ---
-            const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link, #navbarNav .dropdown-item'); 
             const navCollapse = document.querySelector('.navbar-collapse.collapse');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
