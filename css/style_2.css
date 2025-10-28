@@ -4,8 +4,8 @@
     
     /* Aquí debes poner la ruta correcta a tus archivos de fuente. */
     /* Se recomienda usar .woff2 por su mejor compresión y .woff como fallback. */
-    src: url('/fonts/VisbyRoundCF-Regular.woff2') format('woff2'),
-         url('/fonts/VisbyRoundCF-Regular.woff') format('woff');
+    src: url('../Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Regular.woff2') format('woff2'),
+         url('../Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Regular.woff') format('woff');
          
     /* También puedes especificar el peso y estilo si tienes varios archivos. */
     font-weight: normal; /* o 400 */
@@ -15,16 +15,16 @@
   /* Ejemplo para una versión en negrita (bold) */
   @font-face {
     font-family: 'Visby Round CF';
-    src: url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff2') format('woff2'),
-         url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff') format('woff');
+    src: url('../Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff2') format('woff2'),
+         url('../Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Bold.woff') format('woff');
     font-weight: bold; /* o 700 */
     font-style: normal;
   } 
   
   @font-face {
     font-family: 'Visby Round CF';
-    src: url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-ExtraBold.woff') format('woff2'),
-         url('/Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-ExtraBold.woff') format('woff');
+    src: url('../Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-ExtraBold.woff') format('woff2'),
+         url('../Visby-Round-www.Dfonts.org[1]/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-ExtraBold.woff') format('woff');
     font-weight: extrabold; /* o 700 */
     font-style: normal;
   } 
@@ -170,7 +170,7 @@ body {
 .dropdown-item {
     font-family: var(--font-body);
     font-weight: 600;
-    color: var(--brand-dark);
+    color: var(--brand-cream);
     padding: 0.5rem 1.5rem;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -181,6 +181,30 @@ body {
 }
 
 @media (max-width: 991px) {
+
+    #navbarNav.show {
+        background-color: #ffffff;
+        
+        /* Opcional: Añade un poco de espacio para que no se pegue a los bordes */
+        padding: 1rem;
+        border-radius: 0.25rem;
+        margin-top: 0.5rem; /* Para separarlo un poco del logo */
+      }
+    
+      /* 2. Cambiamos el color de los enlaces de texto a verde */
+      #navbarNav.show .nav-link {
+        /* Usé el verde #124735 que vi en el placeholder de tu favicon.
+          El !important es para forzar que sobreescriba los estilos 
+          de Bootstrap que los ponen en blanco (probablemente .navbar-dark).
+        */
+        color: #124735 !important; 
+      }
+    
+      /* 3. (Opcional) Asegurarse de que el color del enlace activo también sea verde */
+      #navbarNav.show .nav-link.active {
+        color: #124735 !important;
+        font-weight: bold; /* Para destacarlo */
+      }
     /* En móvil, el dropdown debe ser un elemento de menú normal */
     .nav-item.dropdown {
         /* Permite que el elemento padre tenga margen y centrado como los otros items */
@@ -214,7 +238,7 @@ body {
     }
 
     .dropdown-item {
-        color: var(--brand-dark); /* Color de sub-items en móvil */
+        color: var(--brand-dark);
         padding: 0.5rem 0;
         background: transparent;
         font-weight: 500;
@@ -223,10 +247,11 @@ body {
         background: transparent;
         color: var(--brand-accent);
     }
+
+
+    
 }
 
-
-/* Navegación de viandas  */
 
 #navbar-viandas {
     transition: all 0.3s ease-in-out;
@@ -311,7 +336,7 @@ body {
 
 /* 5. SECCIÓN CÓMO PEDIR - Viandas*/
 .como-pedir-section {
-    background-image: url('/img/melamina2.png');
+    background-image: url('../img/melamina2.png');
     background-size: cover;
     padding: 5rem 0;
 }
@@ -351,7 +376,7 @@ body {
 /* 6. SECCIÓN PASOS INTERACTIVOS */
 
 .pasos-section {
-    background-image: url('/img/melamina2.png');
+    background-image: url('../img/melamina2.png');
     background-size: cover;
     padding: 6rem 0;
     background-color: var(--brand-cream);
@@ -400,7 +425,7 @@ body {
 /* 12. SECCIÓN 3 PASOS - ESTILO DAILYVIANDAS */
 #como-funciona {
     background-color: #F7F5F2;
-    background-image: url('/img/melamina2.png');
+    background-image: url('../img/melamina2.png');
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -649,7 +674,7 @@ body {
 
 /* 9. NUEVO: ESTILO DE TARJETAS SHOWCASE */
 .showcase-section {
-    background-image: url('/img/melamina2.png');
+    background-image: url('../img/melamina2.png');
     background-size: cover;
     /* background-attachment: fixed; */
     background-position: center;
