@@ -907,7 +907,7 @@ body {
 
 /* Hero Section */
 .hero-about {
-    background-image: linear-gradient(rgba(18, 71, 53, 0.199), rgba(18, 71, 53, 0.6)), url('../img/equipo.jpg');
+    background-image: linear-gradient(rgba(18, 71, 53, 0.199), rgba(18, 71, 53, 0.842)), url('../img/equipo.jpg');
     background-size: cover;
     background-position: center;
     padding: 10rem 0;
