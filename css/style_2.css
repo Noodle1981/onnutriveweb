@@ -170,7 +170,7 @@ body {
 .dropdown-item {
     font-family: var(--font-body);
     font-weight: 600;
-    color: var(--brand-cream);
+    color: var(--brand-green);
     padding: 0.5rem 1.5rem;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
