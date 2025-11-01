@@ -360,7 +360,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-center">
-                    <li class="nav-item "><a class="nav-link mx-3  " href="./viandas.html">Viandas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle"  id="navbarDropdownBudines" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Viandas
+                        </a>
+                        <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
+                            <li><a class="dropdown-item" href="./viandas.html">Viandas Particulares</a></li>
+                            <li><a class="dropdown-item" href="./viandas-empresas.html">Viandas para Empresas</a></li>
+                            
+                            
+                        </ul>
+                    </li>
                     
                     <!-- INICIO DEL CAMBIO: ITEM CON SUBMENÚ (DROPDOWN) -->
                     <!-- Se utiliza 'data-bs-auto-close="outside"' para que el submenú no se cierre si se hace clic fuera del mismo en desktop -->
@@ -380,7 +390,7 @@
                    
                     <li class="nav-item"><a class="nav-link mx-3 " href="./planes.html">Planes</a></li>
                     <li class="nav-item"><a class="nav-link mx-3 " href="./sobre-nosotros.html">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 " href="./eventos-empresas.html">Eventos Empresas</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./eventos-empresas.html">Eventos </a></li>
                 </ul>
                 <div class="d-none d-lg-block">
                     <a href="#contacto" class="cta-button">Pedir Ahora</a>
@@ -530,18 +540,11 @@
 
             // Datos de los planes (puedes expandir esto)
             const planData = [
-                { nombre: 'Plan Fitness', img: './img/planes/p1.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Fitness%20Plus' },
-                { nombre:'Plan Hiperproteico' , img: './img/planes/p2.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Insuficiencia%20Renal' },
-                { nombre:'Plan Balanceado' , img: './img/planes/p3.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Fitness' },
-                { nombre: 'Plan Vegetariano' , img: './img/planes/p4.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Hiperproteico' },
-                { nombre: 'Plan FODMAP' , img: './img/planes/p5.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Balanceado' },
-                { nombre: 'Plan Hipertensión', img: './img/planes/p6.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Descenso%20Graso' },
-                { nombre: 'Plan Insuficiencia Renal', img: './img/planes/p7.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Aumento%20Muscular' },
-                { nombre: 'Plan Fitness Plus', img: './img/planes/p8.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Vegetariano' },
-                // { nombre: 'Plan Mantenimiento', img: './img/planes/p9.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Mantenimiento' },
-                // { nombre: 'Plan Keto', img: './img/planes/p10.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Keto' },
-                // { nombre: 'Plan Anti-inflamatorio', img: './img/planes/p11.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Anti-inflamatorio' },
-                // { nombre: 'Plan Vegano', img: './img/planes/p12.jpeg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Vegano' },
+                { nombre: 'Plan Fitness', img: './img/budines/snack-1.jpg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Fitness%20Plus' },
+                { nombre:'Plan Hiperproteico' , img: './img/budines/snack-1.jpg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Insuficiencia%20Renal' },
+                { nombre:'Plan Balanceado' , img: './img/budines/snack-1.jpg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Fitness' },
+                { nombre: 'Plan Vegetariano' , img: './img/budines/snack-1.jpg', wsp: 'https://wa.me/542645820093?text=Hola%2C%20quisiera%20info%20del%20Plan%20Hiperproteico' },
+              
             ];
             
             const planModalEl = document.getElementById('planModal');

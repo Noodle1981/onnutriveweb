@@ -36,11 +36,36 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-center">
-                    <li class="nav-item"><a class="nav-link nav-viandas-link mx-3" href="#viandas" style="color: #146742 ;">Viandas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle"  id="navbarDropdownBudines" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: #146742 ;">
+                            Viandas
+                        </a>
+                        <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
+                            <li><a class="dropdown-item" href="./viandas.html">Viandas Particulares</a></li>
+                            <li><a class="dropdown-item" href="./viandas-empresas.html">Viandas para Empresas</a></li>
+                            
+                            
+                        </ul>
+                    </li>
+                  
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle"  id="navbarDropdownBudines" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: #146742 ;">
+                            Pastelería
+                        </a>
+                        <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
+                            <li><a class="dropdown-item" href="./budines.html">Budines</a></li>
+                            <li><a class="dropdown-item" href="./snacks.html">Snacks</a></li>
+                            <li><a class="dropdown-item" href="./postres.html">Postres</a></li>
+                            
+                            
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link nav-viandas-link mx-3" href="#como-pedir" style="color: #146742 ;">Cómo Pedir</a></li>
-                    <li class="nav-item"><a class="nav-link nav-viandas-link mx-3" href="#pasteleria" style="color: #146742 ;">Pastelería</a></li>
                     <li class="nav-item"><a class="nav-link nav-viandas-link mx-3" href="./planes.html" style="color: #146742 ;">Planes</a></li>
+                 
+
                     <li class="nav-item"><a class="nav-link nav-viandas-link mx-3" href="./sobre-nosotros.html" style="color: #146742 ;">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link nav-viandas-link mx-3" href="./eventos-empresas.html" style="color: #146742 ;">Eventos</a></li>
                 </ul>
                 <div class="d-none d-lg-block">
                     <a href="#contacto" class="cta-button">Pedir Ahora</a>
@@ -54,165 +79,139 @@
     <div class="main-content-wrapper pt-5">
         <main>
             <!-- SECCIÓN VIANDAS (VERSIÓN ORIGINAL) -->
-            <div id="viandas" class="showcase-section">
+            <div id="viandas" class="showcase-section" style="background: white;">
                 <div class="container position-relative">
                     <div class="showcase-container animate-on-scroll">
                         <div class="showcase-image">
-                            <img src="./img/bife.png" alt="Plato de vianda saludable con ensalada y pollo">
+                            <img src="./img/viandas/vianda-nueva.png" alt="Plato de vianda saludable con ensalada y pollo">
                         </div>
                         <div class="showcase-content">
                             <img src="./img/sandia-sin-fondo.png"  alt="tomate" class="decorative-element anim-float" style="width: 200px; top: -5%; left: -8%;"  data-speed="2">
                     <img src="./img/hoja-completa.png" alt="romero" class="decorative-element anim-float-rotate d-none d-lg-block" style="width: 220px; top: -5%; left: -8%;" data-speed="-3.5">
                     <img src="./img/hojas-sin-fondo.png"  alt="tenedor" class="decorative-element d-none d-lg-block" style="width: 500px; bottom: -55%; right: -5%; transform: rotate(25deg);" data-speed="2">
 
-                    <h2 class="showcase-title">Viandas para Empresas </h2>
-                    <p class="showcase-subtitle">Frescas, elaboradas día a día con alimentos reales.</p>
+                    <h2 class="showcase-title">Viandas para Empresas</h2>
+                    <p class="showcase-subtitle">Viandas corporativas frescas, diseñadas para potenciar la energía y el enfoque.</p>
                     <ul class="showcase-list">
-                        <li><i class="bi bi-basket2-fill"></i> Bajas en sodio y harinas refinadas</li>
-                        <li><i class="bi bi-shield-check"></i>Preparación al horno, nada frito</li>
-                        <li><i class="bi bi-fire"></i> Ricas y abundantes</li>
-                        <li><i class="bi bi-truck"></i> Directo a la puerta de tu casa</li>
+                    <li><i class="bi bi-graph-up-arrow"></i> <strong>Máximo Rendimiento</strong> </li>
+                    <li><i class="bi bi-shield-check"></i> <strong>Bienestar que se nota</strong></li>
+                    <li><i class="bi bi-hand-thumbs-up-fill"></i> <strong>Satisfacción Garantizada</strong></li>
+                    <li><i class="bi bi-building"></i> <strong>Logística Resuelta</strong> </li>
                     </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- SECCIÓN CLIENTES (Prueba Social B2B) -->
+            <section id="clientes" class="py-5">
+                <div class="container text-center text-white" >
+                    <h2 class="section-title  animate-on-scroll">Empresas que confían en nosotros</h2>
+                    <p class="section-subtitle  animate-on-scroll" style="animation-delay: 0.1s;">Nos enorgullece ser el socio de alimentación de grandes equipos.</p>
+                    <div class="client-logos-grid animate-on-scroll" style="animation-delay: 0.2s;">
+                        <!-- Logos de Clientes (Placeholders) -->
+                        <img src="./img/Empresas/eco-minera.png" alt="Logo Eco Minera" class="client-logo">
+                        <img src="./img/Empresas/arcor.png" alt="Logo Arcor" class="client-logo">
+                        <img src="./img/Empresas/upcn.png" alt="Logo UPCN Voley" class="client-logo">
+                        <img src="./img/Empresas/galvarini.png" alt="Logo Galvarini" class="client-logo">
+                        <img src="./img/Empresas/argentina-fortescue.png" alt="Logo Argentina Fortescue" class="client-logo">
+                        <img src="./img/Empresas/cimac.png" alt="Logo Cimac" class="client-logo">
+                        <img src="./img/Empresas/los-aromos.png" alt="Logo Los Aromos" class="client-logo">
+                        <img src="./img/Empresas/veja.png" alt="Logo Vejamoreno" class="client-logo">
+                        <img src="./img/Empresas/el-nido.png" alt="Logo el nido" class="client-logo">
+                        <img src="./img/Empresas/albardon.png" alt="Logo Transportes Albardon" class="client-logo">
+                      
+                        <img src="./img/Empresas/komatsu.png"  alt="Logo Komatsu" class="client-logo">
+                        <img src="./img/Empresas/lumiere.png"  alt="Logo Lumiere" class="client-logo">
+                        <img src="./img/Empresas/los-azules.png" alt="Logo Los Azules" class="client-logo">
+                        <img src="./img/Empresas/mercedario.png" alt="Logo Clinica Mercedario" class="client-logo">
+                        <img src="./img/Empresas/credicop.png" alt="Logo Banco Credicoop" class="client-logo">
+                        <img src="./img/Empresas/aviagen.png" alt="Logo Aviagen" class="client-logo">
+                        <img src="./img/Empresas/cartocor.png" alt="Logo Cartocor" class="client-logo">
+                    </div>
+                </div>
+            </section>
             
             <!-- SECCIÓN ¿CÓMO QUERÉS PEDIR? -->
             <section id="como-pedir" class="como-pedir-section">
-                <div class="container">
-                    <div class="text-center mb-5">
-                         <h2 class="section-title animate-on-scroll">¿Cómo Querés Pedir?</h2>
-                         <p class="section-subtitle animate-on-scroll">Tenemos la opción perfecta para tus necesidades. Elegí la que mejor se adapte a tu rutina.</p>
-                    </div>
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-lg-4 col-md-6 animate-on-scroll" style="--animation-delay: 0.1s;">
-                            <div class="choice-card">
-                                <div>
-                                    <i class="bi bi-bicycle choice-icon"></i>
-                                    <h3 class="choice-title">Disponible en el Día</h3>
-                                    <p class="choice-text">Platos listos para entrega inmediata sujeto a disponibilidad.</p>
-                                </div>
-                                <a href="https://wa.me/542645820093?text=Hola%2C%20quisiera%20saber%20cu%C3%A1l%20es%20el%20men%C3%BA%20del%20d%C3%ADa." target="_blank" class="cta-button">Pedir por WhatsApp</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 animate-on-scroll" style="--animation-delay: 0.2s;">
-                            <div class="choice-card">
-                                <div>
-                                    <i class="bi bi-hand-index-thumb choice-icon"></i>
-                                    <h3 class="choice-title">Vianda a Elección</h3>
-                                    <p class="choice-text">Armás tu menú semanal entre opciones diarias que ofrecemos. Mirá los pasos y creá tu combinación perfecta.</p>
-                                </div>
-                                <a href="#como-funciona" class="cta-button">Ver los 3 Pasos</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 animate-on-scroll">
-                            <div class="choice-card">
-                                <div>
-                                    <i class="bi bi-calendar-week choice-icon"></i>
-                                    <h3 class="choice-title">Planes Nutricionales</h3>
-                                    <p class="choice-text">Packs listos, diseñados por nuestras nutricionistas según cada objetivo.</p>
-                                </div>
-                                <a href="#planes" class="cta-button">Ver Planes</a>
-                            </div>
-                        </div>
-                        
-                       
-                    </div>
+            <div class="container">
+            <div class="text-center mb-5">
+              <h2 class="section-title animate-on-scroll">¡Activá a tu equipo con On Nutrive!</h2>
+             
+            </div>
+            <div class="row g-4 justify-content-center">
+            <div class="col-lg-9 animate-on-scroll" style="--animation-delay: 0.1s;">
+            <div class="choice-card" style="text-align: left; justify-content: flex-start;">
+            <div>
+           
+            <h3 class="choice-title mt-4" style="text-align: left; font-size: 1.35rem;">Un Proceso Ágil y Personalizado</h3>
+            <p class="choice-text" style="margin-top: 0.5rem;">
+                Cada empleado completa un <strong>formulario de Google Forms</strong> con su selección semanal de menús. De esta forma, pueden elegir las opciones que más le gusten, y nosotros organizamos la producción diaria de forma práctica y personalizada.
+                </p>
+               
+                
+               
                 </div>
-            </section>
-            <section id="como-funciona">
-                <div class="container">
+                <div class="text-center mt-4 pt-3">
+                <a href="#contacto" class="cta-button">Consultar por mi Empresa</a>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+                <section id="como-funciona">
+                    <div class="container">
                     <div class="text-center mb-5 pb-4">
-                         <h2 class="section-title animate-on-scroll">Simple en 3 Pasos</h2>
-                         <p class="section-subtitle animate-on-scroll">Comer saludable nunca fue tan fácil.</p>
+                   <h2 class="section-title animate-on-scroll">Simple en 3 Pasos</h2>
+                   <p class="section-subtitle animate-on-scroll">Así de fácil activamos a tu equipo.</p>
                     </div>
-            
+                    
                     <div class="step-container">
-                        <!-- Step 1 -->
-                        <div class="step-row animate-on-scroll">
-                            <div class="step-number">1</div>
-                            <div class="step-image">
-                                <img src="./img/paso 1.png" alt="Elegir plan de viandas">
-                            </div>
-                            <div class="step-content">
-                                <h3>Pedí el menú de la semana por WhatsApp</h3>
-                                <p>Podes hacerlo desde este botón.</p>
-                                <div class="mt-5 animate-on-scroll">
-                                    <a href="https://wa.me/542645820093?text=Hola%20Onnutrive%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20viandas%20y%20planes." target="_blank" class="cta-button-whatsapp">
-                                        <i class="bi bi-whatsapp me-3"></i>
-                                        Pedir por WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <!-- Step 2 -->
-                        <div class="step-row step-row--reverse animate-on-scroll">
-                             <div class="step-number">2</div>
-                            <div class="step-image">
-                                 <img src="./img/paso 2.png" alt="Delivery de viandas">
-                            </div>
-                            <div class="step-content">
-                                <h3>Marcá las viandas que quieras encargar</h3>
-                                <p>Hacé un círculo sobre caad plato y, si querés, anotá la cantidad al lado (ej."2")</p>
-                            </div>
-                        </div>
-            
-                        <!-- Step 3 -->
-                        <div class="step-row animate-on-scroll">
-                             <div class="step-number">3</div>
-                            <div class="step-image">
-                                 <img src="./img/paso 3.png" alt="Disfrutar comida saludable">
-                            </div>
-                            <div class="step-content">
-                                <h3>Enviá la imagen con tus datos</h3>
-                                <p>Debes anotar Nombre y Apellido, y si retiras por el local o la dirección a la que quieres que lo enviemos con la ubicación de la misma.</p>
-                                
-                            </div>
-                        </div>
+                    <div class="step-row animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-image">
+                                                <img src="./img/paso 1.png" alt="Contacto Empresa Onnutrive">
                     </div>
-                </div>
-            </section>
+                    <div class="step-content">
+                    <h3>Activamos tu Empresa</h3>
+                    <p>Contactanos para dar de alta a tu compañía. Definimos las opciones de menú y la logística de entrega.</p>
+                    <div class="mt-5 animate-on-scroll">
+                    <a href="#contacto" class="cta-button">
+                    Consultar Ahora
+                    </a>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <div class="step-row step-row--reverse animate-on-scroll">
+                   <div class="step-number">2</div>
+                    <div class="step-image" >
+                                                <img src="./img/servicios/formulario.png" style="border-radius: 20px;" alt="Selección de viandas por formulario">
+                    </div>
+                    <div class="step-content">
+                    <h3>Cada Empleado Elige</h3>
+                    <p>Enviamos un <strong>Google Form</strong> semanal. Cada persona completa su selección de menú de forma práctica y personalizada.</p>
+                    </div>
+                    </div>
+                    
+                    <div class="step-row animate-on-scroll">
+                   <div class="step-number">3</div>
+                    <div class="step-image">
+                                                 _<img src="./img/viandas/auto-sin-fondo.png" style="border-radius: 20px;" alt="Entrega de viandas en empresa">
+                    </div>
+                    <div class="step-content">
+                    <h3>Producción y Entrega</h3>
+                    <p>Producimos sin desperdicio y entregamos las viandas en tu oficina, listas para activar la jornada laboral.</p>
+                    
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </section>
             
             
 
-            <!-- SECCIÓN PASTELERÍA -->
-            <div id="pasteleria" class="showcase-section" style="background-color: rgba(253, 250, 245, 0.7);">
-                <div class="container position-relative">
-                   <!-- Elementos decorativos para Pastelería -->
-                  
-                   <img src="./img/general-sin-fondo.png"  alt="tenedor" class="decorative-element  d-none d-lg-block" style="width: 400px; top: -75%; left: -8%;" data-speed="-1.5">
-
-                   <img src="./img/sandia-sin-fondo.png"  alt="pimiento rojo" class="decorative-element anim-float d-none d-lg-block" style="width: 120px; top: -10%; right: -5%;" data-speed="2.5">
-                   <img src="./img/hoja-completa.png"  alt="pimiento rojo" class="decorative-element anim-float d-none d-lg-block" style="width: 220px; top: -10%; right: -5%;  transform: rotate(-90deg);" data-speed="2.5">
-
-
-                   <img src="./img/sandia-sin-fondo.png"  alt="hoja de menta" class="decorative-element anim-float-rotate" style="width: 100px; bottom: 10%; left: -5%;" data-speed="-1">
-                   <img src="./img/hoja-completa.png"  alt="cuchillo" class="decorative-element d-none d-lg-block" style="width: 150px; top: 40%; right: 45%; transform: rotate(-20deg);" data-speed="-2">
-                   <img src="./img/hojas-sin-fondo.png"  alt="tenedor" class="decorative-element d-none d-lg-block" style="width: 400px; bottom: -75%; right: -5%; transform: rotate(25deg);" data-speed="1">
-
-                   <!-- Tarjeta 2 PASTELERÍA -->
-                   <div class="showcase-container showcase-container--reverse animate-on-scroll">
-                       <div class="showcase-image">
-                           <img src="./img/alfajores.png" alt="Pastelería saludable">
-                       </div>
-                       <div class="showcase-content">
-                        <h2 class="showcase-title">Pastelería</h2>
-                        <p class="showcase-subtitle">Date un gusto sin culpa</p>
-                        <ul class="showcase-list">
-                            <li><i class="bi bi-lightning-charge-fill"></i> Energía para tus pausas activas</li>
-                            <li><i class="bi bi-palette-fill"></i>Ideales para completar tú dieta</li>
-                            <li><i class="bi bi-tree-fill"></i> Elaborados con productos naturales</li>
-                            <li><i class="bi bi-bicycle"></i>Linea integral y línea Keto</li>
-                        </ul>
-                           <div class="mt-5 text-center animate-on-scroll">
-                               <a href="#contacto" class="cta-button">Ver catálogo</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
+             
             <!-- SECCIÓN PLANES -->
             <section id="planes" class="showcase-section" style="background-color: var(--brand-cream);">
                 <div class="container ">

@@ -38,7 +38,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-center">
-                    <li class="nav-item "><a class="nav-link mx-3  " href="./viandas.html">Viandas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle"  id="navbarDropdownBudines" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Viandas
+                        </a>
+                        <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
+                            <li><a class="dropdown-item" href="./viandas.html">Viandas Particulares</a></li>
+                            <li><a class="dropdown-item" href="./viandas-empresas.html">Viandas para Empresas</a></li>
+                            
+                            
+                        </ul>
+                    </li>
                     
                     <!-- INICIO DEL CAMBIO: ITEM CON SUBMENÚ (DROPDOWN) -->
                     <!-- Se utiliza 'data-bs-auto-close="outside"' para que el submenú no se cierre si se hace clic fuera del mismo en desktop -->
@@ -47,9 +57,9 @@
                             Pastelería
                         </a>
                         <ul class="dropdown-menu text-center text-lg-start" aria-labelledby="navbarDropdownBudines">
-                            <li><a class="dropdown-item" href="#budin-banana">Budines</a></li>
-                            <li><a class="dropdown-item" href="#budin-limon">Snacks</a></li>
-                            <li><a class="dropdown-item" href="#budin-naranja">Postres</a></li>
+                            <li><a class="dropdown-item" href="./budines.html">Budines</a></li>
+                            <li><a class="dropdown-item" href="./snacks.html">Snacks</a></li>
+                            <li><a class="dropdown-item" href="./postres.html">Postres</a></li>
                             
                         </ul>
                     </li>
@@ -58,7 +68,7 @@
                    
                     <li class="nav-item"><a class="nav-link mx-3 " href="./planes.html">Planes</a></li>
                     <li class="nav-item"><a class="nav-link mx-3 " href="./sobre-nosotros.html">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link mx-3 " href="./eventos-empresas.html">Eventos Empresas</a></li>
+                    <li class="nav-item"><a class="nav-link mx-3 " href="./eventos-empresas.html">Eventos </a></li>
                 </ul>
                 <div class="d-none d-lg-block">
                     <a href="#contacto" class="cta-button">Pedir Ahora</a>
