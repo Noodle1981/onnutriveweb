@@ -891,24 +891,27 @@ body {
        max-width: 100%;
     }
 
-    /* .hero-video-background {
-        height: 100vh;
+    .hero-video-background {
+        width: 183%;
+        height: 375px;
      
         position: relative;
         overflow: hidden;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: left;
+        justify-content: left;
+        
     }
     #bgvideo {
         position: absolute;
+        
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
+        /* left: 50%; */
+     
+        width: 50%;
+        height: 375px;
         z-index: 0;
-        object-fit: cover;
+        
     }
 
     .hero-overlay {
@@ -921,21 +924,10 @@ body {
         position: relative;
         z-index: 2;
     }
-     */
+    
 
     
-    .hero-video-background {
-       
-       height: 80vh;
-       width: 100%;
-       position: relative;
-       overflow: hidden
-      
-       
-       
-    
   
-    }
     #planes .text-center.text-lg-start {
         text-align: center !important;
     }
